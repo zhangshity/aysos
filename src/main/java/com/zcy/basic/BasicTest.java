@@ -17,8 +17,12 @@ public class BasicTest {
 
         int y = (-112) % 10;
 
+        int z = Integer.reverse(3);
 
+        String s = "123abc";
+        int length = s.length();
+        System.out.println(length);
 
-        System.out.println(" x="+ x + " y="+ y );
+        //System.out.println(" x=" + x + " y=" + y + " z=" + z);
     }
 }

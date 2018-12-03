@@ -10,6 +10,7 @@ import java.util.List;
  * @ Date: Created in 10:35 2018/11/28
  * @ Modified: By:
  * <p>
+ * ================================================================================
  * -Description:
  * -
  * You are given two non-empty linked lists representing two non-negative integers.
@@ -21,6 +22,7 @@ import java.util.List;
  * Output: 7 -> 0 -> 8
  * Explanation: 342 + 465 = 807.
  * <p>
+ * ================================================================================
  * -描述:
  * -
  * 给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。
@@ -30,9 +32,11 @@ import java.util.List;
  * 输入：(2 -> 4 -> 3) + (5 -> 6 -> 4)
  * 输出：7 -> 0 -> 8
  * 原因：342 + 465 = 807
+ *
+ * ================================================================================
  */
 
-public class AddTwoNumbers {
+public class AddTwoNumbersNo2 {
     /**
      * C语言链表节点定义:
      * struct ListNode {

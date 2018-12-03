@@ -1,12 +1,8 @@
 package com.zcy.leetcode;
 
-import org.junit.Before;
 import org.junit.Test;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
-
-import static org.junit.Assert.*;
 
 public class sumArrayTest {
 
@@ -25,11 +21,11 @@ public class sumArrayTest {
     // public int[] twoSum(int[] nums, int target)
     @Test
     public void testOne() {
-        SumArray sumArray = new SumArray();
+        TwoSumNo1 twoSumNo1 = new TwoSumNo1();
         //int[] nums = {2, 7, 11, 15};
         int[] nums = {2, 8, 11, 7};
         int target = 9;
-        int[] result = sumArray.twoSum(nums,target);
+        int[] result = twoSumNo1.twoSum(nums,target);
         System.out.println(Arrays.toString(result));
     }
 
