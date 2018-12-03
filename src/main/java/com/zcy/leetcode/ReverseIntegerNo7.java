@@ -6,7 +6,7 @@ package com.zcy.leetcode;
  * @ Date: Created in 15:06 2018/11/28
  * @ Modified: By:
  * <p>
- * <p>
+ * ================================================================================
  * -Description:
  * -
  * Given a 32-bit signed integer, reverse digits of an integer.
@@ -24,6 +24,7 @@ package com.zcy.leetcode;
  * `````For the purpose of this problem, assume that your function returns 0 when the reversed integer overflows.
  * <p>
  * <p>
+ * ================================================================================
  * -描述:
  * -
  * 给出一个 32 位的有符号整数，你需要将这个整数中每位上的数字进行反转。
@@ -43,7 +44,7 @@ package com.zcy.leetcode;
  * <p>
  * <p>
  * <p>
- * <p>
+ * ================================================================================
  * !!!!总结:（in mind）
  * -
  * `````数/对应量级=首位数
@@ -58,8 +59,7 @@ package com.zcy.leetcode;
  */
 
 
-public class ReverseInteger {
-
+public class ReverseIntegerNo7 {
 
     //测试成立 但仅限于 3位数内新算法另外写
     public int reverse(int x) {
@@ -177,7 +177,6 @@ public class ReverseInteger {
         int rec = 0;  //存放拼接数字
 
 
-
         while (x != 0) {
             pop = x % 10;
             x = x / 10;
@@ -207,4 +206,11 @@ public class ReverseInteger {
         }
         return rev;
     }
+
+
+    //实际使用的Java包装类Integer.reverse()方法
+    public void demoReverse() {
+        Integer.reverse(12); //通过位的反转顺序,指定的int值而得到的值
+    }
+
 }
