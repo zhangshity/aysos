@@ -1,5 +1,10 @@
 package com.zcy.desgin_pattern.factory_pattern;
 
+import com.zcy.desgin_pattern.factory_pattern.shape.ShapeImpl.Circle;
+import com.zcy.desgin_pattern.factory_pattern.shape.ShapeImpl.Rectangle;
+import com.zcy.desgin_pattern.factory_pattern.shape.Shape;
+import com.zcy.desgin_pattern.factory_pattern.shape.ShapeImpl.Square;
+
 /**
  * @ Author: chunyang.zhang
  * @ Description: Shape的工厂类

@@ -1,5 +1,7 @@
 package com.zcy.desgin_pattern.factory_pattern;
 
+import com.zcy.desgin_pattern.factory_pattern.shape.Shape;
+
 /**
  * @ Author: chunyang.zhang
  * @ Description: 工厂类主函数调用
