@@ -1,8 +1,8 @@
-package com.zcy.desgin_pattern.abstract_factory_pattern;
+package com.zcy.desgin_pattern.abstract_factory;
 
-import com.zcy.desgin_pattern.abstract_factory_pattern.factory.AbstractFactory;
-import com.zcy.desgin_pattern.abstract_factory_pattern.factory.ColorFactory;
-import com.zcy.desgin_pattern.abstract_factory_pattern.factory.ShapeFactory;
+import com.zcy.desgin_pattern.abstract_factory.factory.AbstractFactory;
+import com.zcy.desgin_pattern.abstract_factory.factory.ColorFactory;
+import com.zcy.desgin_pattern.abstract_factory.factory.ShapeFactory;
 
 /**
  * @ Author: chunyang.zhang

@@ -1,8 +1,8 @@
-package com.zcy.desgin_pattern.abstract_factory_pattern;
+package com.zcy.desgin_pattern.abstract_factory;
 
-import com.zcy.desgin_pattern.abstract_factory_pattern.color.Color;
-import com.zcy.desgin_pattern.abstract_factory_pattern.factory.AbstractFactory;
-import com.zcy.desgin_pattern.abstract_factory_pattern.shape.Shape;
+import com.zcy.desgin_pattern.abstract_factory.color.Color;
+import com.zcy.desgin_pattern.abstract_factory.factory.AbstractFactory;
+import com.zcy.desgin_pattern.abstract_factory.shape.Shape;
 
 public class AbstractFactoryDemo {
 

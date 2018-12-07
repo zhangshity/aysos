@@ -1,6 +1,6 @@
-package com.zcy.desgin_pattern.abstract_factory_pattern.color.colorImpl;
+package com.zcy.desgin_pattern.abstract_factory.color.colorImpl;
 
-import com.zcy.desgin_pattern.abstract_factory_pattern.color.Color;
+import com.zcy.desgin_pattern.abstract_factory.color.Color;
 
 /**
  * @ Author: chunyang.zhang

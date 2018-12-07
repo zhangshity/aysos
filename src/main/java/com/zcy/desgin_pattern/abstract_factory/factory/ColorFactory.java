@@ -1,10 +1,10 @@
-package com.zcy.desgin_pattern.abstract_factory_pattern.factory;
+package com.zcy.desgin_pattern.abstract_factory.factory;
 
-import com.zcy.desgin_pattern.abstract_factory_pattern.color.colorImpl.Blue;
-import com.zcy.desgin_pattern.abstract_factory_pattern.color.Color;
-import com.zcy.desgin_pattern.abstract_factory_pattern.color.colorImpl.Green;
-import com.zcy.desgin_pattern.abstract_factory_pattern.color.colorImpl.Red;
-import com.zcy.desgin_pattern.abstract_factory_pattern.shape.Shape;
+import com.zcy.desgin_pattern.abstract_factory.color.colorImpl.Blue;
+import com.zcy.desgin_pattern.abstract_factory.color.Color;
+import com.zcy.desgin_pattern.abstract_factory.color.colorImpl.Green;
+import com.zcy.desgin_pattern.abstract_factory.color.colorImpl.Red;
+import com.zcy.desgin_pattern.abstract_factory.shape.Shape;
 
 /**
  * @ Author: chunyang.zhang

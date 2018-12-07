@@ -1,4 +1,4 @@
-package com.zcy.desgin_pattern.abstract_factory_pattern.color;
+package com.zcy.desgin_pattern.abstract_factory.color;
 
 /**
  * @ Author: chunyang.zhang

@@ -1,4 +1,4 @@
-package com.zcy.desgin_pattern.abstract_factory_pattern.shape;
+package com.zcy.desgin_pattern.abstract_factory.shape;
 
 /**
  * @ Author: chunyang.zhang

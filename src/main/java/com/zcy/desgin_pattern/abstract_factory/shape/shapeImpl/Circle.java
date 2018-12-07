@@ -1,6 +1,6 @@
-package com.zcy.desgin_pattern.abstract_factory_pattern.shape.shapeImpl;
+package com.zcy.desgin_pattern.abstract_factory.shape.shapeImpl;
 
-import com.zcy.desgin_pattern.abstract_factory_pattern.shape.Shape;
+import com.zcy.desgin_pattern.abstract_factory.shape.Shape;
 
 /**
  * @ Author: chunyang.zhang
