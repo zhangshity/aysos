@@ -14,14 +14,22 @@ public abstract class Shape implements Cloneable {
 
     abstract void draw();
 
+    //Id的getter
     public String getId() {
         return id;
     }
 
+    //Id的setter
     public void setId(String id) {
         this.id = id;
     }
 
+    //Type的getter
+    public String getType() {
+        return type;
+    }
+
+    //重写继承的clone方法(通过克隆创建新的对象实例)
     public Object clone (){
         Object clone = null;
         try {
