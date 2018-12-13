@@ -1,7 +1,5 @@
 package com.zcy.desgin_pattern.singleton.review;
 
-import com.zcy.desgin_pattern.singleton.starve.Singleton;
-
 /**
  * @ Author: chunyang.zhang
  * @ Description:
