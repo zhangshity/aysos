@@ -1,4 +1,4 @@
-package com.zcy.desgin_pattern.singleton.lazy;
+package com.zcy.desgin_pattern.singleton.starve;
 
 /**
  * @ Author: chunyang.zhang
@@ -15,7 +15,7 @@ public class mainDemo {
         //Singleton singleton = new Singleton();
         //singleton.showMessage();
 
-        com.zcy.desgin_pattern.singleton.lazy.Singleton singletonInstance = com.zcy.desgin_pattern.singleton.lazy.Singleton.getInstance();
+        com.zcy.desgin_pattern.singleton.starve.Singleton singletonInstance = com.zcy.desgin_pattern.singleton.starve.Singleton.getInstance();
 
         singletonInstance.showMessage();
 
