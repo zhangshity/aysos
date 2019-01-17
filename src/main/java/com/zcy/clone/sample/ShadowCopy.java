@@ -28,8 +28,9 @@ public class ShadowCopy {
         professor2.setAge(44);
         student2.setProfessor(professor2);
 
-        System.out.println("复制后学生1："+student1);
         System.out.println("复制后得到学生2：" + student2);
+        System.out.println("复制后学生1："+student1);
+
 
         //把clone后的student2,中的教授改了。发现student1的教授也改了。
         //此为浅克隆(shadow clone):只clone 引用(reference)。
