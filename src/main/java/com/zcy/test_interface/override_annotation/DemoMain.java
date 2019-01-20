@@ -5,7 +5,7 @@ import com.zcy.test_interface.override_annotation.abstract_class.People;
 import com.zcy.test_interface.override_annotation.interface_class.Car;
 import com.zcy.test_interface.override_annotation.interface_class.CarImpl;
 
-public class demoMain {
+public class DemoMain {
     public static void main(String[] args) {
 
         //==========inerface======================
