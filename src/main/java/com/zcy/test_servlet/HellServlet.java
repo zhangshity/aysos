@@ -1,4 +1,4 @@
-package com.zcy.basic;
+package com.zcy.test_servlet;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServlet;
