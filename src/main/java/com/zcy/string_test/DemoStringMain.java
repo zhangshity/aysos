@@ -1,5 +1,8 @@
 package com.zcy.string_test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @ Author: chunyang.zhang
  * @ Description:
@@ -73,6 +76,10 @@ public class DemoStringMain {
         //StringBuffer 和 StringBuilder 绝对方法大多相同。
         //且均继承AbstractStringBuilder。
         //但在继承的实现上。StringBuffer大多加入了Syschronized修饰符,保证线程安全。但牺牲了部分性能
+
+
+
+
     }
 }
 

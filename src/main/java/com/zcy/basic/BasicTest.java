@@ -1,5 +1,8 @@
 package com.zcy.basic;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static java.lang.Math.pow;
 
 /**
@@ -28,5 +31,23 @@ public class BasicTest {
 
 //        StringBuilder stringBuilder = new StringBuilder();
 //        stringBuilder.
+
+
+//        //List .size()函数和 get(index)的用法
+//        System.out.println("=====size()函数和 get(index)的用法===========");
+//        List<String> stringList = new ArrayList<>();
+//        stringList.add("1asd");
+//        stringList.add("2asd");
+//        stringList.add("3asd");
+//        stringList.add("4asd");
+//
+//        System.out.println(stringList.size());
+//
+//        String getsomething = stringList.get(stringList.size()-1);
+//
+//        System.out.println(getsomething);
+
+
+
     }
 }
