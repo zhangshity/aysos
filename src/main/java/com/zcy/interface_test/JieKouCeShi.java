@@ -1,4 +1,4 @@
-package com.zcy.test_interface;
+package com.zcy.interface_test;
 
 public interface JieKouCeShi {
 

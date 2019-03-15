@@ -1,4 +1,4 @@
-package com.zcy.test_interface.override_annotation.abstract_class;
+package com.zcy.interface_test.override_annotation.abstract_class;
 
 public class Assole extends People {
 
