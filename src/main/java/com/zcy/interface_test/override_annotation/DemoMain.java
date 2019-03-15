@@ -1,9 +1,9 @@
-package com.zcy.test_interface.override_annotation;
+package com.zcy.interface_test.override_annotation;
 
-import com.zcy.test_interface.override_annotation.abstract_class.Assole;
-import com.zcy.test_interface.override_annotation.abstract_class.People;
-import com.zcy.test_interface.override_annotation.interface_class.Car;
-import com.zcy.test_interface.override_annotation.interface_class.CarImpl;
+import com.zcy.interface_test.override_annotation.abstract_class.Assole;
+import com.zcy.interface_test.override_annotation.abstract_class.People;
+import com.zcy.interface_test.override_annotation.interface_class.Car;
+import com.zcy.interface_test.override_annotation.interface_class.CarImpl;
 
 public class DemoMain {
     public static void main(String[] args) {

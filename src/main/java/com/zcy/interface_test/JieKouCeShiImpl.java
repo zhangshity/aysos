@@ -1,6 +1,4 @@
-package com.zcy.test_interface;
-
-import com.zcy.test_interface.JieKouCeShi;
+package com.zcy.interface_test;
 
 public class JieKouCeShiImpl implements JieKouCeShi {
 

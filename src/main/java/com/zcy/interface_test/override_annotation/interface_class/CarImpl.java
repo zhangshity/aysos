@@ -1,4 +1,4 @@
-package com.zcy.test_interface.override_annotation.interface_class;
+package com.zcy.interface_test.override_annotation.interface_class;
 
 /**
  * @ Author: chunyang.zhang
