@@ -15,6 +15,12 @@ import java.util.List;
 public class DemoStringMain {
     public static final String S_FIN = "123";
 
+    //全局变量初值测试 3.无初值 line 154
+    public static String staticStringNoValue;
+
+    //全局变量初值测试 4.有初值 line 157
+    public static String staticStringValueIsNull = null;
+
     public static void main(String[] args) {
 
 
@@ -127,6 +133,29 @@ public class DemoStringMain {
         System.out.println("Content: >>>|" + emptyString + "|");
 
 
+        /**
+         * @Author: chunyang.zhang
+         * @Description: String不赋初值初始化
+         * @Date: Created in 16:31 2019-05-08
+         * @Modified: By:
+         */
+        //String不赋初值初始化
+        System.out.println("\n\n" + "=========String不赋初值初始化===============");
+
+        String stringNoValue;
+        String stringValueIsNull = null;
+
+        //1.局部变量无初值: 此行无法通过编译,局部变量没有堆内存指向,空指针异常
+        System.out.println("String stringNoValue;  >>" + stringNoValue);
+
+        //2.局部变量有初值null:
+        System.out.println("String stringValueIsNull = null;  >>" + stringValueIsNull);
+
+        //3.全局变量无初值:
+        System.out.println("public static String staticStringNoValue;  >>" + staticStringNoValue);
+
+        //4.全局变量有初值:
+        System.out.println("public static String staticStringValueIsNull = null;  >>" + staticStringValueIsNull);
     }
 
 
