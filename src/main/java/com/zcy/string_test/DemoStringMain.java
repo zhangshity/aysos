@@ -127,7 +127,7 @@ public class DemoStringMain {
         String valueIsNull = null;
 
         System.out.println("\n");
-        //编译错误见 line154 String不赋初值初始化
+        //编译错误见 line167-177 String不赋初值初始化
 //        System.out.println(noValue == null);
 //        System.out.println(noValue.isEmpty());
         System.out.println(valueIsNull == null);
