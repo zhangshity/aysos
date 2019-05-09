@@ -102,20 +102,40 @@ public class DemoStringMain {
 
         /**
          * @ Author: chunyang.zhang
-         * @ Description: 在String中  .equals()  和  ==  的对比
+         * @ Description: 在String中  .equals()  和  == 的对比, 外加 .isEmpty() 方法校验
          * @ Date: Created in 10:30 2019-03-14
          * @ Modified: By:
          */
-        System.out.println("\n\n" + "=========equals()  ==  对比===============");
+        System.out.println("\n\n" + "=========equals() 和 == 对比===============");
         String equalsTestString = "asd";
-        System.out.println(".equals() >>> " + equalsTestString.equals("asd"));
-        System.out.println("== >>>" + (equalsTestString == "asd")); //为什么相等,因为String建立放在常量池,所以不会创建新对象,而实际比较的是指向同一堆内存的引用,必然相等
+
+        System.out.println("String equalsTestString = \"asd\";");
+        System.out.println("equalsTestString.equals(\"asd\") >> " + equalsTestString.equals("asd"));
+        System.out.println("\n");
+
+        //为什么相等,因为String建立放在常量池,所以不会创建新对象,而实际比较的是指向同一堆内存的引用,必然相等
+        System.out.println("String equalsTestString = \"asd\";");
+        System.out.println("(equalsTestString == \"asd\") >> " + (equalsTestString == "asd"));
 
         //【分析】1)  ==   比较引用,即栈内存（通常比较基本数据类型）
         //【分析】2)  .equals()   比较内容,即堆内存（String类型通常用此方法）
 
-        System.out.println(equalsTestString == null); //为空判断可以 == 因为只需判断引用是否为 null 就好
-        System.out.println(equalsTestString.isEmpty());
+        //==============================================================================================
+        System.out.println("\n\n" + "=========isEmpty() ==  对比===============");
+
+        String noValue;
+        String valueIsNull = null;
+
+        System.out.println("\n");
+        //编译错误见 line154 String不赋初值初始化
+//        System.out.println(noValue == null);
+//        System.out.println(noValue.isEmpty());
+        System.out.println(valueIsNull == null);
+//        System.out.println(valueIsNull.isEmpty());
+
+        // isEmpty()只能 比较 "" 堆内存的空值,而不是 null 这种没有指向堆内存的 空引用
+        // Exception in thread "main" java.lang.NullPointerException
+        //	at com.zcy.string_test.DemoStringMain.main(DemoStringMain.java:132)
 
 
         /**
@@ -124,14 +144,13 @@ public class DemoStringMain {
          * @ Date: Created in 10:52 2019-03-14
          * @ Modified: By:
          */
+        System.out.println("\n\n" + "=========String \"\" 的空显示问题===============");
 
+        String emptyString1 = null;
+        String emptyString2 = "";
 
-        String emptyString = null;
-        if (emptyString == null) {
-            emptyString = "";
-        }
-        System.out.println("Content: >>>|" + emptyString + "|");
-
+        System.out.println("String emptyString1 = null;  >>  " + emptyString1);
+        System.out.println("String emptyString2 = \"\";  >>  " + emptyString2);
 
         /**
          * @Author: chunyang.zhang
@@ -146,7 +165,7 @@ public class DemoStringMain {
         String stringValueIsNull = null;
 
         //1.局部变量无初值: 此行无法通过编译,局部变量没有堆内存指向,空指针异常
-        System.out.println("String stringNoValue;  >>" + stringNoValue);
+//        System.out.println("String stringNoValue;  >>" + stringNoValue);
 
         //2.局部变量有初值null:
         System.out.println("String stringValueIsNull = null;  >>" + stringValueIsNull);
