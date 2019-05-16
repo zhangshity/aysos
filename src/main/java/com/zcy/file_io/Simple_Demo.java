@@ -32,7 +32,7 @@ public class Simple_Demo {
             //方法1. InputStream自有方法直接输出到Byte数组
             byte[] byteArray = new byte[1024];
             int len = inputStream.read(byteArray);
-            String result1 = new String(byteArray, 0, byteArray.length);
+            String result1 = new String(byteArray, 0, len);
             System.out.println("Method1. =  >>>" + result1 + "\n");
 
             //方法2.循环输出(实际是读取单个字节)
@@ -43,7 +43,7 @@ public class Simple_Demo {
             while ((temp = inputStream.read()) != -1) {
                 byteContainer[index++] = (byte) temp;
             }
-            String reslut = new String(byteContainer, 0, byteArray.length);
+            String reslut = new String(byteContainer, 0, index);
             System.out.println("Method3.   >>>" + reslut + "\n");
 
 
