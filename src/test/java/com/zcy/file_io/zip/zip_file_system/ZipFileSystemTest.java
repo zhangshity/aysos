@@ -1,8 +1,6 @@
-package com.zcy.zip_file_system;
+package com.zcy.file_io.zip.zip_file_system;
 
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class ZipFileSystemTest {
 

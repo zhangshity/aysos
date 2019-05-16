@@ -1,11 +1,8 @@
-package com.zcy.zip_file_system;
+package com.zcy.file_io.zip.zip_file_system;
 
 import java.io.IOException;
-import java.io.Writer;
 import java.net.URI;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.*;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
