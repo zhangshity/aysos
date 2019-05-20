@@ -1,10 +1,5 @@
 package com.zcy.string_test;
 
-import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
-
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * @ Author: chunyang.zhang
  * @ Description:
@@ -175,6 +170,30 @@ public class DemoStringMain {
 
         //4.全局变量有初值:
         System.out.println("public static String staticStringValueIsNull = null;  >>" + staticStringValueIsNull);
+
+
+        /**
+         * @ Author: chunyang.zhang
+         * @ Description: String的substring()方法测试
+         * @ Date: Created in 15:32 2019-05-20
+         * @ Modified: By:
+         */
+        System.out.println("\n\n" + "=========String的substring()方法测试===============");
+
+        String subStringMethod = "zxcvasdqwr";
+        System.out.println("String subStringMethod = \"zxcvasdqwr\";  >>> " + subStringMethod);
+        String trim1 = subStringMethod.substring(3);
+        String trim2 = subStringMethod.substring(0, 3);
+        int length = subStringMethod.length();
+        System.out.println("String trim1 = subStringMethod.substring(3); >>> " + trim1);
+        System.out.println("String trim2 = subStringMethod.substring(0, 3); >>> " + trim2);
+        System.out.println("int length = subStringMethod.length(); >>> " + length);
+
+
+        String sub1 = "12345er";
+        String sub2 = "12345";
+        System.out.println("拼接：>>> " + sub1.substring(sub2.length()));
+
     }
 
 
