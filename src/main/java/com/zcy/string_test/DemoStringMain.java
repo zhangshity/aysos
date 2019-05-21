@@ -173,10 +173,10 @@ public class DemoStringMain {
 
 
         /**
-         * @ Author: chunyang.zhang
-         * @ Description: String的substring()方法测试
-         * @ Date: Created in 15:32 2019-05-20
-         * @ Modified: By:
+         * @Author:
+         * @Description: String的substring()方法测试
+         * @Date: Created in 15:32 2019-05-20
+         * @Modified: By:
          */
         System.out.println("\n\n" + "=========String的substring()方法测试===============");
 
@@ -193,6 +193,22 @@ public class DemoStringMain {
         String sub1 = "12345er";
         String sub2 = "12345";
         System.out.println("拼接：>>> " + sub1.substring(sub2.length()));
+
+
+        /**
+         * @Description: startsWith()、endsWith()方法测试
+         * @Date: Created in 11:13 2019-05-21
+         * @Modified: By:
+         */
+        System.out.println("\n\n" + "=========String的substring()方法测试===============");
+        String sd = "asd1234";
+        String sd2 = "fff.txt";
+        if (sd.startsWith("asd")) {
+            System.out.println(sd2);
+        }
+        if (sd2.endsWith(".txt")) {
+            System.out.println(sd2);
+        }
 
     }
 
