@@ -10,10 +10,10 @@ package com.zcy.string_test;
 public class DemoStringMain {
     public static final String S_FIN = "123";
 
-    //全局变量初值测试 3.无初值 line 154
+    //全局变量初值测试 3.无初值 line 169
     public static String staticStringNoValue;
 
-    //全局变量初值测试 4.有初值 line 157
+    //全局变量初值测试 4.有初值 line 172
     public static String staticStringValueIsNull = null;
 
     public static void main(String[] args) {
@@ -21,7 +21,7 @@ public class DemoStringMain {
 
         /**
          * @ Author: chunyang.zhang
-         * @ Description: String基础测试
+         * @ Description: 1.String基础测试
          * @ Date: Created in 10:32 2019-03-14
          * @ Modified: By:
          */
@@ -57,12 +57,12 @@ public class DemoStringMain {
 
         /**
          * @ Author: chunyang.zhang
-         * @ Description: String中 hascode() 方法测试
+         * @ Description: 2.String中 hascode() 方法测试
          * @ Date: Created in 10:31 2019-03-14
          * @ Modified: By:
          */
         //===========================================================
-        System.out.println("==========================================");
+        System.out.println("===========2.String中 hascode() 方法测试===============================");
         //String
         String str1 = new String("123");
         String str2 = "123";
@@ -97,11 +97,11 @@ public class DemoStringMain {
 
         /**
          * @ Author: chunyang.zhang
-         * @ Description: 在String中  .equals()  和  == 的对比, 外加 .isEmpty() 方法校验
+         * @ Description: 3.在String中  .equals()  和  == 的对比, 外加 .isEmpty() 方法校验
          * @ Date: Created in 10:30 2019-03-14
          * @ Modified: By:
          */
-        System.out.println("\n\n" + "=========equals() 和 == 对比===============");
+        System.out.println("\n\n" + "=========3.equals() 和 == 对比===============");
         String equalsTestString = "asd";
 
         System.out.println("String equalsTestString = \"asd\";");
@@ -116,7 +116,7 @@ public class DemoStringMain {
         //【分析】2)  .equals()   比较内容,即堆内存（String类型通常用此方法）
 
         //==============================================================================================
-        System.out.println("\n\n" + "=========isEmpty() ==  对比===============");
+        System.out.println("\n\n" + "=========3.isEmpty() ==  对比===============");
 
         String noValue;
         String valueIsNull = null;
@@ -135,11 +135,11 @@ public class DemoStringMain {
 
         /**
          * @ Author: chunyang.zhang
-         * @ Description: String "" 的空显示问题
+         * @ Description: 4.String "" 的空显示问题
          * @ Date: Created in 10:52 2019-03-14
          * @ Modified: By:
          */
-        System.out.println("\n\n" + "=========String \"\" 的空显示问题===============");
+        System.out.println("\n\n" + "=========4.String \"\" 的空显示问题===============");
 
         String emptyString1 = null;
         String emptyString2 = "";
@@ -149,12 +149,12 @@ public class DemoStringMain {
 
         /**
          * @Author: chunyang.zhang
-         * @Description: String不赋初值初始化
+         * @Description: 5.String不赋初值初始化
          * @Date: Created in 16:31 2019-05-08
          * @Modified: By:
          */
         //String不赋初值初始化
-        System.out.println("\n\n" + "=========String不赋初值初始化===============");
+        System.out.println("\n\n" + "=========5.String不赋初值初始化===============");
 
         String stringNoValue;
         String stringValueIsNull = null;
@@ -174,11 +174,11 @@ public class DemoStringMain {
 
         /**
          * @Author:
-         * @Description: String的substring()方法测试
+         * @Description: 6.String的substring()方法测试
          * @Date: Created in 15:32 2019-05-20
          * @Modified: By:
          */
-        System.out.println("\n\n" + "=========String的substring()方法测试===============");
+        System.out.println("\n\n" + "=========6.String的substring()方法测试===============");
 
         String subStringMethod = "zxcvasdqwr";
         System.out.println("String subStringMethod = \"zxcvasdqwr\";  >>> " + subStringMethod);
@@ -196,11 +196,11 @@ public class DemoStringMain {
 
 
         /**
-         * @Description: startsWith()、endsWith()方法测试
+         * @Description: 7.startsWith()、endsWith()方法测试
          * @Date: Created in 11:13 2019-05-21
          * @Modified: By:
          */
-        System.out.println("\n\n" + "=========String的substring()方法测试===============");
+        System.out.println("\n\n" + "=========7.String的substring()方法测试===============");
         String sd = "asd1234";
         String sd2 = "fff.txt";
         if (sd.startsWith("asd")) {
@@ -209,6 +209,91 @@ public class DemoStringMain {
         if (sd2.endsWith(".txt")) {
             System.out.println(sd2);
         }
+
+
+        /**
+         * 8.测试字符串 直接赋值 和 new新对象的区别
+         * String s1 = "abc";
+         * String s2 = new String("abc");
+         */
+        System.out.println("\n\n" + "=========8.直接赋值 和 new新对象的区别===============");
+        String directValue = "abc";
+        String newObject = new String("abc");
+
+        System.out.println("String directValue = \"abc\"; >>> " + directValue);
+        System.out.println("String newObject = new String(\"abc\"); >>> " + newObject);
+        System.out.println("(directValue==newObject) >>> " + (directValue == newObject));
+
+        String newObject2 = new String("abc");
+        String directValue2 = "abc";
+
+        System.out.println("\n" + "String newObject2 = new String(\"abc\"); >>> " + newObject2);
+        System.out.println("String directValue2 = \"abc\"; >>> " + directValue2);
+        System.out.println("(directValue == directValue2) >>> " + (directValue == directValue2));
+        System.out.println("(newObject == newObject2) >>> " + (newObject == newObject2));
+
+        //总结:
+        //1.直接赋值在常量池创建对象,new String()也是在常量池
+        //2.区别:
+        //   直接赋值: 会在常量池中寻找有无已经创建的String对象，有就直接引用指向此地址，没有在创建新的然后指向此地址
+        //   new新对象:强制在常量池创建新的String对象，不管是否重复，都是新创建(可以看到IDE弹出警告重复变量,通过编译但是重复)
+        //3.结论: 最好直接赋值节省资源。除非特殊情况一定要要不同对象
+
+
+        //特殊例子(例题):
+        System.out.println("\n" + "=========8.直接赋值 和 new新对象的区别(例题)===============");
+        //String str1 = "ABC";
+        //String str2 = new String("ABC");
+        /**
+         * String str1 = “ABC”;可能创建一个或者不创建对象，如果”ABC”这个字符串在java String池里不存在，会在java String池里创建一个创建一个String对象 (“ABC”)，然后str1指向这个内存地址，
+         * 无论以后用这种方式创建多少个值为”ABC”的字符串对象，始终只有一个内存地址被分配，之后的都是String的拷贝，Java中称为“字符串驻留”，所有的字符串常量都会在编译之后自动地驻留。
+         *
+         * String str2 = new String(“ABC”); 至少创建一个对象，也可能两个。因为用到new关键字，肯定会在heap中创建一个str2的String对象，它的value是“ABC”。
+         * 同时如果这个字符串再java String池里不存在，会在java池里创建这个String对象“ABC”。
+         *
+         * 在JVM里，考虑到垃圾回收（Garbage Collection）的方便，将heap(堆) 划分为三部分：young generation (新生代)、tenured generation （old generation）（旧生代）、permanent generation（永生代）。
+         *
+         * 字符串为了解决字符串重复问题，生命周期长，存于pergmen中。
+         *
+         * JVM中，相应的类被加载运行后，常量池对应的映射到JVM运行时的常量池中。
+         *
+         * 考虑下面的问题：
+         */
+
+
+        String str11 = new String("ABC");
+        String str22 = new String("ABC");
+
+        //str1 == str2的值是true还是false呢？false
+
+        String str33 = "ABC";
+        String str44 = "ABC";
+        String str55 = "AB" + "C";
+        System.out.println(str33 == str44); //true
+        System.out.println(str33 == str55); // true
+
+
+        String a = "ABC";
+        String b = "AB";
+        String c = b + "C";
+        System.out.println(a == c); //false
+
+        /**
+         * a、b在编译时就已经被确定了，而c是引用变量，不会在编译时就被确定。
+         *
+         * 应用的情况：建议在平时的使用中，尽量使用String = “abcd”;这种方式来创建字符串，而不是String = new String(“abcd”);
+         * 这种形式，因为使用new构造器创建字符串对象一定会开辟一个新的heap空间，而双引号则是采用了String interning(字符串驻留)进行了优化，效率比构造器高。
+         *
+         */
+        //=====================================================================================================
+
+
+        /**
+         * @ Author: chunyang.zhang
+         * @ Description: 9
+         * @ Date: Created in 14:43 2019-05-22
+         * @ Modified: By:
+         */
 
     }
 

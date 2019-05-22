@@ -1,6 +1,6 @@
-//package com.zcy.readwrite;
+//package com.zcy.file_io.readwrite;
 //
-//import com.zcy.readwrite.entity.Student;
+//import com.zcy.file_io.readwrite.entity.Student;
 //
 //import java.io.BufferedReader;
 //import java.io.FileNotFoundException;
