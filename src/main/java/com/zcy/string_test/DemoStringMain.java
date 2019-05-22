@@ -10,10 +10,10 @@ package com.zcy.string_test;
 public class DemoStringMain {
     public static final String S_FIN = "123";
 
-    //全局变量初值测试 3.无初值 line 154
+    //全局变量初值测试 3.无初值 line 169
     public static String staticStringNoValue;
 
-    //全局变量初值测试 4.有初值 line 157
+    //全局变量初值测试 4.有初值 line 172
     public static String staticStringValueIsNull = null;
 
     public static void main(String[] args) {
@@ -21,7 +21,7 @@ public class DemoStringMain {
 
         /**
          * @ Author: chunyang.zhang
-         * @ Description: String基础测试
+         * @ Description: 1.String基础测试
          * @ Date: Created in 10:32 2019-03-14
          * @ Modified: By:
          */
@@ -57,12 +57,12 @@ public class DemoStringMain {
 
         /**
          * @ Author: chunyang.zhang
-         * @ Description: String中 hascode() 方法测试
+         * @ Description: 2.String中 hascode() 方法测试
          * @ Date: Created in 10:31 2019-03-14
          * @ Modified: By:
          */
         //===========================================================
-        System.out.println("==========================================");
+        System.out.println("===========2.String中 hascode() 方法测试===============================");
         //String
         String str1 = new String("123");
         String str2 = "123";
@@ -97,11 +97,11 @@ public class DemoStringMain {
 
         /**
          * @ Author: chunyang.zhang
-         * @ Description: 在String中  .equals()  和  == 的对比, 外加 .isEmpty() 方法校验
+         * @ Description: 3.在String中  .equals()  和  == 的对比, 外加 .isEmpty() 方法校验
          * @ Date: Created in 10:30 2019-03-14
          * @ Modified: By:
          */
-        System.out.println("\n\n" + "=========equals() 和 == 对比===============");
+        System.out.println("\n\n" + "=========3.equals() 和 == 对比===============");
         String equalsTestString = "asd";
 
         System.out.println("String equalsTestString = \"asd\";");
@@ -116,7 +116,7 @@ public class DemoStringMain {
         //【分析】2)  .equals()   比较内容,即堆内存（String类型通常用此方法）
 
         //==============================================================================================
-        System.out.println("\n\n" + "=========isEmpty() ==  对比===============");
+        System.out.println("\n\n" + "=========3.isEmpty() ==  对比===============");
 
         String noValue;
         String valueIsNull = null;
@@ -135,11 +135,11 @@ public class DemoStringMain {
 
         /**
          * @ Author: chunyang.zhang
-         * @ Description: String "" 的空显示问题
+         * @ Description: 4.String "" 的空显示问题
          * @ Date: Created in 10:52 2019-03-14
          * @ Modified: By:
          */
-        System.out.println("\n\n" + "=========String \"\" 的空显示问题===============");
+        System.out.println("\n\n" + "=========4.String \"\" 的空显示问题===============");
 
         String emptyString1 = null;
         String emptyString2 = "";
@@ -149,12 +149,12 @@ public class DemoStringMain {
 
         /**
          * @Author: chunyang.zhang
-         * @Description: String不赋初值初始化
+         * @Description: 5.String不赋初值初始化
          * @Date: Created in 16:31 2019-05-08
          * @Modified: By:
          */
         //String不赋初值初始化
-        System.out.println("\n\n" + "=========String不赋初值初始化===============");
+        System.out.println("\n\n" + "=========5.String不赋初值初始化===============");
 
         String stringNoValue;
         String stringValueIsNull = null;
@@ -174,11 +174,11 @@ public class DemoStringMain {
 
         /**
          * @Author:
-         * @Description: String的substring()方法测试
+         * @Description: 6.String的substring()方法测试
          * @Date: Created in 15:32 2019-05-20
          * @Modified: By:
          */
-        System.out.println("\n\n" + "=========String的substring()方法测试===============");
+        System.out.println("\n\n" + "=========6.String的substring()方法测试===============");
 
         String subStringMethod = "zxcvasdqwr";
         System.out.println("String subStringMethod = \"zxcvasdqwr\";  >>> " + subStringMethod);
@@ -196,11 +196,11 @@ public class DemoStringMain {
 
 
         /**
-         * @Description: startsWith()、endsWith()方法测试
+         * @Description: 7.startsWith()、endsWith()方法测试
          * @Date: Created in 11:13 2019-05-21
          * @Modified: By:
          */
-        System.out.println("\n\n" + "=========String的substring()方法测试===============");
+        System.out.println("\n\n" + "=========7.String的substring()方法测试===============");
         String sd = "asd1234";
         String sd2 = "fff.txt";
         if (sd.startsWith("asd")) {
@@ -212,11 +212,11 @@ public class DemoStringMain {
 
 
         /**
-         * 测试字符串 直接赋值 和 new新对象的区别
+         * 8.测试字符串 直接赋值 和 new新对象的区别
          * String s1 = "abc";
          * String s2 = new String("abc");
          */
-        System.out.println("\n\n" + "=========直接赋值 和 new新对象的区别===============");
+        System.out.println("\n\n" + "=========8.直接赋值 和 new新对象的区别===============");
         String directValue = "abc";
         String newObject = new String("abc");
         System.out.println("String directValue = \"abc\"; >>> " + directValue);
