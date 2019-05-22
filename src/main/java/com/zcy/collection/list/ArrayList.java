@@ -1,4 +1,4 @@
-package com.zcy.set.list;
+package com.zcy.collection.list;
 
 import java.util.List;
 

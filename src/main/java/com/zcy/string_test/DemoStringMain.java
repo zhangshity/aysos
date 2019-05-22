@@ -210,6 +210,21 @@ public class DemoStringMain {
             System.out.println(sd2);
         }
 
+
+        /**
+         * 测试字符串 直接赋值 和 new新对象的区别
+         * String s1 = "abc";
+         * String s2 = new String("abc");
+         */
+        System.out.println("\n\n" + "=========直接赋值 和 new新对象的区别===============");
+        String directValue = "abc";
+        String newObject = new String("abc");
+        System.out.println("String directValue = \"abc\"; >>> " + directValue);
+        System.out.println("String newObject = new String(\"abc\"); >>> " + newObject);
+
+        System.out.println("(directValue==newObject) >>> " + (directValue == newObject));
+
+
     }
 
 

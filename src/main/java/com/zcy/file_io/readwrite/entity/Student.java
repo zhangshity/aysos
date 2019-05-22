@@ -1,4 +1,4 @@
-package com.zcy.readwrite.entity;
+package com.zcy.file_io.readwrite.entity;
 
 /**
  * @ Author: chunyang.zhang
