@@ -1,4 +1,4 @@
-package com.zcy.collection.list;
+package com.zcy.collection.list.backup;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import java.util.List;
  * @ Modified: By:
  */
 
-public class ArrayList {
+public class ArrayListT {
 
     public static void main(String[] args) {
 

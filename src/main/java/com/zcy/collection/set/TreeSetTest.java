@@ -24,23 +24,25 @@ public class TreeSetTest {
         set.add("1asd");
         set.add("2sdsfs");
 
-        //foreach遍历
-        for (String s : set) {
-            System.out.println(s);
-        }
-
-        //常规遍历
-        for (int i = 0; i < set.size(); i++) {
-            Object[] o = set.toArray();
-            System.out.println(o[i]);
-        }
-
         //Iterator遍历
         Iterator<String> iterator = set.iterator();
         while (iterator.hasNext()) {
             String value = iterator.next();
             System.out.println(value);
         }
+
+        //foreach遍历
+        for (String s : set) {
+            System.out.println(s);
+        }
+
+        //转为数组-遍历
+        Object[] o = set.toArray();
+        for (int i = 0; i < set.size(); i++) {
+            System.out.println(o[i]);
+        }
+
+
     }
 
 }
