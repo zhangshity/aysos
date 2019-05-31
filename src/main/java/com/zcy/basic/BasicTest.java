@@ -35,7 +35,7 @@ public class BasicTest {
 
 //        //List .size()函数和 get(index)的用法
 //        System.out.println("=====size()函数和 get(index)的用法===========");
-//        List<String> stringList = new ArrayList<>();
+//        List<String> stringList = new ArrayListT<>();
 //        stringList.add("1asd");
 //        stringList.add("2asd");
 //        stringList.add("3asd");

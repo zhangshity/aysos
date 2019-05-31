@@ -5,7 +5,7 @@
 //import java.io.BufferedReader;
 //import java.io.FileNotFoundException;
 //import java.io.FileReader;
-//import java.util.ArrayList;
+//import java.util.ArrayListT;
 //
 ///**
 // * @ Author: chunyang.zhang
@@ -17,8 +17,8 @@
 //public class ReadFile {
 //
 //
-//    public ArrayList getRecord() {
-//        ArrayList<Student> arrayList = new ArrayList<Student>();
+//    public ArrayListT getRecord() {
+//        ArrayListT<Student> arrayList = new ArrayListT<Student>();
 //
 //        //绝对路径
 ////    BufferedReader bf = new BufferedReader(
