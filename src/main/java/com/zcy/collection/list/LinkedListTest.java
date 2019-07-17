@@ -42,6 +42,8 @@ public class LinkedListTest {
             System.out.println(list.get(i));
         }
 
-        //
+        //转为数组-遍历
+        list.toArray();
+
     }
 }
