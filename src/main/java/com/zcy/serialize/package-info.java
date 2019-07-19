@@ -201,3 +201,8 @@ package com.zcy.serialize;
  */
 //public interface Serializable {
 //}
+
+//总结：
+//1.序列化需要继承Serializable接口，不继承不能序列化
+//2.父类不可序列化，子类可序列换就可以让不能序列化的类序列化
+//3.序列化类需要一个serialVersionUID版本号来标识，不显式声明会随机生成，建议手工定义
