@@ -1,18 +1,19 @@
-package com.zcy.clone.sample;
+package com.zcy.clone.myexample;
 
 /**
  * @ Author: chunyang.zhang
- * @ Description: 学生类 实现 Cloneable接口
+ * @ Description: 《学生类》 实现 Cloneable接口
  * @ Date: Created in 09:47 2018/12/13
  * @ Modified: By:
+ * <p>
+ * 参考对应Github文档:
+ * https://github.com/zhangshity/technote/blob/master/Java/clone()%E6%96%B9%E6%B3%95.md
  */
 
 public class Student implements Cloneable {
 
     private String name;
-
     private int age;
-
     private Professor professor;
 
     public String getName() {
@@ -48,8 +49,8 @@ public class Student implements Cloneable {
                 '}';
     }
 
-
-    @Override//伪代码,但可以让编译器检查缩写代码是否为父类代码所有
+    //克隆需重写 Cloneable接口的clone()方法
+    @Override
     public Object clone() {
         Object reference = null;
         try {
