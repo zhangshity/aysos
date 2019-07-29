@@ -1,7 +1,7 @@
 package com.zcy.clone.internetexample;
 
-import com.zcy.clone.sample.Professor;
-import com.zcy.clone.sample.Student;
+import com.zcy.clone.internetexample.Professor;
+import com.zcy.clone.internetexample.Student;
 
 /**
  * @ Author: chunyang.zhang
