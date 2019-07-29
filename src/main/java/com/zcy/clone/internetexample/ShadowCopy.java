@@ -5,7 +5,7 @@ import com.zcy.clone.sample.Student;
 
 /**
  * @ Author: chunyang.zhang
- * @ Description: 《深克隆》<ShadowCopy/>
+ * @ Description: 《浅克隆》<ShadowCopy/>
  * @ Date: Created in 14:47 2019-07-29
  * @ Modified: By:
  * <p>

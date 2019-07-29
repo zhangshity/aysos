@@ -2,7 +2,7 @@ package com.zcy.clone.internetexample;
 
 /**
  * @ Author: chunyang.zhang
- * @ Description: 《深克隆-对象类》<ShadowCopy-object/>
+ * @ Description: 《浅克隆-对象类》<ShadowCopy-object/>
  * @ Date: Created in 14:47 2019-07-29
  * @ Modified: By:
  * <p>

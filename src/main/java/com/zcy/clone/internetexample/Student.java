@@ -4,7 +4,7 @@ import com.zcy.clone.sample.Professor;
 
 /**
  * @ Author: chunyang.zhang
- * @ Description: 《深克隆-主类(包含对象类)》<ShadowCopy-MainClass/>
+ * @ Description: 《浅克隆-主类(包含对象类)》<ShadowCopy-MainClass/>
  * @ Date: Created in 14:47 2019-07-29
  * @ Modified: By:
  * <p>
