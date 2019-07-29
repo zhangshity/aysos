@@ -1,17 +1,19 @@
-package com.zcy.clone.sample;
+package com.zcy.clone.myexample;
 
 /**
  * @ Author: chunyang.zhang
- * @ Description: 教授类
+ * @ Description: 《教授类》实现Cloneable为深克隆，不实现为浅克隆
  * @ Date: Created in 09:47 2018/12/13
  * @ Modified: By:
+ * <p>
+ * 参考对应Github文档:
+ * https://github.com/zhangshity/technote/blob/master/Java/clone()%E6%96%B9%E6%B3%95.md
  */
 
 //public class Professor implements Cloneable {
 public class Professor {
 
     private String name;
-
     private int age;
 
     public String getName() {
