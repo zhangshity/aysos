@@ -1,7 +1,5 @@
 package com.zcy.clone.internetexample;
 
-import com.zcy.clone.internetexample.Professor;
-
 /**
  * @ Author: chunyang.zhang
  * @ Description: 《浅克隆-主类(包含对象类)》<ShadowCopy-MainClass/>

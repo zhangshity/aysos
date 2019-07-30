@@ -1,8 +1,5 @@
 package com.zcy.clone.internetexample;
 
-import com.zcy.clone.internetexample.Professor;
-import com.zcy.clone.internetexample.Student;
-
 /**
  * @ Author: chunyang.zhang
  * @ Description: 《浅克隆》<ShadowCopy/>
