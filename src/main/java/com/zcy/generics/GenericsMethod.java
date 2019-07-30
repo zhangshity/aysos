@@ -14,8 +14,7 @@ public class GenericsMethod {
      * @param array
      * @param <E>
      */
-    //【1】所有'泛型方法声明'都有一个<类型参数声明部分>(由尖括号分隔),
-    // 该<类型参数声明部分>在方法'返回类型'之前（在下面例子中的<E>）。
+    //【1】所有'泛型方法声明'都有一个<类型参数声明部分>(由尖括号分隔),该<类型参数声明部分>在方法'返回类型'之前（在下面例子中的<E>）。
     private static <E> void printArray(E[] array) {
         //foreach遍历数组
         for (E e : array) {
@@ -23,9 +22,7 @@ public class GenericsMethod {
         }
         System.out.println();
     }
-    //【2】每一个<类型参数声明部分>包含一个或多个类型参数，参数间用逗号隔开。
-    // 一个泛型参数，也被称为一个类型变量，是用于指定一个泛型类型名称的标识符。
-
+    //【2】每一个<类型参数声明部分>包含一个或多个类型参数，参数间用逗号隔开。一个泛型参数，也被称为一个类型变量，是用于指定一个泛型类型名称的标识符。
     //【3】<类型参数>能被用来声明返回值类型，并且能作为泛型方法得到的实际参数类型的占位符。
 
 
@@ -52,12 +49,4 @@ public class GenericsMethod {
         printArray(doublesArray);
         printArray(charactersArray);
     }
-
-
-
-
-
-
-
-
 }
