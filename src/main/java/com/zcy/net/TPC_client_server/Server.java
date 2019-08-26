@@ -8,7 +8,7 @@ import java.net.Socket;
 
 /**
  * @ Author: chunyang.zhang
- * @ Description: <>网络通信-服务器-TCP</>
+ * @ Description: <网络通信-服务器-TCP/>
  * @ Date: Created in 11:04 2019-08-16
  * @ Modified: By:
  * <p>
@@ -19,7 +19,7 @@ import java.net.Socket;
  * 3.编译文件 (javac -encoding utf-8 Server.class)
  * 4.运行程序 (java Server)
  * 5.等待客户端发送消息并接收打印
- * <p>============================================
+ * <p>=============================================
  */
 public class Server {
 
@@ -27,8 +27,10 @@ public class Server {
 
         //创建服务器连接socket
         ServerSocket serverSocket = new ServerSocket(1333);
+        System.out.println("Server has started...\n>>> ...\n>>> ...\n>>> ...");
 
         int reciveCounter = 0;//接收socket计数器
+
         while (true) { //循环接收
             //接收客户端socket
             Socket clientSocket = serverSocket.accept();
@@ -38,7 +40,7 @@ public class Server {
             DataInputStream dataInputStream = new DataInputStream(clientInputStream);
             String acceptResult = dataInputStream.readUTF();
 
-            System.out.printf("第%d数据: %s %n", reciveCounter, acceptResult);
+            System.out.printf("第%d条数据: %s %n", reciveCounter, acceptResult);
 
 
             dataInputStream.close();

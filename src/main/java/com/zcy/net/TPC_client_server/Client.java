@@ -21,7 +21,7 @@ public class Client {
         //向服务器发送socket
         OutputStream clientOutputStream = clientSocket.getOutputStream();
         DataOutputStream dataOutputStream = new DataOutputStream(clientOutputStream);
-        dataOutputStream.writeUTF("Hello，我是阳爹发送的数据，Client 客户端发送的测试连接数据 ");
+        dataOutputStream.writeUTF("<Hello，我是阳爹发送的数据，Client 客户端发送的测试连接数据 >");
 
 
         dataOutputStream.flush();
