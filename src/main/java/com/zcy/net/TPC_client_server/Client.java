@@ -16,7 +16,7 @@ public class Client {
     public static void main(String[] args) throws IOException {
 
         //建立客户端连接socket(指定IP和端口)
-        Socket clientSocket = new Socket("10.18.89.199", 1333);
+        Socket clientSocket = new Socket("localhost", 1333);
 
         //向服务器发送socket
         OutputStream clientOutputStream = clientSocket.getOutputStream();
