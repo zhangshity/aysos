@@ -1,4 +1,4 @@
-package com.zcy.generics;
+package com.zcy.generics.generic_method;
 
 /**
  * @ Author: chunyang.zhang
