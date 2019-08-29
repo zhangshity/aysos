@@ -63,6 +63,21 @@
             <artifactId>zookeeper</artifactId>
             <version>3.5.5</version>
         </dependency>
+        <!-- jdbc-mysql-connector-java(5.1)-->
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.47</version>
+        </dependency>
+        <!-- jdbc-mysql-connector-java(8.0)-->
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <!--        <dependency>-->
+        <!--            <groupId>mysql</groupId>-->
+        <!--            <artifactId>mysql-connector-java</artifactId>-->
+        <!--            <version>8.0.17</version>-->
+        <!--        </dependency>-->
+
     </dependencies>
 
 
