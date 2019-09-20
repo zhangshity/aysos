@@ -17,7 +17,7 @@ public class Client {
     public static void main(String[] args) throws IOException {
 
         //建立连接socket
-        DatagramSocket datagramSocket = new DatagramSocket(232);
+        DatagramSocket datagramSocket = new DatagramSocket();
 
         //UDP报文
         byte[] buf = "UDP报文".getBytes();
