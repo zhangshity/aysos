@@ -18,6 +18,7 @@ public class Server {
         //建立连接,指定端口
         DatagramSocket datagramSocket = new DatagramSocket(1235);
 
+        //指定数组和DatagramPacket对象容器存放接收的数据
         byte[] buf = new byte[1024];
         DatagramPacket datagramPacket = new DatagramPacket(buf, buf.length);
 
