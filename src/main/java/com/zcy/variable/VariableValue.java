@@ -16,7 +16,7 @@ public class VariableValue {
     public static void main(String[] args) {
         //局部变量
         String localVariable_NonValue;
-        String localVariable_HasValue = "";
+        String localVariable_HasValue = "localVariable";
 
 
         //全局变量打印
