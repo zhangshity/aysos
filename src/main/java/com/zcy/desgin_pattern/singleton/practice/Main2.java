@@ -30,10 +30,8 @@ public class Main2 {
         //反射获取的两个值是一个对象
 
         //正常取到获取单利对象
-        Cat catNormal = Cat.getInstance();
-        System.out.println("对比: >> "+"cat: "+cat+" catNormal: "+catNormal);
-
-
+        Object objNormal = Cat.getInstance();
+        System.out.println("对比: >> " + "object: " + object + " objNormal: " + objNormal);
 
 
     }
