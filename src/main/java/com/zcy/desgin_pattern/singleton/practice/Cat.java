@@ -7,7 +7,7 @@ public class Cat {
 
     private static Cat catSingleton = new Cat();
 
-    public synchronized Cat getInstance() {
+    public static synchronized Cat getInstance() {
         return catSingleton;
     }
 
