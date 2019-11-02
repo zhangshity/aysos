@@ -37,9 +37,19 @@ public class ArrrayListTest {
             System.out.println(i);
         }
 
-        //普通
+        //普通遍历
         for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i));
         }
+
+
+        //============cotains()方法=============
+        List<String> list2 = new ArrayList<>();
+        list2.add("a");
+        list2.add("b");
+        list2.add("c");
+
+        System.out.println(list2.contains("v"));
+
     }
 }
