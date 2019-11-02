@@ -2,7 +2,7 @@ package com.zcy.newcoder;
 
 import java.util.*;
 
-public class HashMap_putMethod {
+public class HashMap_put {
 
     public static void main(String[] args) {
 
@@ -39,9 +39,26 @@ public class HashMap_putMethod {
         }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         //===============HashTable========================================
         Map<String, Integer> map1 = new Hashtable<>();
-
 
 
     }
