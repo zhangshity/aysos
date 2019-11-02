@@ -54,10 +54,24 @@ public class Huawei {
             }
 
 
-            //遍历存储的HashMap
-            for (String key : afterCountContainer.keySet()) {
-                System.out.println(key + "=" + afterCountContainer.get(key));
+//            //遍历存储的HashMap
+//            for (String key : afterCountContainer.keySet()) {
+//                System.out.println(key + "=" + afterCountContainer.get(key));
+//            }
+
+            //TODO 排序遍历(先放入List在遍历输出)
+            List<Map.Entry<String, Integer>> list = new ArrayList<>(afterCountContainer.entrySet());
+            Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
+                @Override
+                public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+                    return o2.getValue().compareTo(o1.getValue());
+                }
+            });
+            for (Map.Entry<String, Integer> entry : list) {
+                System.out.println(entry.getKey() + "=" + entry.getValue());
             }
+
+
             //每次清空map容器
             afterCountContainer.clear();
         }
