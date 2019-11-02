@@ -1,11 +1,8 @@
 package com.zcy.newcoder;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-public class Practice {
+public class HashMap_putMethod {
 
     public static void main(String[] args) {
 
@@ -16,7 +13,7 @@ public class Practice {
 //            System.out.println(c[i]);
 //        }
 
-
+        //
         List<String> list = new ArrayList<>();
         list.add("a");
         list.add("b");
@@ -31,15 +28,21 @@ public class Practice {
         map.put("b", 3);
         map.put("c", 4);
         map.put("c", 10);
-        map.put("c", 5);
+        map.put("c", 5);   //可见如果key重复，put入map时则只会更新掉value
 
 
         System.out.println(map.containsKey("c"));
         System.out.println(map.get("c"));
 
         for (String key : map.keySet()) {
-            System.out.println("k " +key + "v " +map.get(key));
+            System.out.println("k " + key + "v " + map.get(key));
         }
+
+
+        //===============HashTable========================================
+        Map<String, Integer> map1 = new Hashtable<>();
+
+
 
     }
 
