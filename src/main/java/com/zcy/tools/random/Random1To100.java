@@ -16,7 +16,7 @@ public class Random1To100 {
          */
 
         //==================== Thinking思路 >>>>>>>============================
-        //调用Math的随机数方法random(),返回的是double型 [0,100)
+        //调用Math的随机数方法random(),返回的是double型 [0,1)
         double randomNumber = Math.random();
         System.out.println(randomNumber);
         //Method1: 直接乘100，再转化为int
