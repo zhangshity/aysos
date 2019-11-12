@@ -9,7 +9,7 @@ public class WaitDemo {
     public static void main(String[] args) throws InterruptedException {
 
         //定义一个对象,模拟锁
-        Object objectLock = new Object();
+        final Object objectLock = new Object();
 
         //定义线程A run()方法
         new Thread(new Runnable() {
