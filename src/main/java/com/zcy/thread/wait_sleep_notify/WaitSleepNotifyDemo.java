@@ -1,9 +1,9 @@
-package com.zcy.thread.wait_notify;
+package com.zcy.thread.wait_sleep_notify;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class WaitDemo {
+public class WaitSleepNotifyDemo {
 
     //主函数
     public static void main(String[] args) throws InterruptedException {
