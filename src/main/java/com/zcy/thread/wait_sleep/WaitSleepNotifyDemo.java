@@ -1,4 +1,4 @@
-package com.zcy.thread.wait_sleep_notify;
+package com.zcy.thread.wait_sleep;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
