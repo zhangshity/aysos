@@ -1,4 +1,4 @@
-package com.zcy.thread.runnable_1;
+package com.zcy.thread.A_runnable_1;
 
 public class MyRunnable implements Runnable {
     @Override
