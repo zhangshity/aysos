@@ -1,4 +1,4 @@
-package com.zcy.thread.thread_1;
+package com.zcy.thread.A_thread_1;
 
 public class MyThread extends Thread {
     @Override

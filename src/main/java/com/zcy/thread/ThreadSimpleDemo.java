@@ -9,7 +9,7 @@ package com.zcy.thread;
  * 程序展示只有主函数的线程
  * 其实JVM是多线程运行的(GC垃圾回收线程)
  */
-public class MainThread {
+public class ThreadSimpleDemo {
     public static void main(String[] args) {
 
         //native static方法 currentThread(),获得当前线程类引用
