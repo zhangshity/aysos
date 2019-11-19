@@ -3,10 +3,10 @@ package com.zcy.thread.notify_notifyAll;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class MyDemo {
+public class MyNotificationDemo {
     public static void main(String[] args) throws InterruptedException {
 
-        final MyDemo lock = new MyDemo();
+        final MyNotificationDemo lock = new MyNotificationDemo();
 
         //wait()线程
         Runnable wait = new Runnable() {
