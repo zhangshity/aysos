@@ -14,6 +14,10 @@ public class SynThread implements Runnable {
             syncObjectBlock1();
         } else if (threadName.startsWith("C")) {
             syncObjectMethod1();
+        } else if (threadName.startsWith("D")) {
+            syncClassBlock1();
+        } else if (threadName.startsWith("E")) {
+            syncClassMethod1();
         }
     }
 
@@ -61,5 +65,35 @@ public class SynThread implements Runnable {
         }
     }
 
+
+    /**
+     * 方法中有 synchronized(类名.class) {} 同步代码块
+     */
+    private void syncClassBlock1() {
+        System.out.println(Thread.currentThread().getName() + "_SyncClassBlock1: " + new SimpleDateFormat("HH:mm:ss").format(new Date()));
+        synchronized (com.zcy.thread.Z_synchronized.SynThread.class) {
+            try {
+                System.out.println(Thread.currentThread().getName() + "_SyncClassBlock1_Start: " + new SimpleDateFormat("HH:mm:ss").format(new Date()));
+                Thread.sleep(1000);
+                System.out.println(Thread.currentThread().getName() + "_SyncClassBlock1_End: " + new SimpleDateFormat("HH:mm:ss").format(new Date()));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * synchronized static 修饰静态方法
+     */
+    private synchronized static void syncClassMethod1() {
+        System.out.println(Thread.currentThread().getName() + "_SyncClassMethod1: " + new SimpleDateFormat("HH:mm:ss").format(new Date()));
+        try {
+            System.out.println(Thread.currentThread().getName() + "_SyncClassMethod1_Start: " + new SimpleDateFormat("HH:mm:ss").format(new Date()));
+            Thread.sleep(1000);
+            System.out.println(Thread.currentThread().getName() + "_SyncClassMethod1_End: " + new SimpleDateFormat("HH:mm:ss").format(new Date()));
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 
 }
