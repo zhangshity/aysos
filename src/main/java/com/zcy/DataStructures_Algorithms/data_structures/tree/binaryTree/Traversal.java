@@ -1,6 +1,4 @@
-package com.zcy.data_structure.binaryTree;
-
-import com.zcy.data_structure.binaryTree.TreeNode;
+package com.zcy.DataStructures_Algorithms.data_structures.tree.binaryTree;
 
 /**
  * @ Author: chunyang.zhang
