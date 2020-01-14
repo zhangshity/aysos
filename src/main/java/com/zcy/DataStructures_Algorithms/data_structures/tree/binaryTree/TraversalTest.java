@@ -1,4 +1,4 @@
-package com.zcy.data_structure.binaryTree;
+package com.zcy.DataStructures_Algorithms.data_structures.tree.binaryTree;
 
 /**
  * @ Author: chunyang.zhang
