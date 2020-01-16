@@ -10,10 +10,5 @@ public class Test {
         System.out.println(System.getProperty("java.ext.dirs"));
         //Application ClassLoader
         System.out.println(System.getProperty("java.class.path"));
-
-
-        //
-//        ClassLoader
-        AppletClassLoader
     }
 }
