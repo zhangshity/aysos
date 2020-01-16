@@ -5,6 +5,6 @@ public class ClassLoaderMain {
         MyClassLoader myClassLoader = new MyClassLoader("/Users/zhangchunyang/Desktop/", "myClassLoader");
         Class c = myClassLoader.loadClass("Student");
         System.out.println(c.getClassLoader());
-        c.newInstance();
+        Object instance = c.newInstance();
     }
 }
