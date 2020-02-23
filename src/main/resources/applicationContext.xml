@@ -6,4 +6,15 @@
 
     <bean id="helloworld" class="com.zcy.spring.helloworld.HelloWorld"/>
 
+    <bean id="person" class="com.zcy.spring._demo1.Person">
+        <property name="name" value="Bruce"/>
+        <property name="age" value="18"/>
+        <property name="car">
+            <bean class="com.zcy.spring._demo1.Car">
+                <constructor-arg name="brand" value="Porsche"/>
+                <constructor-arg name="price" value="1200000.26"/>
+                <constructor-arg name="maxSpeed" value="340"/>
+            </bean>
+        </property>
+    </bean>
 </beans>
