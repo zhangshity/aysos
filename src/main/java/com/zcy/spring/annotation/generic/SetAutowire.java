@@ -7,6 +7,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Map;
+
 @Component
 public class SetAutowire {
 
@@ -20,9 +21,8 @@ public class SetAutowire {
         for (Car car : carList) {
             System.out.println(car.getClass().getName());
         }
-
-        for (Map.Entry entry :carMap.entrySet()) {
-            System.out.println(entry.getKey()+" | "+entry.getValue());
+        for (Map.Entry entry : carMap.entrySet()) {
+            System.out.println(entry.getKey() + " | " + entry.getValue());
         }
     }
 
