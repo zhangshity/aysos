@@ -79,6 +79,12 @@
         <!--            <version>8.0.17</version>-->
         <!--        </dependency>-->
 
+        <!-- c3p0连接池-->
+        <dependency>
+            <groupId>com.mchange</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.5.2</version>
+        </dependency>
 
         <dependency>
             <groupId>org.apache.maven</groupId>

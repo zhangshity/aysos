@@ -8,7 +8,10 @@
             http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:component-scan base-package="com.zcy.spring.annotation"/>
+    <!-- 相当于注解@ComponentScan("com.zcy.spring.annotation") -->
 
+    <!-- <context:property-placeholder location="db.properties"/> -->
+    <!-- 相当于注解 @PropertySource("classpath:db.properties") -->
 
     <bean id="helloworld" class="com.zcy.spring.helloworld.HelloWorld"/>
 
@@ -23,7 +26,6 @@
             </bean>
         </property>
     </bean>
-
 
 
 </beans>
