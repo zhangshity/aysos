@@ -7,20 +7,20 @@
             http://www.springframework.org/schema/context
             http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!-- 相当于注解@ComponentScan("com.zcy.spring.annotation") -->
-    <context:component-scan base-package="com.zcy.spring.annotation"/>
+    <!-- 相当于注解@ComponentScan("com.zcy.spring.ioc.annotation") -->
+    <context:component-scan base-package="com.zcy.spring.ioc.annotation"/>
 
     <!-- 相当于注解 @PropertySource("classpath:db.properties") -->
     <!-- <context:property-placeholder location="db.properties"/> -->
 
 
-    <bean id="helloworld" class="com.zcy.spring.helloworld.HelloWorld"/>
+    <bean id="helloworld" class="com.zcy.spring.ioc.helloworld.HelloWorld"/>
 
-    <bean id="person" class="com.zcy.spring._demo1.Person">
+    <bean id="person" class="com.zcy.spring.ioc._demo1.Person">
         <property name="name" value="Bruce"/>
         <property name="age" value="18"/>
         <property name="car">
-            <bean class="com.zcy.spring._demo1.Car">
+            <bean class="com.zcy.spring.ioc._demo1.Car">
                 <constructor-arg name="brand" value="Porsche"/>
                 <constructor-arg name="price" value="1200000.26"/>
                 <constructor-arg name="maxSpeed" value="340"/>
@@ -30,7 +30,7 @@
 
 
     <!-- JSR -->
-    <context:component-scan base-package="com.zcy.spring.jsr"/>
+    <context:component-scan base-package="com.zcy.spring.ioc.jsr"/>
 
 
 </beans>
