@@ -2,10 +2,13 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
             http://www.springframework.org/schema/beans/spring-beans.xsd
             http://www.springframework.org/schema/context
-            http://www.springframework.org/schema/context/spring-context.xsd">
+            http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/aop
+            http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <!-- 相当于注解@ComponentScan("com.zcy.spring.ioc.annotation") -->
     <context:component-scan base-package="com.zcy.spring.ioc.annotation"/>
@@ -29,8 +32,31 @@
     </bean>
 
 
-    <!-- JSR -->
+    <!-- JSR的 注解装配-->
     <context:component-scan base-package="com.zcy.spring.ioc.jsr"/>
 
+
+    <!--    <aop:config>-->
+    <!--        <aop:aspect id="myAspect" ref="helloworld"/>-->
+    <!--    </aop:config>-->
+
+
+    <!-- ============ AOP基于XML配置 ======================-->
+    <bean id="myAspect" class="com.zcy.spring.aop.demo1_xml.MyAspect"/>
+    <bean id="businessClass" class="com.zcy.spring.aop.demo1_xml.BusinessClass"/>
+
+    <aop:config>
+        <aop:pointcut id="myPointcut" expression="execution(* com.zcy.spring.aop.demo1_xml.BusinessClass.*(..))"/>
+        <aop:aspect id="myAspectAOP" ref="myAspect">
+            <aop:before method="before" pointcut-ref="myPointcut"/>
+            <aop:after method="after" pointcut-ref="myPointcut"/>
+            <aop:after-returning method="afterReturn" pointcut-ref="myPointcut"/>
+            <aop:after-throwing method="afterThrowing" pointcut-ref="myPointcut"/>
+            <aop:around method="around" pointcut-ref="myPointcut"/>
+        </aop:aspect>
+    </aop:config>
+    <!-- =================================================-->
+
+    
 
 </beans>
