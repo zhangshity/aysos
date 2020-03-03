@@ -17,8 +17,8 @@ public class MyAspect {
         System.out.println("MyAspect . around()");
     }
 
-    public void afterReturn() {
-        System.out.println("MyAspect . afterReturn()");
+    public void afterReturning() {
+        System.out.println("MyAspect . afterReturning()");
     }
 
     public void afterThrowing() {

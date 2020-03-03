@@ -1,5 +1,6 @@
 package com.zcy.spring.aop.demo2_annotation;
 
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 
@@ -22,13 +23,14 @@ public class MyAspect {
     }
 
     @Around("pointCut()")
-    public void around() {
-        System.out.println("MyAspect2 . around()");
+    public void around(JoinPoint joinPoint) {
+        String j = joinPoint.getKind();
+        System.out.println("MyAspect2 . around() " + j);
     }
 
     @AfterReturning("pointCut()")
-    public void afterReturn() {
-        System.out.println("MyAspect2 . afterReturn()");
+    public void afterReturning() {
+        System.out.println("MyAspect2 . afterReturning()");
     }
 
     @AfterThrowing("pointCut()")
