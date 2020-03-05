@@ -1,7 +1,6 @@
-package com.zcy.spring.framework_demo.config;
+package com.zcy.spring.ioc.framework_demo.config;
 
-import com.zcy.spring.framework_demo.entity.Person;
-import org.codehaus.plexus.component.annotations.Configuration;
+import com.zcy.spring.ioc.framework_demo.entity.Person;
 
 //@Configuration()
 public class ApplicationConfig {

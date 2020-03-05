@@ -1,4 +1,4 @@
-package com.zcy.spring.framework_demo.entity;
+package com.zcy.spring.ioc.framework_demo.entity;
 
 public class Person {
 
