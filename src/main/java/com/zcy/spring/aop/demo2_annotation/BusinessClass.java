@@ -7,5 +7,6 @@ public class BusinessClass {
 
     public void biz() {
         System.out.println("BusinessClass2.biz()");
+//        throw new RuntimeException();
     }
 }
