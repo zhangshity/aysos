@@ -1,5 +1,7 @@
 package com.zcy.spring.aop.demo1_xml;
 
+import org.aspectj.lang.ProceedingJoinPoint;
+
 public class MyAspect {
 
     public void pointCut() {
@@ -23,5 +25,18 @@ public class MyAspect {
 
     public void afterThrowing() {
         System.out.println("MyAspect . afterThrowing()");
+    }
+
+    public Object around2xml(ProceedingJoinPoint pjp, String name, int times) throws Throwable {
+        System.out.println("Aspect init around" + name + " " + times);
+        Object o = null;
+        try {
+            System.out.println("Aspect init around before " + name + " " + times);
+            o = pjp.proceed();
+            System.out.println("Aspect init around after" + name + " " + times);
+        } catch (Throwable throwable) {
+            throwable.printStackTrace();
+        }
+        return o;
     }
 }
