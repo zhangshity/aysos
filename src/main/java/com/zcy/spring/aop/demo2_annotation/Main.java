@@ -8,5 +8,6 @@ public class Main {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
         BusinessClass businessClass = (BusinessClass) applicationContext.getBean("businessClass2");
         businessClass.biz();
+        businessClass.init("名字",3000);
     }
 }
