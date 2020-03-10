@@ -41,7 +41,7 @@
     <!--    </aop:config>-->
 
 
-    <!-- ============ AOP基于XML配置 ======================-->
+    <!-- ============= AOP基于XML配置 ====(com.zcy.spring.aop.demo1_xml)=====================-->
     <bean id="myAspect" class="com.zcy.spring.aop.demo1_xml.MyAspect"/>
     <bean id="businessClass" class="com.zcy.spring.aop.demo1_xml.BusinessClass"/>
 
@@ -57,7 +57,7 @@
                         pointcut="execution(* com.zcy.spring.aop.demo1_xml.BusinessClass.init(String,int)) and args(name,times))"/>
         </aop:aspect>
     </aop:config>
-
+    
     <!--    <aop:config>-->
     <!--        <aop:pointcut id="argsAround"-->
     <!--                      expression="execution(* com.zcy.spring.aop.demo1_xml.BusinessClass.init(String,int)) and args(name,times))"/>-->
@@ -65,12 +65,26 @@
     <!--            <aop:around method="around2xml" pointcut-ref="argsAround"/>-->
     <!--        </aop:aspect>-->
     <!--    </aop:config>-->
-    <!-- =================================================-->
+    <!-- ================================================================================-->
 
 
-    <!-- ============ AOP基于@注解配置 ======================-->
+    <!-- ============ AOP基于@注解配置 ====(com.zcy.spring.aop.demo2_annotation)============-->
     <context:component-scan base-package="com.zcy.spring.aop"/>
     <aop:aspectj-autoproxy/>
-    <!-- =================================================-->
+    <!-- ================================================================================-->
+
+
+    <!-- =========== Introduction ====(com.zcy.spring.aop.demo3_introduction_xml)===========
+            允许一个切面，声明一个实现指定接口的通知对象，并且提供一个接口实现类来代表这些对象-->
+    <bean id="businessClass3" class="com.zcy.spring.aop.demo3_introduction_xml.BusinessClass"/>
+    <aop:config>
+        <aop:aspect>
+            <aop:declare-parents types-matching="com.zcy.spring.aop.demo3_introduction_xml.BusinessClass"
+                                 implement-interface="com.zcy.spring.aop.demo3_introduction_xml.Fit"
+                                 default-impl="com.zcy.spring.aop.demo3_introduction_xml.FitImpl"/>
+        </aop:aspect>
+    </aop:config>
+    <!-- ================================================================================-->
+
 
 </beans>
