@@ -1,14 +1,15 @@
-
+*.class
 /out/
-/target/
-!.mvn/wrapper/maven-wrapper.jar
+
+### Maven ###
+target/
 
 ### STS ###
 .apt_generated
-.classpath
 .factorypath
-.project
 .settings
+.project
+.classpath
 .springBeans
 .sts4-cache
 
@@ -18,6 +19,13 @@
 *.iml
 *.ipr
 
+### Eclipse ###
+.settings/
+.project
+.classpatch
+.metadata
+catalina.*
+
 ### NetBeans ###
 /nbproject/private/
 /build/
@@ -26,6 +34,32 @@
 /nbdist/
 /.nb-gradle/
 
-lib
+
+### MAC System ###
+.DS_Store
+Thumbs.db
+
+### Package File ###
+*.jar
+*.war
+*.ear
+
+### Temp File ###
 *.log
-/logs
+*.cache
+*.diff
+*.patch
+*.tmp
+/logs/
+
+lib
+
+
+
+#kdiff3 ignore
+*.orig
+
+
+
+
+
