@@ -7,9 +7,9 @@ public class MyMethodInterceptor implements MethodInterceptor {
 
     @Override
     public Object invoke(MethodInvocation invocation) throws Throwable {
-        System.out.println("MyMethodInterceptor1 " + invocation.getMethod().getName() + " " + invocation.getStaticPart().getClass().getName());
+        System.out.println("MyMethodInterceptor1 > " + invocation.getMethod().getName() + " " + invocation.getStaticPart().getClass().getName());
         Object o = invocation.proceed();
-        System.out.println("MyMethodInterceptor2 " + o);
+        System.out.println("MyMethodInterceptor2 > " + "proceed()> " + o);
         return o;
     }
 }
