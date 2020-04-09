@@ -13,5 +13,20 @@ public class JavaNumber {
                 "\n十进制: " + decimal +
                 "\n十六进制: " + hexadecimal);
 
+        //===================================================
+        int i = 231;
+        System.out.println("二进制显示 >" + Integer.toBinaryString(i));
+        System.out.println("八进制显示 >" + Integer.toOctalString(i));
+        System.out.println("十六进制显示 >" + Integer.toHexString(i));
+
+        System.out.println("任意进制转换显示 >" + Integer.toString(257, 34)); //radix默认2-36
+
+        //=========String转换成整型==============================
+        String s = "1234";
+        int parseInt = Integer.parseInt(s, 10);
+        Integer valueOf = Integer.valueOf(s, 10);
+
+        System.out.println("String转为int >" + parseInt + "\nString转为Integer >" + valueOf);
+
     }
 }
