@@ -41,25 +41,83 @@
     <!--    </aop:config>-->
 
 
-    <!-- ============ AOP基于XML配置 ======================-->
+    <!-- ============= AOP基于XML配置 ====(com.zcy.spring.aop.demo1_xml)=====================-->
     <bean id="myAspect" class="com.zcy.spring.aop.demo1_xml.MyAspect"/>
     <bean id="businessClass" class="com.zcy.spring.aop.demo1_xml.BusinessClass"/>
 
     <aop:config>
-        <aop:pointcut id="myPointcut" expression="execution(* com.zcy.spring.aop.demo1_xml.BusinessClass.*(..))"/>
+        <aop:pointcut id="myPointcut" expression="execution(* com.zcy.spring.aop.demo1_xml.BusinessClass.biz(..))"/>
         <aop:aspect id="myAspectAOP" ref="myAspect">
             <aop:before method="before" pointcut-ref="myPointcut"/>
             <aop:after method="after" pointcut-ref="myPointcut"/>
             <aop:after-returning method="afterReturning" pointcut-ref="myPointcut"/>
             <aop:after-throwing method="afterThrowing" pointcut-ref="myPointcut"/>
             <aop:around method="around" pointcut-ref="myPointcut"/>
+            <aop:around method="around2xml"
+                        pointcut="execution(* com.zcy.spring.aop.demo1_xml.BusinessClass.init(String,int)) and args(name,times))"/>
         </aop:aspect>
     </aop:config>
-    <!-- =================================================-->
 
-    <!-- ============ AOP基于@注解配置 ======================-->
+    <!--    <aop:config>-->
+    <!--        <aop:pointcut id="argsAround"-->
+    <!--                      expression="execution(* com.zcy.spring.aop.demo1_xml.BusinessClass.init(String,int)) and args(name,times))"/>-->
+    <!--        <aop:aspect id="newAspect" ref="myAspect">-->
+    <!--            <aop:around method="around2xml" pointcut-ref="argsAround"/>-->
+    <!--        </aop:aspect>-->
+    <!--    </aop:config>-->
+    <!-- ================================================================================-->
+
+
+    <!-- ============ AOP基于@注解配置 ====(com.zcy.spring.aop.demo2_annotation)============-->
     <context:component-scan base-package="com.zcy.spring.aop"/>
     <aop:aspectj-autoproxy/>
-    <!-- =================================================-->
+    <!-- ================================================================================-->
+
+
+    <!-- =========== Introduction ====(com.zcy.spring.aop.demo3_introduction_xml)===========
+            允许一个切面，声明一个实现指定接口的通知对象，并且提供一个接口实现类来代表这些对象-->
+    <bean id="businessClass3" class="com.zcy.spring.aop.demo3_introduction_xml.BusinessClass"/>
+    <aop:config>
+        <aop:aspect>
+            <aop:declare-parents types-matching="com.zcy.spring.aop.demo3_introduction_xml.BusinessClass"
+                                 implement-interface="com.zcy.spring.aop.demo3_introduction_xml.Fit"
+                                 default-impl="com.zcy.spring.aop.demo3_introduction_xml.FitImpl"/>
+        </aop:aspect>
+    </aop:config>
+    <!-- ================================================================================-->
+
+
+    <!-- ============ AOP api ====(com.zcy.spring.aop.demo5_api)============-->
+    <bean id="myBeforeAdvice" class="com.zcy.spring.aop.demo5_api.MyBeforeAdvice"/>
+    <bean id="myAfterReturningAdvice" class="com.zcy.spring.aop.demo5_api.MyAfterReturningAdvice"/>
+    <bean id="myThrowsAdvice" class="com.zcy.spring.aop.demo5_api.MyThrowsAdvice"/>
+    <bean id="myMethodInterceptor" class="com.zcy.spring.aop.demo5_api.MyMethodInterceptor"/>
+
+    <bean id="bizLogicImplTarget" class="com.zcy.spring.aop.demo5_api.BizLogicImpl"/>
+
+    <bean id="pointcutBean" class="org.springframework.aop.support.NameMatchMethodPointcut">
+        <property name="mappedNames">
+            <list>
+                <value>save*</value>
+            </list>
+        </property>
+    </bean>
+
+    <!--    <bean id="defaultAdvisor" class="org.springframework.aop.support.DefaultPointcutAdvisor">-->
+    <!--        <property name="advice" ref="myBeforeAdvice"/>-->
+    <!--        <property name="pointcut" ref="pointcutBean"/>-->
+    <!--    </bean>-->
+
+    <bean id="bizLogicImpl" class="org.springframework.aop.framework.ProxyFactoryBean">
+        <property name="target" ref="bizLogicImplTarget"/>
+        <property name="interceptorNames">
+            <list>
+                <value>myBeforeAdvice</value>
+                <value>myAfterReturningAdvice</value>
+                <value>myThrowsAdvice</value>
+                <value>myMethodInterceptor</value>
+            </list>
+        </property>
+    </bean>
 
 </beans>
