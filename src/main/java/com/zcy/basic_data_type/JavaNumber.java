@@ -1,4 +1,4 @@
-package com.zcy.basic;
+package com.zcy.basic_data_type;
 
 public class JavaNumber {
     public static void main(String[] args) {
