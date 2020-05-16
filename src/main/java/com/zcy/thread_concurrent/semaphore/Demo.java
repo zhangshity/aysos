@@ -1,4 +1,4 @@
-package com.zcy.thread_concurrency.semaphore;
+package com.zcy.thread_concurrent.semaphore;
 
 /**
  * @ Author: chunyang.zhang

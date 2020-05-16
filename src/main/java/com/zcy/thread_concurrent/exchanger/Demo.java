@@ -1,4 +1,4 @@
-package com.zcy.thread_concurrency.exchanger;
+package com.zcy.thread_concurrent.exchanger;
 
 /**
  * @ Author: chunyang.zhang
