@@ -7,7 +7,7 @@ package com.zcy.clone.myexample;
  * @ Modified: By:
  * <p>
  * 参考对应Github文档:
- * https://github.com/zhangshity/technote/blob/master/Java/clone()%E6%96%B9%E6%B3%95.md
+ * https://github.com/zhangshity/technote/blob/master/Java/Java%20clone()%E6%96%B9%E6%B3%95.md
  */
 
 public class CloneMainDemo {

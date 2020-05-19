@@ -30,7 +30,7 @@ public class Huawei {
 //            for (int i = 0; i < split.length; i++) {
 ////                System.out.println(split[i]);
 //                for (int j = 0; j < split.length; j++) {
-//                    if (!afterCountContainer.containsKey(split[i]) && split[i].equals(split[j])) {//TODO 数字不统计！记得修订( if(split[i]不是数字){} )
+//                    if (!afterCountContainer.containsKey(split[i]) && split[i].equals(split[j])) {// 数字不统计！记得修订( if(split[i]不是数字){} )
 //                        counter++;
 //                    }
 //                }
@@ -59,7 +59,7 @@ public class Huawei {
 //                System.out.println(key + "=" + afterCountContainer.get(key));
 //            }
 
-            //TODO 排序遍历(先放入List在遍历输出)
+            // 排序遍历(先放入List在遍历输出)
             List<Map.Entry<String, Integer>> list = new ArrayList<>(afterCountContainer.entrySet());
             Collections.sort(list, new Comparator<Map.Entry<String, Integer>>() {
                 @Override

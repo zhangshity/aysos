@@ -16,7 +16,7 @@ public class Factorial {
     public static int getgetFactorialArray(int n) {
         int[] a = new int[1000000000];
         a[0] = 1;
-        //TODO
+        //TODO 阶乘数组存放大数据
 //        for (int i = 0; i < n; i++) {
 //            a[]
 //        }

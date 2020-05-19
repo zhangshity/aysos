@@ -1,4 +1,4 @@
-package com.zcy.basic;
+package com.zcy.basic_data_type;
 
 public class IntergerTest {
     public static void main(String[] args) {
@@ -33,4 +33,17 @@ public class IntergerTest {
 //    3.两个都是非new出来的Integer，使用 == 比较，如果数在-128到127之间，则是true，否则为false
 //    4.两个都是new出来的，==比较都为false。若要比较值是否相等，需使用equals方法进行比较。
 //    5int和Integer(无论new否)比，都为true，因为会把Integer自动拆箱为int再去比。
+
+
+    /**
+     * Interger的装箱和拆箱 (自动和手动)
+     */
+    int i1 = 500;
+    Integer integer1 = new Integer(i1); // 手动装箱
+    int i2 = integer1.intValue(); // 手动拆箱
+
+
+    int i3 = 500;
+    Integer integer2 = i3; // 自动装箱
+    int i4 = integer2; // 自动拆箱
 }
