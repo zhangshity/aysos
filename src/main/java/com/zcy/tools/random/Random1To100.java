@@ -21,10 +21,13 @@ public class Random1To100 {
         System.out.println(randomNumber);
         //Method1: 直接乘100，再转化为int
         int m1Result = new Double(randomNumber * 100).intValue();
-//        int m1Result = (int) (randomNumber * 100);
+        int m11Result = (int) (randomNumber * 100);
         System.out.println(m1Result);
+        System.out.println(m11Result);
+        //================================================
         //Mehtod2: 利用util工具函数
-        int m2Result = new Random().nextInt(100);
+        Random random = new Random();
+        int m2Result = random.nextInt(100);
         System.out.println(m2Result);
         //==================== <<<<<<< Thinking思路============================
 
