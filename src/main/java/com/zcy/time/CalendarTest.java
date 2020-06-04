@@ -21,9 +21,11 @@ public class CalendarTest {
 
         //==========================================
         String d = "2020-05-26 13:30:20";
+        String d2 = "20200526 13:30:20";
         SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         try {
             Date date1 = sf.parse(d);
+            Date date2 = sf.parse(d2);
             System.out.println("simpleDateFormat.parse(date) ->\n"+date1);
         } catch (ParseException e) {
             e.printStackTrace();
