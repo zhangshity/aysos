@@ -1,5 +1,6 @@
 package com.zcy.time;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -11,9 +12,21 @@ public class CalendarTest {
         Calendar calendar = Calendar.getInstance();
         calendar.set(2020, Calendar.MAY, 26, 0, 0, 0);
         Date date = calendar.getTime();
+        System.out.println("calendar.getTime() ->\n" + date);
 
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         String resultDate = simpleDateFormat.format(date);
-        System.out.println(resultDate);
+        System.out.println("Date date = simpleDateFormat.format(date) ->\n"+resultDate);
+
+
+        //==========================================
+        String d = "2020-05-26 13:30:20";
+        SimpleDateFormat sf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        try {
+            Date date1 = sf.parse(d);
+            System.out.println("simpleDateFormat.parse(date) ->\n"+date1);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 }
