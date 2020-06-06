@@ -44,4 +44,12 @@ public class TimeTest {
         String time = new SimpleDateFormat("G-yyyy-M-dd HH:mm:ss a").format(new Date());
         System.out.println(time);
     }
+
+
+    public static void main(String[] args) {
+        //================================2020-06-06 20:42:?? Sat.
+        System.out.println("//================================2020-06-06 20:42:?? Sat.");
+        //系统当前时间
+        System.out.println(new SimpleDateFormat("yyyy-MM-dd").format(new Date()));
+    }
 }

@@ -1,4 +1,5 @@
 package com.zcy.string_test;
+
 /**
  * @ Author: chunyang.zhang
  * @ Description:
@@ -15,5 +16,15 @@ public class Split {
         String day = date[2];
         System.out.println(year + " " + month + " " + day);
         System.out.println(System.currentTimeMillis());
+
+
+        //================================2020-06-06 20:42:?? Sat.
+        System.out.println("//================================2020-06-06 20:42:?? Sat.");
+        String beginDateTime = "2020-05-26 13:25:35";
+        String endDateTime = "2020-05-26 20:24:12";
+
+        System.out.println(beginDateTime.split(" ")[0]);
+        System.out.println(endDateTime.split(" ")[0]);
+        System.out.println(beginDateTime.split(" ")[0].equals(endDateTime.split(" ")[0]));
     }
 }
