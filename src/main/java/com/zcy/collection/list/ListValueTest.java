@@ -27,5 +27,12 @@ public class ListValueTest {
         List list2 = new ArrayList();
         list.add(null);
         System.out.println(list.isEmpty()); //false
+
+
+        List list3 = new ArrayList();
+        System.out.println("list3= " + list3);
+        List list4 = null;
+        System.out.println("list4= " + list4);
+        System.out.println(list4.isEmpty()); //空指针异常
     }
 }
