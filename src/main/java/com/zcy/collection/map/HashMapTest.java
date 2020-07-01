@@ -39,6 +39,14 @@ public class HashMapTest {
         System.out.println("map1 's value is >>> " + map1.get("2"));
 
 
+        Map<String, String> map = new HashMap<>();
+        map.put("v1", "213");
+        map.put("v2", "23111");
+        map.put("v3", "2123");
+        map.put("v4", "25wer");
+        map.put("v5", "2er3");
+
+
     }
 
 
