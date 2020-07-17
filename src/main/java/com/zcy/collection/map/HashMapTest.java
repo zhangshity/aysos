@@ -39,12 +39,26 @@ public class HashMapTest {
         System.out.println("map1 's value is >>> " + map1.get("2"));
 
 
+        //==============================2020-07-17遍历===============================
+        System.out.println("==============================2020-07-17遍历===============================");
         Map<String, String> map = new HashMap<>();
         map.put("v1", "213");
         map.put("v2", "23111");
         map.put("v3", "2123");
         map.put("v4", "25wer");
         map.put("v5", "2er3");
+        map.put(null, "??");
+        map.put("v6", null);
+
+        //foreach Map.Entry<k,v>遍历
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            //System.out.println(entry);
+            System.out.println(entry.getKey() + " " + entry.getValue());
+
+        }
+
+
+
 
 
     }
