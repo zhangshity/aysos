@@ -29,7 +29,7 @@ public class VariableValue {
         //全局变量打印
         System.out.println("全局变量(未赋初值): " + globalVariable_NonValue);
         System.out.println("全局变量(赋初值): " + globalVariable_HasValue);
-        //局部变量打印
+        //main函数中,局部变量打印
 //        System.out.println("局部变量(未赋初值): " + localVariable_NonValue);//不赋初值根本没法调用(编译不通过)
         System.out.println("局部变量(赋初值): " + localVariable_HasValue);
 
@@ -39,5 +39,16 @@ public class VariableValue {
         VariableValue vv = new VariableValue();
         System.out.println("成员变量(未赋初值): " + vv.propertyVariable_NonValue);
         System.out.println("成员变量(未赋初值): " + vv.propertyVariable_HasValue);
+
+        //普通方法中,局部变量打印
+        vv.testMethod();
+    }
+
+
+    private void testMethod() {
+        String localVariableInMeth_NonValue;
+        String localVariableInMeth_HasValue = "local~Variable in method";
+//        System.out.println("localVariableInMeth_NonValue" + localVariableInMeth_NonValue); //不赋初值根本没法调用(编译不通过)
+        System.out.println("localVariableInMeth_HasValue" + localVariableInMeth_HasValue);
     }
 }

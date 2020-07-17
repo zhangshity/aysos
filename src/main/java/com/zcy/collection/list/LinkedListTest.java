@@ -45,5 +45,9 @@ public class LinkedListTest {
         //转为数组-遍历
         list.toArray();
 
+        System.out.println("=============LinkedList get()====================");
+        System.out.println(list.get(0));
+        System.out.println(list.get(1));
+        System.out.println(list.get(2));
     }
 }

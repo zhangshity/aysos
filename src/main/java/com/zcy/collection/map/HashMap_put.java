@@ -27,7 +27,8 @@ public class HashMap_put {
             System.out.println("key >>> " + key + "| v >>> " + map.get(key));
         }
 
-
+        //map直接打印
+        System.out.println(map);
 
 
 
