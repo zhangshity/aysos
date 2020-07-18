@@ -1,4 +1,4 @@
-package com.zcy.basic.variable_value_reference;
+package com.zcy.variable;
 
 /**
  * @ Author: chunyang.zhang
@@ -29,41 +29,31 @@ package com.zcy.basic.variable_value_reference;
  * C.test ok and abc
  * D.test ok and gbc
  * <p>
- * @see com.zcy.variable.FormalParameterAndActualParameter#exchange(String, char[])
+ * @see com.zcy.basic.variable_value_reference.VariableOperate#exchange(String, char[], int[], int, Object, StringBuilder, String)
  */
-public class VariableOperate {
+public class FormalParameterAndActualParameter {
+
     String str = "good";
     char[] ch = {'a', 'b', 'c'};
-    int[] in = {1, 2, 3};
-    int i = 123;
-    Object o = new Student();
-    StringBuilder sb = new StringBuilder("well");
-    String s = new String("good2");
 
-    public void exchange(String str1, char[] ch, int[] in, int i, Object o, StringBuilder sb, String s) {
+    public void exchange(String str, char[] ch) {
         str = "test ok";
+        System.out.println(ch);
         ch[0] = 'g';
-        in[1] = 9;
-        i = 911;
-        o = new Professor();
-        sb.append("test ko");
-        s = "test ok2";
     }
-
 
     public static void main(String[] args) {
-        VariableOperate v = new VariableOperate();
-        v.exchange(v.str, v.ch, v.in, v.i, v.o, v.sb,v.s);
+        FormalParameterAndActualParameter v = new FormalParameterAndActualParameter();
 
-        System.out.println("=======main()打印==========");
+        v.exchange(v.str, v.ch);
+
         System.out.print(v.str + " and ");
         System.out.println(v.ch);
-        System.out.println(v.i);
-        System.out.println(v.o);
-        for (int i = 0; i < v.in.length; i++) {
-            System.out.print(v.in[i]);
-        }
-        System.out.println("\n" + v.sb);
-        System.out.println(v.s);
     }
+
+    /**
+     * 分析：
+     * 网上太多乱七八糟的解释，太多扯皮的概念，其实就是一个内存草图就可以解释
+     */
+
 }
