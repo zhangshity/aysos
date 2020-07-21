@@ -38,7 +38,6 @@ public class FormalParameterAndActualParameter {
 
     public void exchange(String str, char[] ch) {
         str = "test ok";
-        System.out.println(ch);
         ch[0] = 'g';
     }
 
@@ -54,6 +53,7 @@ public class FormalParameterAndActualParameter {
     /**
      * 分析：
      * 网上太多乱七八糟的解释，太多扯皮的概念，其实就是一个内存草图就可以解释
+     * https://blog.csdn.net/weixin_42338707/article/details/107497840
      */
 
 }
