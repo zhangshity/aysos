@@ -1,7 +1,6 @@
 package com.zcy.thread_concurrent.executor;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 
 /**
  * 线程池
@@ -23,10 +22,31 @@ import java.util.concurrent.Executors;
 public class ThreadPool {
 
 
-    public static void main(String[] args) {
-        ExecutorService pool = Executors.newFixedThreadPool(6);
+    public static void main(String[] args) throws ExecutionException, InterruptedException {
+        ExecutorService pool = Executors.newFixedThreadPool(5);
 
-        //pool.submit()
+        Future f1 = pool.submit(new Callable<Object>() {
+            @Override
+            public Object call() throws Exception {
+                int result = 0;
+                for (int i = 0; i < 10; i++) {
+                    result += i;
+                    System.out.println(Thread.currentThread().getName() + " " + result);
+                }
+                return result;
+            }
+        });
+
+        System.out.println(f1.get());
+        System.out.println(pool.isShutdown());
+
+        pool.submit(() -> System.out.println(500));
+        System.out.println(pool.isShutdown());
+
+        pool.shutdown();
+        System.out.println(pool.isShutdown());
+
+
     }
 
 

@@ -2,6 +2,7 @@ package com.zcy.thread_concurrent.threadlocal;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.FutureTask;
+import java.util.concurrent.TimeUnit;
 
 /**
  * <p>Title: ThreadLocalTest</p >
@@ -13,49 +14,49 @@ import java.util.concurrent.FutureTask;
  */
 public class ThreadLocalTest {
 
-    private int i=0;
-
-    Thread t1 = new Thread(new FutureTask<Object>(new Callable<Object>() {
-        public Object call() throws Exception {
-            ThreadLocal threadLocal = new ThreadLocal();
-            threadLocal.set(i);
-            i = 1 ;
-            System.out.println("i " + threadLocal.get());
-            return i;
+    public static int add(int num) {
+        try {
+            TimeUnit.SECONDS.sleep(1);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
-    }));
+        return num + 10;
+    }
 
-    Thread t2 = new Thread(new FutureTask<Object>(new Callable<Object>() {
-        public Object call() throws Exception {
-            ThreadLocal threadLocal = new ThreadLocal();
-            threadLocal.set(i);
-            i = 5;
-            System.out.println("i " + threadLocal.get());
-            return i;
-        }
-    }));
-
-    Thread t3 = new Thread(new FutureTask<Object>(new Callable<Object>() {
-        public Object call() throws Exception {
-            ThreadLocal threadLocal = new ThreadLocal();
-            threadLocal.set(i);
-            i = 10;
-            System.out.println("i " + threadLocal.get());
-            return i;
-        }
-    }));
 
     public static void main(String[] args) {
 
-        ThreadLocalTest demo = new ThreadLocalTest();
+        ThreadLocal<Integer> threadLocal = new ThreadLocal<>();
+        
+        for (int i = 0; i < 10; i++) {
+            int temp = i;
+            new Thread(() -> System.out.println(Thread.currentThread().getName() + " " + temp + " " + ThreadLocalTest.add(temp))).start();
+        }
 
 
-        demo.t1.start();
-        demo.t2.start();
-        demo.t3.start();
-
-
-
+//        new Thread(new FutureTask<Object>(new Callable<Object>() {
+//            public Object call() throws Exception {
+//                threadLocal.set(i);
+//                System.out.println("i " + threadLocal.get());
+//                return i;
+//            }
+//        })).start();
+//
+//        new Thread(new FutureTask<Object>(new Callable<Object>() {
+//            public Object call() throws Exception {
+//                threadLocal.set(i);
+//                System.out.println("i " + threadLocal.get());
+//                return i;
+//            }
+//        })).start();
+//
+//        new Thread(new FutureTask<Object>(new Callable<Object>() {
+//            public Object call() throws Exception {
+//                threadLocal.set(i);
+//                System.out.println("i " + threadLocal.get());
+//                return i;
+//            }
+//        })).start();
 
 
     }
