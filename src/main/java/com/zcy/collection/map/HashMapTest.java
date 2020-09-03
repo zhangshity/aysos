@@ -57,8 +57,15 @@ public class HashMapTest {
 
         }
 
-
-
+        // HashMap取不存在key测试
+        System.out.println(map.get("v1")); //213
+        System.out.println(map.get("v7")); //null
+        /**
+         *     public V get(Object key) {
+         *         Node<K,V> e;
+         *         return (e = getNode(hash(key), key)) == null ? null : e.value;
+         *     }
+         */
 
 
     }

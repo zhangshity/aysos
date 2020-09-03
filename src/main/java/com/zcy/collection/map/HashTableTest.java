@@ -35,6 +35,21 @@ public class HashTableTest {
             System.out.println(iterator.next());
         }
 
-
+        // HashTable取不存在key测试
+        System.out.println(hashtable.get(1)); //ZhangSan
+        System.out.println(hashtable.get(8)); //null
+        /**
+         *     public synchronized V get(Object key) {
+         *         Entry<?,?> tab[] = table;
+         *         int hash = key.hashCode();
+         *         int index = (hash & 0x7FFFFFFF) % tab.length;
+         *         for (Entry<?,?> e = tab[index] ; e != null ; e = e.next) {
+         *             if ((e.hash == hash) && e.key.equals(key)) {
+         *                 return (V)e.value;
+         *             }
+         *         }
+         *         return null;
+         *     }
+         */
     }
 }
