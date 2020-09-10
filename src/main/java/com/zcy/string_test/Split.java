@@ -54,5 +54,12 @@ public class Split {
         String empty = "";
         System.out.println("==" + empty + "==");
 
+
+
+        //========================正则触发测试=========================================
+        System.out.println("//========================正则触发测试=========================================");
+        String exp = "Son&Father&God&Nobody";
+        String[] expSplitArray = exp.split("[&]");
+        System.out.println(Arrays.asList(expSplitArray));
     }
 }
