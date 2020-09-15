@@ -1,12 +1,14 @@
 package com.zcy.tools.decimal_format;
 
+import java.lang.reflect.Field;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
 public class BigDecimal2String {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException, NoSuchFieldException, IllegalAccessException {
 
         BigDecimal bigDecimal = new BigDecimal(1233.128800); //1233.12879999999995561665855348110198974609375 精度丢失
 
@@ -49,8 +51,6 @@ public class BigDecimal2String {
 
 
 
-
-
         //======================= BigDecimal 除法===================================================
         System.out.println("======================= BigDecimal 除法===================================================");
         BigDecimal t1 = new BigDecimal("1");
@@ -61,6 +61,49 @@ public class BigDecimal2String {
 
 
 
+
+
+        //=================================== 小数位 =========================================================
+        System.out.println("=================================== 小数位 =========================================================");
+        BigDecimal bigDecimalScale = new BigDecimal("156.2587");
+        System.out.println(" new BigDecimal(\"156.2587\")值为: " + bigDecimalScale);
+        System.out.println(" new BigDecimal(\"156.2587\") 小数位设置为5 值为: " + bigDecimalScale.setScale(5));
+        System.out.println(" new BigDecimal(\"156.2587\") 小数位设置为6 值为: " + bigDecimalScale.setScale(6));
+
+        System.out.println("缩小小数位: - " + "需要四舍五入设置, 否则报Rounding necessary异常");
+        System.out.println(" new BigDecimal(\"156.2587\") 小数位设置为3 值为: " + bigDecimalScale.setScale(3,BigDecimal.ROUND_HALF_UP));
+
+
+
+
+
+
+
+
+
+
+
+
+        //================= ###### ====== 原理！！！！ ===================================================
+        System.out.println("======================= 原理！！！！ ===================================================");
+        BigDecimal bigDecimal1 = new BigDecimal("123.56");
+        System.out.println("打印new BigDecimal(123.56): " + bigDecimal1);
+        System.out.println("打印new BigDecimal(123.56): 小数位scale: " + bigDecimal1.scale());
+        System.out.println("打印new BigDecimal(123.56): 无小数部分长度unscale: " + (bigDecimal1.precision() - bigDecimal1.scale()) );
+        System.out.println("打印new BigDecimal(123.56): 精度precision: " + bigDecimal1.precision());
+
+        // 反射获取实际存储字段
+        Class<?> clazz = Class.forName("java.math.BigDecimal");
+
+        Field intVal = clazz.getDeclaredField("intVal");
+        intVal.setAccessible(true);
+        BigInteger intValField = (BigInteger) intVal.get(bigDecimal1);
+        System.out.println("打印new BigDecimal(123.56): BigIneger值intVal: " + intValField);
+
+        Field intCompact = clazz.getDeclaredField("intCompact");
+        intCompact.setAccessible(true);
+        long intCompactField = (long) intCompact.get(bigDecimal1);
+        System.out.println("打印new BigDecimal(123.56): 消除小数紧凑整数数值intCompact: " + intCompactField);
 
 
     }
