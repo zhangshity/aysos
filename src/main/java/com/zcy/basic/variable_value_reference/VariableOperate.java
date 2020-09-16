@@ -30,6 +30,7 @@ package com.zcy.basic.variable_value_reference;
  * D.test ok and gbc
  * <p>
  * @see com.zcy.variable.FormalParameterAndActualParameter#exchange(String, char[])
+ * https://blog.csdn.net/weixin_42338707/article/details/107497840
  */
 public class VariableOperate {
     String str = "good";
@@ -40,7 +41,7 @@ public class VariableOperate {
     StringBuilder sb = new StringBuilder("well");
     String s = new String("good2");
 
-    public void exchange(String str1, char[] ch, int[] in, int i, Object o, StringBuilder sb, String s) {
+    public void exchange(String str, char[] ch, int[] in, int i, Object o, StringBuilder sb, String s) {
         str = "test ok";
         ch[0] = 'g';
         in[1] = 9;
