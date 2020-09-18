@@ -68,6 +68,24 @@ public class HashMapTest {
          */
 
 
+
+
+
+
+        String key = null;
+        String value = null;
+        System.out.println("====================空Map遍历测试==============================");
+        Map<String, String> mapNull = new HashMap<>();
+        for (Map.Entry<String, String> entry : mapNull.entrySet()) {
+            //System.out.println(entry);
+            //System.out.println(entry.getKey() + " " + entry.getValue());
+            key = entry.getKey();
+            value = entry.getValue();
+        }
+        System.out.println("key=" + key + " value=" + value);
+
+
+
     }
 
 
