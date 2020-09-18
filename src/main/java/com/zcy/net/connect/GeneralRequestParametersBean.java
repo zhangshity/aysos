@@ -1,6 +1,8 @@
 package com.zcy.net.connect;
 
 
+import java.util.Map;
+
 public class GeneralRequestParametersBean {
 
     /**
@@ -19,34 +21,39 @@ public class GeneralRequestParametersBean {
     private int timeout;
 
     /**
-     * Request Header - Authorization
+     * 请求头 Request Header
      */
-    private String authorization;
+    private Map<String, String> headers;
 
-    /**
-     * Request Header - Accept
-     */
-    private String accept;
-
-    /**
-     * Request Header - Connection
-     */
-    private String connection;
-
-    /**
-     * Request Header - Content-Type
-     */
-    private String contentType;
-
-    /**
-     * Request Header - User-Agent
-     */
-    private String userAgent;
-
-    /**
-     * Request Header - Cache-Control
-     */
-    private String cacheControl;
+//    /**
+//     * Request Header - Authorization
+//     */
+//    private String authorization;
+//
+//    /**
+//     * Request Header - Accept
+//     */
+//    private String accept;
+//
+//    /**
+//     * Request Header - Connection
+//     */
+//    private String connection;
+//
+//    /**
+//     * Request Header - Content-Type
+//     */
+//    private String contentType;
+//
+//    /**
+//     * Request Header - User-Agent
+//     */
+//    private String userAgent;
+//
+//    /**
+//     * Request Header - Cache-Control
+//     */
+//    private String cacheControl;
 
     /**
      * 请求协议类型(TLSv1.2 ...)
@@ -103,52 +110,12 @@ public class GeneralRequestParametersBean {
         this.timeout = timeout;
     }
 
-    public String getAuthorization() {
-        return authorization;
+    public Map<String, String> getHeaders() {
+        return headers;
     }
 
-    public void setAuthorization(String authorization) {
-        this.authorization = authorization;
-    }
-
-    public String getAccept() {
-        return accept;
-    }
-
-    public void setAccept(String accept) {
-        this.accept = accept;
-    }
-
-    public String getConnection() {
-        return connection;
-    }
-
-    public void setConnection(String connection) {
-        this.connection = connection;
-    }
-
-    public String getContentType() {
-        return contentType;
-    }
-
-    public void setContentType(String contentType) {
-        this.contentType = contentType;
-    }
-
-    public String getUserAgent() {
-        return userAgent;
-    }
-
-    public void setUserAgent(String userAgent) {
-        this.userAgent = userAgent;
-    }
-
-    public String getCacheControl() {
-        return cacheControl;
-    }
-
-    public void setCacheControl(String cacheControl) {
-        this.cacheControl = cacheControl;
+    public void setHeaders(Map<String, String> headers) {
+        this.headers = headers;
     }
 
     public String getSslContextProtocol() {
