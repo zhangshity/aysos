@@ -122,7 +122,67 @@ public class SslWithCert {
 //    }
 
 
+    /**
+     * 通用POST请求方法
+     * @title postRequestWithResponseParse
+     * @description
+     * @param params 请求参数实体
+     * @return String 响应结果
+     */
+    public static String generalPostRequest(GeneralRequestParametersBean params) {
+        CloseableHttpClient httpclient = null;
+        CloseableHttpResponse httpResponse = null;
+        String responseResult = null;
+        try {
+            // 1.获取SSLContext,加载协议设置
+            SSLContext sslContext = SSLContext.getInstance(params.getSslContextProtocol() == null ? "Default" : params.getSslContextProtocol());
+            // 2.获取SocketFactory
+            SSLConnectionSocketFactory sslSocketFactory = new SSLConnectionSocketFactory(sslContext, (hostname, session) -> true);
+            // 3.HttpClient设置
+            httpclient = HttpClients.custom().setSSLSocketFactory(sslSocketFactory).build();
 
+            // 4.Http请求构建
+            HttpPost httpRequest = new HttpPost(params.getRequestUrl());
+            // 4.-1请求头设置
+            Map<String, String> headers = params.getHeaders();
+            for (Map.Entry<String, String> header : headers.entrySet()) {
+                httpRequest.setHeader(header.getKey(), header.getValue());
+            }
+            // 4.-2请求配置设置 (超时时间)
+            RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(params.getTimeout())
+                    .setConnectionRequestTimeout(params.getTimeout()).setSocketTimeout(params.getTimeout()).build();
+            httpRequest.setConfig(requestConfig);
+            // 4.-3请求实体设置 (请求参数)
+            StringEntity requestEntity = new StringEntity(params.getRequestParameters());
+            httpRequest.setEntity(requestEntity);
+
+            // ## 发送请求获取响应 ##
+            httpResponse = httpclient.execute(httpRequest);
+            // 5.获取响应实体
+            HttpEntity httpEntity = httpResponse.getEntity();
+            // 6.获取响应结果
+            responseResult = EntityUtils.toString(httpEntity, StandardCharsets.UTF_8);
+
+            //log.info("----------------------------------------");
+            //log.info("响应状态信息为：{} ", httpResponse.getStatusLine().toString());
+            //log.info("响应结果为：{}", responseResult);
+            //log.info("----------------------------------------");
+        } catch (Exception e) {
+            //log.error("发送请求出错", e);
+        } finally {
+            try {
+                if (httpResponse != null) {
+                    httpResponse.close();
+                }
+                if (httpclient != null) {
+                    httpclient.close();
+                }
+            } catch (IOException e) {
+                //log.error("关闭连接错误", e);
+            }
+        }
+        return responseResult;
+    }
 
 
     /**
