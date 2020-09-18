@@ -22,6 +22,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.security.KeyStore;
+import java.util.HashMap;
+import java.util.Map;
 
 public class SslWithCert {
 
@@ -30,18 +32,112 @@ public class SslWithCert {
     }
 
 
+//    /**
+//     * 带有证书的POST请求通用方法
+//     * @title generalPostRequestWithCert
+//     * @description 证书Post通用方法
+//     * @param params 请求参数实体
+//     * @return String
+//     */
+//    public static String generalPostRequestWithCert(GeneralRequestParametersBean params) {
+//        CloseableHttpClient httpclient = null;
+//        CloseableHttpResponse httpResponse = null;
+//        FileInputStream fileInputStream = null;
+//        StringBuilder result = new StringBuilder();
+//        try {
+//            // 1.获取KeyStore,加载证书
+//            KeyStore ks = KeyStore.getInstance(params.getKeyStoreType());
+//            ks.load(fileInputStream = new FileInputStream(new File(params.getCertPath())), params.getCertPassword().toCharArray());
+//            // 2.获取KeyManagerFactory,初始化
+//            KeyManagerFactory kmf = KeyManagerFactory.getInstance(params.getKeyManagerFactoryAlgorithm());
+//            kmf.init(ks,params.getCertPassword().toCharArray());
+//            // 3.获取TrustManagerFactory,初始化
+//            TrustManagerFactory tmf = TrustManagerFactory.getInstance(params.getTrustManagerFactoryAlgorithm());
+//            tmf.init(ks);
+//            // 4.获取SSLContext,加载协议设置
+//            SSLContext sslContext = SSLContext.getInstance(params.getSslContextProtocol());
+//            sslContext.init(kmf.getKeyManagers(), tmf.getTrustManagers(), null);
+//            // 5.获取SocketFactory
+//            SSLConnectionSocketFactory sslSocketFactory = new SSLConnectionSocketFactory(sslContext, (hostname, session) -> true);
+//
+//            httpclient = HttpClients.custom().setSSLSocketFactory(sslSocketFactory).build();
+//            HttpPost httpRequest = new HttpPost(params.getRequestUrl());
+//            // 请求头设置
+//            if (StringUtils.isNotBlank(params.getAuthorization())) {
+//                httpRequest.addHeader(HttpHeaders.AUTHORIZATION, params.getAuthorization());
+//            }
+//            if (StringUtils.isNotBlank(params.getAccept())) {
+//                httpRequest.addHeader(HttpHeaders.ACCEPT, params.getAccept());
+//            }
+//            if (StringUtils.isNotBlank(params.getConnection())) {
+//                httpRequest.addHeader(HttpHeaders.CONNECTION, params.getConnection());
+//            }
+//            if (StringUtils.isNotBlank(params.getContentType())) {
+//                httpRequest.addHeader(HttpHeaders.CONTENT_TYPE, params.getContentType());
+//            }
+//            if (StringUtils.isNotBlank(params.getUserAgent())) {
+//                httpRequest.addHeader(HttpHeaders.USER_AGENT, params.getUserAgent());
+//            }
+//            if (StringUtils.isNotBlank(params.getCacheControl())) {
+//                httpRequest.addHeader(HttpHeaders.CACHE_CONTROL, params.getCacheControl());
+//            }
+//            StringEntity requestEntity = new StringEntity(params.getRequestParameters());
+//            httpRequest.setEntity(requestEntity);
+//            // 设置超时时间
+//            RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(params.getTimeout())
+//                    .setConnectionRequestTimeout(params.getTimeout()).setSocketTimeout(params.getTimeout()).build();
+//            httpRequest.setConfig(requestConfig);
+//
+//            // # 发送请求获取响应
+//            httpResponse = httpclient.execute(httpRequest);
+//            // 获取响应实体
+//            HttpEntity httpEntity = httpResponse.getEntity();
+//            //log.info("响应状态信息为：{} ", httpResponse.getStatusLine().toString());
+//            if (httpEntity != null) {
+//                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpEntity.getContent(), StandardCharsets.UTF_8));
+//                String text;
+//                while ((text = bufferedReader.readLine()) != null) {
+//                    result.append(text);
+//                }
+//            }
+//            EntityUtils.consume(httpEntity);
+//        } catch (Exception e) {
+//            //log.error("发送请求出错", e);
+//        } finally {
+//            try {
+//                if (null != httpclient) {
+//                    httpclient.close();
+//                }
+//                if (null != fileInputStream) {
+//                    fileInputStream.close();
+//                }
+//                if (null != httpResponse) {
+//                    httpResponse.close();
+//                }
+//            } catch (IOException e) {
+//                //log.error("关闭连接错误", e);
+//            }
+//        }
+//        return result.toString();
+//    }
+
+
+
+
+
     /**
      * 带有证书的POST请求通用方法
      * @title generalPostRequestWithCert
      * @description 证书Post通用方法
+     * @time 2020-09-14 09:14:08/
      * @param params 请求参数实体
-     * @return String
+     * @return String 响应结果
      */
     public static String generalPostRequestWithCert(GeneralRequestParametersBean params) {
         CloseableHttpClient httpclient = null;
         CloseableHttpResponse httpResponse = null;
         FileInputStream fileInputStream = null;
-        StringBuilder result = new StringBuilder();
+        String responseResult = null;
         try {
             // 1.获取KeyStore,加载证书
             KeyStore ks = KeyStore.getInstance(params.getKeyStoreType());
@@ -50,73 +146,137 @@ public class SslWithCert {
             KeyManagerFactory kmf = KeyManagerFactory.getInstance(params.getKeyManagerFactoryAlgorithm());
             kmf.init(ks,params.getCertPassword().toCharArray());
             // 3.获取TrustManagerFactory,初始化
-            TrustManagerFactory tmf = TrustManagerFactory.getInstance(params.getTrustManagerFactoryAlgorithm());
-            tmf.init(ks);
+            //TrustManagerFactory tmf = TrustManagerFactory.getInstance(params.getTrustManagerFactoryAlgorithm());
+            //tmf.init(ks);
             // 4.获取SSLContext,加载协议设置
             SSLContext sslContext = SSLContext.getInstance(params.getSslContextProtocol());
-            sslContext.init(kmf.getKeyManagers(), tmf.getTrustManagers(), null);
+            sslContext.init(kmf.getKeyManagers(), null, null);
             // 5.获取SocketFactory
             SSLConnectionSocketFactory sslSocketFactory = new SSLConnectionSocketFactory(sslContext, (hostname, session) -> true);
-
+            // 6.HttpClient设置
             httpclient = HttpClients.custom().setSSLSocketFactory(sslSocketFactory).build();
+
+            // 7.Http请求构建
             HttpPost httpRequest = new HttpPost(params.getRequestUrl());
-            // 请求头设置
-            if (StringUtils.isNotBlank(params.getAuthorization())) {
-                httpRequest.addHeader(HttpHeaders.AUTHORIZATION, params.getAuthorization());
+            // 7.-1请求头设置
+            Map<String, String> headers = params.getHeaders();
+            for (Map.Entry<String, String> header : headers.entrySet()) {
+                httpRequest.setHeader(header.getKey(), header.getValue());
             }
-            if (StringUtils.isNotBlank(params.getAccept())) {
-                httpRequest.addHeader(HttpHeaders.ACCEPT, params.getAccept());
-            }
-            if (StringUtils.isNotBlank(params.getConnection())) {
-                httpRequest.addHeader(HttpHeaders.CONNECTION, params.getConnection());
-            }
-            if (StringUtils.isNotBlank(params.getContentType())) {
-                httpRequest.addHeader(HttpHeaders.CONTENT_TYPE, params.getContentType());
-            }
-            if (StringUtils.isNotBlank(params.getUserAgent())) {
-                httpRequest.addHeader(HttpHeaders.USER_AGENT, params.getUserAgent());
-            }
-            if (StringUtils.isNotBlank(params.getCacheControl())) {
-                httpRequest.addHeader(HttpHeaders.CACHE_CONTROL, params.getCacheControl());
-            }
-            StringEntity requestEntity = new StringEntity(params.getRequestParameters());
-            httpRequest.setEntity(requestEntity);
-            // 设置超时时间
+            // 7.-2请求配置设置 (超时时间)
             RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(params.getTimeout())
                     .setConnectionRequestTimeout(params.getTimeout()).setSocketTimeout(params.getTimeout()).build();
             httpRequest.setConfig(requestConfig);
+            // 7.-3请求实体设置 (请求参数)
+            StringEntity requestEntity = new StringEntity(params.getRequestParameters());
+            httpRequest.setEntity(requestEntity);
 
-            // # 发送请求获取响应
+            // ## 发送请求获取响应 ##
             httpResponse = httpclient.execute(httpRequest);
-            // 获取响应实体
+
+            // 8.获取响应实体
             HttpEntity httpEntity = httpResponse.getEntity();
+            // 9.获取响应结果
+            responseResult = EntityUtils.toString(httpEntity, StandardCharsets.UTF_8);
+            //log.info("----------------------------------------");
             //log.info("响应状态信息为：{} ", httpResponse.getStatusLine().toString());
-            if (httpEntity != null) {
-                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(httpEntity.getContent(), StandardCharsets.UTF_8));
-                String text;
-                while ((text = bufferedReader.readLine()) != null) {
-                    result.append(text);
-                }
-            }
-            EntityUtils.consume(httpEntity);
+            //log.info("响应结果为：{}", responseResult);
+            //log.info("----------------------------------------");
         } catch (Exception e) {
             //log.error("发送请求出错", e);
         } finally {
             try {
-                if (null != httpclient) {
-                    httpclient.close();
+                if (httpResponse != null) {
+                    httpResponse.close();
                 }
-                if (null != fileInputStream) {
+                if (fileInputStream != null) {
                     fileInputStream.close();
                 }
-                if (null != httpResponse) {
-                    httpResponse.close();
+                if (httpclient != null) {
+                    httpclient.close();
                 }
             } catch (IOException e) {
                 //log.error("关闭连接错误", e);
             }
         }
-        return result.toString();
+        return responseResult;
+    }
+
+    /**
+     * 响应解析为Map的POST请求
+     * @title postRequestWithResponseParse
+     * @description 带有响应解析的post请求(MOLPay银行使用)
+     * @author Allen.C.Y.Zhang
+     * @time 2020-09-16 10:09:59
+     * @param params 请求参数实体
+     * @return Map<String, String> 解析为Map的响应结果
+     */
+    public static Map<String, String> postRequestWithResponseParse(GeneralRequestParametersBean params) {
+        CloseableHttpClient httpclient = null;
+        CloseableHttpResponse httpResponse = null;
+        BufferedReader bufferedReader = null;
+        Map<String, String> responseMap = new HashMap<>(16);
+        try {
+            // 1.获取SSLContext,加载协议设置
+            SSLContext sslContext = SSLContext.getInstance(params.getSslContextProtocol());
+            // 2.获取SocketFactory
+            SSLConnectionSocketFactory sslSocketFactory = new SSLConnectionSocketFactory(sslContext, (hostname, session) -> true);
+            // 3.HttpClient设置
+            httpclient = HttpClients.custom().setSSLSocketFactory(sslSocketFactory).build();
+
+            // 4.Http请求构建
+            HttpPost httpRequest = new HttpPost(params.getRequestUrl());
+            // 4.-1请求头设置
+            Map<String, String> headers = params.getHeaders();
+            for (Map.Entry<String, String> header : headers.entrySet()) {
+                httpRequest.setHeader(header.getKey(), header.getValue());
+            }
+            // 4.-2请求配置设置 (超时时间)
+            RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(params.getTimeout())
+                    .setConnectionRequestTimeout(params.getTimeout()).setSocketTimeout(params.getTimeout()).build();
+            httpRequest.setConfig(requestConfig);
+            // 4.-3请求实体设置 (请求参数)
+            StringEntity requestEntity = new StringEntity(params.getRequestParameters());
+            httpRequest.setEntity(requestEntity);
+
+            // ## 发送请求获取响应 ##
+            httpResponse = httpclient.execute(httpRequest);
+            // 5.获取响应实体
+            HttpEntity httpEntity = httpResponse.getEntity();
+            // 6.获取响应结果
+            if (httpEntity != null) {
+                bufferedReader = new BufferedReader(new InputStreamReader(httpEntity.getContent(), StandardCharsets.UTF_8));
+                String line;
+                while ((line = bufferedReader.readLine()) != null) {
+                    String[] lineArray = line.split(":");
+                    String key = lineArray[0].trim();
+                    String value = lineArray[1].trim();
+                    responseMap.put(key, value);
+                }
+            }
+            EntityUtils.consume(httpEntity);
+            //log.info("----------------------------------------");
+            //log.info("响应状态信息为：{} ", httpResponse.getStatusLine().toString());
+            //log.info("响应结果为：{}", responseMap);
+            //log.info("----------------------------------------");
+        } catch (Exception e) {
+            //log.error("发送请求出错", e);
+        } finally {
+            try {
+                if (bufferedReader != null) {
+                    bufferedReader.close();
+                }
+                if (httpResponse != null) {
+                    httpResponse.close();
+                }
+                if (httpclient != null) {
+                    httpclient.close();
+                }
+            } catch (IOException e) {
+                //log.error("关闭连接错误", e);
+            }
+        }
+        return responseMap;
     }
 
 }
