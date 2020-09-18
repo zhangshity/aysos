@@ -145,8 +145,10 @@ public class SslWithCert {
             HttpPost httpRequest = new HttpPost(params.getRequestUrl());
             // 4.-1请求头设置
             Map<String, String> headers = params.getHeaders();
-            for (Map.Entry<String, String> header : headers.entrySet()) {
-                httpRequest.setHeader(header.getKey(), header.getValue());
+            if (!headers.isEmpty()) {
+                for (Map.Entry<String, String> header : headers.entrySet()) {
+                    httpRequest.setHeader(header.getKey(), header.getValue());
+                }
             }
             // 4.-2请求配置设置 (超时时间)
             RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(params.getTimeout())
@@ -220,8 +222,10 @@ public class SslWithCert {
             HttpPost httpRequest = new HttpPost(params.getRequestUrl());
             // 7.-1请求头设置
             Map<String, String> headers = params.getHeaders();
-            for (Map.Entry<String, String> header : headers.entrySet()) {
-                httpRequest.setHeader(header.getKey(), header.getValue());
+            if (!headers.isEmpty()) {
+                for (Map.Entry<String, String> header : headers.entrySet()) {
+                    httpRequest.setHeader(header.getKey(), header.getValue());
+                }
             }
             // 7.-2请求配置设置 (超时时间)
             RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(params.getTimeout())
@@ -288,8 +292,10 @@ public class SslWithCert {
             HttpPost httpRequest = new HttpPost(params.getRequestUrl());
             // 4.-1请求头设置
             Map<String, String> headers = params.getHeaders();
-            for (Map.Entry<String, String> header : headers.entrySet()) {
-                httpRequest.setHeader(header.getKey(), header.getValue());
+            if (!headers.isEmpty()) {
+                for (Map.Entry<String, String> header : headers.entrySet()) {
+                    httpRequest.setHeader(header.getKey(), header.getValue());
+                }
             }
             // 4.-2请求配置设置 (超时时间)
             RequestConfig requestConfig = RequestConfig.custom().setConnectTimeout(params.getTimeout())
