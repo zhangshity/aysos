@@ -160,6 +160,13 @@
             <artifactId>jackson-annotations</artifactId>
             <version>2.11.0</version>
         </dependency>
+        <!-- Jackson解析XML需要依赖 -->
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-xml -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.dataformat</groupId>
+            <artifactId>jackson-dataformat-xml</artifactId>
+            <version>2.11.0</version>
+        </dependency>
 
 
         <!-- https://mvnrepository.com/artifact/joda-time/joda-time -->
@@ -176,8 +183,12 @@
             <version>4.5.12</version>
         </dependency>
 
-
-
+        <!-- https://mvnrepository.com/artifact/dom4j/dom4j -->
+        <dependency>
+            <groupId>dom4j</groupId>
+            <artifactId>dom4j</artifactId>
+            <version>1.6.1</version>
+        </dependency>
     </dependencies>
 
     <build>
