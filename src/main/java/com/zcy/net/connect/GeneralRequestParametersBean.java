@@ -1,7 +1,19 @@
 package com.zcy.net.connect;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.ssl.PrivateKeyStrategy;
+import org.apache.http.ssl.TrustStrategy;
 
+import java.security.SecureRandom;
+import java.util.List;
 import java.util.Map;
+
+/**
+ * 通用网络请求参数
+ * <p>Description: 用于公共网络请求参数存放</p>
+ *
+ * @date 2020-09-14 11:13:00
+ */
 
 public class GeneralRequestParametersBean {
 
@@ -11,64 +23,39 @@ public class GeneralRequestParametersBean {
     private String requestUrl;
 
     /**
-     * 请求参数
+     * 请求参数(类型:Json/XML)
      */
     private String requestParameters;
 
     /**
+     * 请求参数(类型:x-www-form-urlencoded)
+     */
+    private List<NameValuePair> requestParametersList;
+
+    /**
      * 超时时间
      */
-    private int timeout;
+    private Integer timeout;
 
     /**
      * 请求头 Request Header
      */
     private Map<String, String> headers;
 
-//    /**
-//     * Request Header - Authorization
-//     */
-//    private String authorization;
-//
-//    /**
-//     * Request Header - Accept
-//     */
-//    private String accept;
-//
-//    /**
-//     * Request Header - Connection
-//     */
-//    private String connection;
-//
-//    /**
-//     * Request Header - Content-Type
-//     */
-//    private String contentType;
-//
-//    /**
-//     * Request Header - User-Agent
-//     */
-//    private String userAgent;
-//
-//    /**
-//     * Request Header - Cache-Control
-//     */
-//    private String cacheControl;
-
     /**
-     * 请求协议类型(TLSv1.2 ...)
+     * 请求协议类型(SSL/TLS/TLSv1.2 ...)
      */
     private String sslContextProtocol;
 
     /**
-     * 证书地址
+     * 请求协议 Provider
      */
-    private String certPath;
+    private String provider;
 
     /**
-     * 证书密码
+     * 请求协议 随机数
      */
-    private String certPassword;
+    private SecureRandom secureRandom;
 
     /**
      * 证书 KeyStore类型 (JKS,JCEKS,PKCS12,PKCS11)
@@ -84,6 +71,37 @@ public class GeneralRequestParametersBean {
      * 证书 TrustManagerFactory算法
      */
     private String trustManagerFactoryAlgorithm;
+
+    /**
+     * 证书地址
+     */
+    private String certPath;
+
+    /**
+     * 证书密码(废弃)
+     */
+    @Deprecated
+    private String certPassword;
+
+    /**
+     * KeyStore加载密码
+     */
+    private String storePassword;
+
+    /**
+     * KeyManagerFactory加载密码
+     */
+    private String keyPassword;
+
+    /**
+     * KeyManagerFactory-私钥策略
+     */
+    private PrivateKeyStrategy aliasStrategy;
+
+    /**
+     * TrustManagerFactory-信任策略
+     */
+    private TrustStrategy trustStrategy;
 
 
     public String getRequestUrl() {
@@ -102,11 +120,19 @@ public class GeneralRequestParametersBean {
         this.requestParameters = requestParameters;
     }
 
-    public int getTimeout() {
+    public List<NameValuePair> getRequestParametersList() {
+        return requestParametersList;
+    }
+
+    public void setRequestParametersList(List<NameValuePair> requestParametersList) {
+        this.requestParametersList = requestParametersList;
+    }
+
+    public Integer getTimeout() {
         return timeout;
     }
 
-    public void setTimeout(int timeout) {
+    public void setTimeout(Integer timeout) {
         this.timeout = timeout;
     }
 
@@ -126,20 +152,20 @@ public class GeneralRequestParametersBean {
         this.sslContextProtocol = sslContextProtocol;
     }
 
-    public String getCertPath() {
-        return certPath;
+    public String getProvider() {
+        return provider;
     }
 
-    public void setCertPath(String certPath) {
-        this.certPath = certPath;
+    public void setProvider(String provider) {
+        this.provider = provider;
     }
 
-    public String getCertPassword() {
-        return certPassword;
+    public SecureRandom getSecureRandom() {
+        return secureRandom;
     }
 
-    public void setCertPassword(String certPassword) {
-        this.certPassword = certPassword;
+    public void setSecureRandom(SecureRandom secureRandom) {
+        this.secureRandom = secureRandom;
     }
 
     public String getKeyStoreType() {
@@ -164,5 +190,53 @@ public class GeneralRequestParametersBean {
 
     public void setTrustManagerFactoryAlgorithm(String trustManagerFactoryAlgorithm) {
         this.trustManagerFactoryAlgorithm = trustManagerFactoryAlgorithm;
+    }
+
+    public String getCertPath() {
+        return certPath;
+    }
+
+    public void setCertPath(String certPath) {
+        this.certPath = certPath;
+    }
+
+    public String getCertPassword() {
+        return certPassword;
+    }
+
+    public void setCertPassword(String certPassword) {
+        this.certPassword = certPassword;
+    }
+
+    public String getStorePassword() {
+        return storePassword;
+    }
+
+    public void setStorePassword(String storePassword) {
+        this.storePassword = storePassword;
+    }
+
+    public String getKeyPassword() {
+        return keyPassword;
+    }
+
+    public void setKeyPassword(String keyPassword) {
+        this.keyPassword = keyPassword;
+    }
+
+    public PrivateKeyStrategy getAliasStrategy() {
+        return aliasStrategy;
+    }
+
+    public void setAliasStrategy(PrivateKeyStrategy aliasStrategy) {
+        this.aliasStrategy = aliasStrategy;
+    }
+
+    public TrustStrategy getTrustStrategy() {
+        return trustStrategy;
+    }
+
+    public void setTrustStrategy(TrustStrategy trustStrategy) {
+        this.trustStrategy = trustStrategy;
     }
 }
