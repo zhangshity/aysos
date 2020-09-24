@@ -106,5 +106,22 @@ public class BigDecimal2String {
         System.out.println("打印new BigDecimal(123.56): 消除小数紧凑整数数值intCompact: " + intCompactField);
 
 
+
+
+
+        //======================== null 测试 =======================================================================
+        System.out.println("======================== null 测试 =======================================================================");
+//        String s = null;
+//        BigDecimal bigDecimal6 = new BigDecimal(s); //NullPointerException
+//        System.out.println(bigDecimal6);
+
+
+
+
+
+
+
+
+
     }
 }
