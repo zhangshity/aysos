@@ -53,6 +53,12 @@ public class JacksonTest {
         System.out.println(j3);
         System.out.println(j4);
 
+
+        System.out.println("========================== 空值测试(优秀组件处理了空指针异常) ==============================");
+        String j5 = node.get("www").textValue();
+        String j6 = node.has("result") ? node.get("result").asText() : null;
+        //System.out.println(j5);
+        System.out.println(j6);
     }
 
 
