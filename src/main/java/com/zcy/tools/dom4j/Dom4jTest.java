@@ -35,12 +35,18 @@ public class Dom4jTest {
         Document document = DocumentHelper.parseText(xml);
         Element root = document.getRootElement();
         String totalFee = root.element("total_fee").getText();
-        String feeType = root.element("fee_type").getText();
+        String feeType = root.elementText("fee_type");
+        String feeType1 = root.elementText("fee_type1");
+
+        String returnCode = root.attributeValue("return_code");
+        String returnMsg = root.attributeValue("return_code");
 
         System.out.println(totalFee);
         System.out.println(feeType);
+        System.out.println(feeType1);
 
-
+        System.out.println(returnCode);
+        System.out.println(returnMsg);
 
 
 
