@@ -103,6 +103,15 @@ public class GeneralRequestParametersBean {
      */
     private TrustStrategy trustStrategy;
 
+    /**
+     * 请求内容Charset
+     */
+    private String requestCharset;
+
+    /**
+     * 响应内容Charset
+     */
+    private String responseCharset;
 
     public String getRequestUrl() {
         return requestUrl;
@@ -238,5 +247,21 @@ public class GeneralRequestParametersBean {
 
     public void setTrustStrategy(TrustStrategy trustStrategy) {
         this.trustStrategy = trustStrategy;
+    }
+
+    public String getRequestCharset() {
+        return requestCharset;
+    }
+
+    public void setRequestCharset(String requestCharset) {
+        this.requestCharset = requestCharset;
+    }
+
+    public String getResponseCharset() {
+        return responseCharset;
+    }
+
+    public void setResponseCharset(String responseCharset) {
+        this.responseCharset = responseCharset;
     }
 }
