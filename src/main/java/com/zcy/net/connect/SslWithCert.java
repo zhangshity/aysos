@@ -43,8 +43,6 @@ public class SslWithCert {
      * 通用GET请求方法
      * @title generalGetRequest
      * @description
-     * @author Allen.C.Y.Zhang
-     * @time 2020-09-23 11:45:46
      * @param params 请求参数实体
      * @return String 响应结果
      */
@@ -56,11 +54,15 @@ public class SslWithCert {
             // 1.初始化SSLContext (所有参数均可为空,默认TLS协议,无证书)
             SSLContextBuilder sslContextBuilder = SSLContextBuilder.create()
                     .setProtocol(params.getSslContextProtocol())
-                    .setProvider(params.getProvider())
                     .setKeyStoreType(params.getKeyStoreType() != null ? params.getKeyStoreType() : KeyStore.getDefaultType())
                     .setKeyManagerFactoryAlgorithm(params.getKeyManagerFactoryAlgorithm())
                     .setTrustManagerFactoryAlgorithm(params.getTrustManagerFactoryAlgorithm())
                     .setSecureRandom(params.getSecureRandom());
+            if (params.getProviderName() != null) {
+                sslContextBuilder = sslContextBuilder.setProvider(params.getProviderName());
+            }else {
+                sslContextBuilder = sslContextBuilder.setProvider(params.getProvider());
+            }
             if (params.getCertPath() != null) {
                 sslContextBuilder = sslContextBuilder
                         .loadKeyMaterial(new File(params.getCertPath()), params.getStorePassword().toCharArray(), params.getKeyPassword().toCharArray(), params.getAliasStrategy())
@@ -122,9 +124,7 @@ public class SslWithCert {
     /**
      * 通用POST请求方法
      * @title generalPostRequest (证书信息可不传)
-     * @description 证书Post通用方法
-     * @author Allen.C.Y.Zhang
-     * @time 2020-09-14 09:14:08
+     * @description Post通用方法
      * @param params 请求参数实体
      * @return String 响应结果
      */
@@ -136,11 +136,15 @@ public class SslWithCert {
             // 1.初始化SSLContext (所有参数均可为空,默认TLS协议,无证书)
             SSLContextBuilder sslContextBuilder = SSLContextBuilder.create()
                     .setProtocol(params.getSslContextProtocol())
-                    .setProvider(params.getProvider())
                     .setKeyStoreType(params.getKeyStoreType() != null ? params.getKeyStoreType() : KeyStore.getDefaultType())
                     .setKeyManagerFactoryAlgorithm(params.getKeyManagerFactoryAlgorithm())
                     .setTrustManagerFactoryAlgorithm(params.getTrustManagerFactoryAlgorithm())
                     .setSecureRandom(params.getSecureRandom());
+            if (params.getProviderName() != null) {
+                sslContextBuilder = sslContextBuilder.setProvider(params.getProviderName());
+            }else {
+                sslContextBuilder = sslContextBuilder.setProvider(params.getProvider());
+            }
             if (params.getCertPath() != null) {
                 sslContextBuilder = sslContextBuilder
                         .loadKeyMaterial(new File(params.getCertPath()), params.getStorePassword().toCharArray(), params.getKeyPassword().toCharArray(), params.getAliasStrategy())
@@ -158,7 +162,7 @@ public class SslWithCert {
             HttpPost httpRequest = new HttpPost(params.getRequestUrl());
             // 4.-1请求头设置
             Map<String, String> headers = params.getHeaders();
-            if (!headers.isEmpty()) {
+            if (headers != null && !headers.isEmpty()) {
                 for (Map.Entry<String, String> header : headers.entrySet()) {
                     httpRequest.setHeader(header.getKey(), header.getValue());
                 }
@@ -207,13 +211,10 @@ public class SslWithCert {
         return responseResult;
     }
 
-
     /**
      * 响应解析为Map的POST请求
      * @title postRequestWithResponseParse
-     * @description 带有响应解析的post请求(MOLPay银行使用)
-     * @author Allen.C.Y.Zhang
-     * @time 2020-09-16 10:09:59
+     * @description 带有响应解析的post请求
      * @param params 请求参数实体
      * @return Map<String, String> 解析为Map的响应结果
      */
@@ -226,11 +227,15 @@ public class SslWithCert {
             // 1.初始化SSLContext (所有参数均可为空,默认TLS协议,无证书)
             SSLContextBuilder sslContextBuilder = SSLContextBuilder.create()
                     .setProtocol(params.getSslContextProtocol())
-                    .setProvider(params.getProvider())
                     .setKeyStoreType(params.getKeyStoreType() != null ? params.getKeyStoreType() : KeyStore.getDefaultType())
                     .setKeyManagerFactoryAlgorithm(params.getKeyManagerFactoryAlgorithm())
                     .setTrustManagerFactoryAlgorithm(params.getTrustManagerFactoryAlgorithm())
                     .setSecureRandom(params.getSecureRandom());
+            if (params.getProviderName() != null) {
+                sslContextBuilder = sslContextBuilder.setProvider(params.getProviderName());
+            }else {
+                sslContextBuilder = sslContextBuilder.setProvider(params.getProvider());
+            }
             if (params.getCertPath() != null) {
                 sslContextBuilder = sslContextBuilder
                         .loadKeyMaterial(new File(params.getCertPath()), params.getStorePassword().toCharArray(), params.getKeyPassword().toCharArray(), params.getAliasStrategy())
@@ -248,7 +253,7 @@ public class SslWithCert {
             HttpPost httpRequest = new HttpPost(params.getRequestUrl());
             // 4.-1请求头设置
             Map<String, String> headers = params.getHeaders();
-            if (!headers.isEmpty()) {
+            if (headers != null && !headers.isEmpty()) {
                 for (Map.Entry<String, String> header : headers.entrySet()) {
                     httpRequest.setHeader(header.getKey(), header.getValue());
                 }

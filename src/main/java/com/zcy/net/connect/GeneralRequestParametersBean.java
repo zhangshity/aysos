@@ -4,6 +4,7 @@ import org.apache.http.NameValuePair;
 import org.apache.http.ssl.PrivateKeyStrategy;
 import org.apache.http.ssl.TrustStrategy;
 
+import java.security.Provider;
 import java.security.SecureRandom;
 import java.util.List;
 import java.util.Map;
@@ -50,7 +51,12 @@ public class GeneralRequestParametersBean {
     /**
      * 请求协议 Provider
      */
-    private String provider;
+    private Provider provider;
+
+    /**
+     * 请求协议 ProviderName
+     */
+    private String providerName;
 
     /**
      * 请求协议 随机数
@@ -161,12 +167,20 @@ public class GeneralRequestParametersBean {
         this.sslContextProtocol = sslContextProtocol;
     }
 
-    public String getProvider() {
+    public Provider getProvider() {
         return provider;
     }
 
-    public void setProvider(String provider) {
+    public void setProvider(Provider provider) {
         this.provider = provider;
+    }
+
+    public String getProviderName() {
+        return providerName;
+    }
+
+    public void setProviderName(String providerName) {
+        this.providerName = providerName;
     }
 
     public SecureRandom getSecureRandom() {
