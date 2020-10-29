@@ -57,7 +57,32 @@ public class HashMapTest {
 
         }
 
+        // HashMap取不存在key测试
+        System.out.println(map.get("v1")); //213
+        System.out.println(map.get("v7")); //null
+        /**
+         *     public V get(Object key) {
+         *         Node<K,V> e;
+         *         return (e = getNode(hash(key), key)) == null ? null : e.value;
+         *     }
+         */
 
+
+
+
+
+
+        String key = null;
+        String value = null;
+        System.out.println("====================空Map遍历测试==============================");
+        Map<String, String> mapNull = new HashMap<>();
+        for (Map.Entry<String, String> entry : mapNull.entrySet()) {
+            //System.out.println(entry);
+            //System.out.println(entry.getKey() + " " + entry.getValue());
+            key = entry.getKey();
+            value = entry.getValue();
+        }
+        System.out.println("key=" + key + " value=" + value);
 
 
 

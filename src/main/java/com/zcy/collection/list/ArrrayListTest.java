@@ -44,11 +44,18 @@ public class ArrrayListTest {
 
 
         //============cotains()方法=============
+        System.out.println("============cotains()方法============="); //本质就是对List中的存储容器elementData做了一个遍历
         List<String> list2 = new ArrayList<>();
         list2.add("a");
         list2.add("b");
         list2.add("c");
+        list2.add(null);
+        list2.add("d");
 
+        System.out.println(list2);
+        System.out.println(list2.contains("a"));
+        System.out.println(list2.contains(null));
+        System.out.println(list2.contains("d"));
         System.out.println(list2.contains("v"));
 
     }
