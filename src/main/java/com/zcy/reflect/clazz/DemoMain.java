@@ -1,9 +1,11 @@
 package com.zcy.reflect.clazz;
 
+import java.lang.reflect.Field;
+
 public class DemoMain {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NoSuchFieldException, IllegalAccessException {
         //第一种方式获取Class对象
         Student stu1 = new Student();//这一new 产生一个Student对象，一个Class对象。
         Class stuClass = stu1.getClass();//获取Class对象
@@ -21,5 +23,26 @@ public class DemoMain {
             e.printStackTrace();
         }
 
+
+
+
+
+
+
+        //================获取字段====================
+        System.out.println("================获取字段====================\n");
+        Student student = new Student();
+        student.setId(3141906);
+        student.setName("CY爹");
+
+        Class<? extends Student> clazz = student.getClass();
+        Field id = clazz.getDeclaredField("id");
+        Field name = clazz.getDeclaredField("name");
+        id.setAccessible(true);
+        name.setAccessible(true);
+
+        System.out.println(id);
+        System.out.println((int) id.get(student));
+        System.out.println((String) name.get(student));
     }
 }

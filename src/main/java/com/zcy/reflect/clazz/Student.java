@@ -2,8 +2,8 @@ package com.zcy.reflect.clazz;
 
 public class Student {
 
-    int id;
-    String name;
+    private int id;
+    private String name;
 
     public int getId() {
         return id;
