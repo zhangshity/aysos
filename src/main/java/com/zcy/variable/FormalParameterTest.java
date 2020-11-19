@@ -12,8 +12,8 @@ public class FormalParameterTest {
         //int a = 600;
         int b = 9;
         //int b = 900;
-        System.out.println("基本变量a地址 " + System.identityHashCode(a));
-        System.out.println("基本变量c地址 " + System.identityHashCode(b));
+        System.out.println("基本变量a地址 " + System.identityHashCode(a)); //基本变量a地址 218365679    //基本变量a地址 1096325556
+        System.out.println("基本变量c地址 " + System.identityHashCode(b)); // 基本变量c地址 -643712286  //基本变量c地址 1019384619
 
         System.out.println("============调用测试方法================");
         swap(a, b);
@@ -21,10 +21,10 @@ public class FormalParameterTest {
 
     //形参测试方法
     public static void swap(int c, int d) {
-        System.out.println(c);
-        System.out.println(d);
-        System.out.println("形参c地址 " + System.identityHashCode(c));
-        System.out.println("形参d地址 " + System.identityHashCode(d));
+        System.out.println(c); //6  //600
+        System.out.println(d); //9  //900
+        System.out.println("形参c地址 " + System.identityHashCode(c)); //形参c地址 218365679   //形参c地址 322279800
+        System.out.println("形参d地址 " + System.identityHashCode(d)); //形参d地址 -643712286  //形参d地址 -1264907899
     }
 
     /**
