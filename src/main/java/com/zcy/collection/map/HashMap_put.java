@@ -37,10 +37,10 @@ public class HashMap_put {
 
         //================================= capacity 容量测试 =====================================================
         System.out.println("\n\n\n================================= capacity 容量测试 =====================================================");
-        Map<String, String> hashMap = new HashMap<>(2);   //容量的初始值直接设置为 = 数据量大小/负载因子 +1
+        Map<String, String> hashMap = new HashMap<>();   //容量的初始值直接设置为 = 数据量大小/负载因子 +1
         hashMap.put("key1", "value1");
-        //hashMap.put("key2", "value2");
-        //hashMap.put("key3", "value3");
+        hashMap.put("key2", "value2");
+        hashMap.put("key3", "value3");
         //hashMap.put("key4", "value4");
         //hashMap.put("key5", "value5");
         //hashMap.put("key6", "value6");
@@ -73,4 +73,43 @@ public class HashMap_put {
         //System.out.println("table.size : " + field3.get(hashMap));
     }
 
+
+    /**
+     * ###源码分析:
+     *
+     *  threshold初始值为不小于capacity最小的2的n次幂 如 1->1  2->2  3->4  4->4  5->8  ...  8->8  9->16
+     *  当初始化完成后 第一次调用put方法，因为(table==null) 所以第一次put会resize()，
+     *  通过这次resize() threshold 即变为原先threshold的loadFactor倍(默认0.75)
+     * <code>
+     *     // 构造函数1
+     *     public HashMap(int initialCapacity) {
+     *         this(initialCapacity, DEFAULT_LOAD_FACTOR);
+     *     }
+     *
+     *     // 构造函数2
+     *     public HashMap(int initialCapacity, float loadFactor) {
+     *         if (initialCapacity < 0)
+     *             throw new IllegalArgumentException("Illegal initial capacity: " +
+     *                                                initialCapacity);
+     *         if (initialCapacity > MAXIMUM_CAPACITY)
+     *             initialCapacity = MAXIMUM_CAPACITY;
+     *         if (loadFactor <= 0 || Float.isNaN(loadFactor))
+     *             throw new IllegalArgumentException("Illegal load factor: " +
+     *                                                loadFactor);
+     *         this.loadFactor = loadFactor;
+     *         this.threshold = tableSizeFor(initialCapacity);
+     *     }
+     *
+     *     // 初始化阈值threshold
+     *     static final int tableSizeFor(int cap) {
+     *         int n = cap - 1;
+     *         n |= n >>> 1;
+     *         n |= n >>> 2;
+     *         n |= n >>> 4;
+     *         n |= n >>> 8;
+     *         n |= n >>> 16;
+     *         return (n < 0) ? 1 : (n >= MAXIMUM_CAPACITY) ? MAXIMUM_CAPACITY : n + 1;
+     *     }
+     * </code>
+     */
 }
