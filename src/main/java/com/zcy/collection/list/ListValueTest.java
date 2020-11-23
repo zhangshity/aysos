@@ -38,6 +38,8 @@ public class ListValueTest {
         System.out.println(list2);
         System.out.println("get(0) " + list2.get(0)); //null
         System.out.println("get(1) " + list2.get(1)); //第二个值
+        //System.out.println("get(3) " + list2.get(3)); //空指针异常
+
 
 
 
