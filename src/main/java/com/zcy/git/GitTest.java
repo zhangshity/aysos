@@ -12,5 +12,7 @@ public class GitTest {
         System.out.println("第7次提交");
         System.out.println("第8次提交");
         System.out.println("第10次提交");
+        System.out.println("第12次提交");
+
     }
 }
