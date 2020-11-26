@@ -1,5 +1,8 @@
 package com.zcy.java1_8NewFunction.optional;
 
+import org.apache.zookeeper.Op;
+
+import java.math.BigDecimal;
 import java.util.Optional;
 import java.util.function.Supplier;
 
@@ -7,6 +10,19 @@ import java.util.function.Supplier;
  * 关于Java1.8新功能Optional的测试
  */
 public class OptionalTest {
+
+    /**
+     * 自定义静态方法控制台打印参数值,并返回参数值
+     * @param s
+     * @return
+     */
+    private static String fetch(String s) {
+        System.out.println("Supplier()内部实现方法: 参数:" + s + "   ：~~已执行~~");
+        return s;
+    }
+
+
+
     public static void main(String[] args) {
 
         /**
@@ -60,17 +76,34 @@ public class OptionalTest {
             }
         });
         System.out.println(s3);
+
+
+
+
+
+
+
+
+
+
+
+
+        //================================== map 显示三目运算符 ==================================
+        System.out.println("================================== map 显示三目运算符 ==================================");
+
+        //String amount = "12.98";
+        String amount = null;
+        BigDecimal amountDecimal = Optional.ofNullable(amount).map(BigDecimal::new).orElse(null);
+
+        System.out.println(amountDecimal);
     }
 
 
-    /**
-     * 自定义静态方法控制台打印参数值,并返回参数值
-     * @param s
-     * @return
-     */
-    private static String fetch(String s) {
-        System.out.println("Supplier()内部实现方法: 参数:" + s + "   ：~~已执行~~");
-        return s;
-    }
+
+
+
+
+
+
 
 }
