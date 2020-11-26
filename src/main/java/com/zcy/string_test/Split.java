@@ -42,6 +42,7 @@ public class Split {
         String dataString7 = ",,Alipay,Wechatpay";             //[, , Alipay, Wechatpay]             //两个都是 ""
         String dataString8 = ",,,Alipay,Wechatpay";            //[, , , Alipay, Wechatpay]           //三个都是 ""
         String dataString9 = "AlipayWechatpay";                //[AlipayWechatpay]                   //没有分隔符就不分隔
+        String dataString10 = "";                               //[]                                 //没有分隔符就不分隔
 
         String[] dataArray = dataString8.split(",");
         System.out.println("==" + dataArray[2] + "==");
