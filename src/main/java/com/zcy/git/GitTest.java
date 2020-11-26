@@ -7,5 +7,6 @@ public class GitTest {
         System.out.println("第二次提交");
         System.out.println("第三次提交");
         System.out.println("第四次提交");
+        System.out.println("第5次提交");
     }
 }
