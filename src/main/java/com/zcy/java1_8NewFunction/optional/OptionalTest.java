@@ -3,6 +3,8 @@ package com.zcy.java1_8NewFunction.optional;
 import org.apache.zookeeper.Op;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 import java.util.function.Supplier;
 
@@ -81,6 +83,22 @@ public class OptionalTest {
 
 
 
+        // Optional.xx.orElseGet()结合lambda表达式理解
+        System.out.println("============== Optional.xx.orElseGet()结合lambda表达式理解 ==============");
+        Map<String, String> map = new HashMap() {{
+            put("aa", "aainfo");
+            put("bb", "puxxy?");
+        }};
+        String ss1 = Optional.ofNullable(map.get("cc")).orElseGet(() -> map.get("bb")); //@FunctionalInterface lambda表达式写法
+        System.out.println(ss1);
+
+        String ss2 = Optional.ofNullable(map.get("cc")).orElseGet(new Supplier<String>() { //1.8前旧式接口重写写法(与上面的lambda无区别，参考理解)
+            @Override
+            public String get() {
+                return map.get("bb");
+            }
+        });
+        System.out.println(ss2);
 
 
 
@@ -97,6 +115,11 @@ public class OptionalTest {
 
         System.out.println(amountDecimal);
     }
+
+
+
+
+
 
 
 
