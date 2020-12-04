@@ -117,8 +117,14 @@ public class BigDecimal2String {
 
 
 
-
-
+        //=========================== toString() 测试 ==============================================================
+        System.out.println("=========================== toString() 测试 ==============================================================");
+        BigDecimal bigDecimal7 = new BigDecimal("28.00");
+        System.out.println(bigDecimal7.toString()); //28.00
+        BigDecimal bigDecimal8 = new BigDecimal("50.0000");
+        System.out.println(bigDecimal8.toString()); //50.0000
+        BigDecimal bigDecimal9 = new BigDecimal("105.0000");
+        System.out.println(bigDecimal9); //105.0000
 
 
 
