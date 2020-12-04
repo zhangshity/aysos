@@ -1,9 +1,13 @@
 package com.zcy.tools.jackson.tool;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.math.BigDecimal;
 
-
+//@JsonIgnoreProperties(ignoreUnknown = true)
 public class BankReconciliationInfoBO {
 
     /**
@@ -24,6 +28,7 @@ public class BankReconciliationInfoBO {
     /**
      * 银行方此笔交易金额
      */
+//    @JsonFormat(shape = JsonFormat.Shape.STRING)
     private BigDecimal bankTransactionAmount;
 
     /**
@@ -72,9 +77,9 @@ public class BankReconciliationInfoBO {
         return bankTradeNo;
     }
 
-    public void setBankTradeNo(String bankTradeNo) {
-        this.bankTradeNo = bankTradeNo;
-    }
+//    public void setBankTradeNo(String bankTradeNo) {
+//        this.bankTradeNo = bankTradeNo;
+//    }
 
     public Integer getBankTransactionStatus() {
         return bankTransactionStatus;
@@ -96,9 +101,9 @@ public class BankReconciliationInfoBO {
         return bankTransactionAmount;
     }
 
-    public void setBankTransactionAmount(BigDecimal bankTransactionAmount) {
-        this.bankTransactionAmount = bankTransactionAmount;
-    }
+//    public void setBankTransactionAmount(BigDecimal bankTransactionAmount) {
+//        this.bankTransactionAmount = bankTransactionAmount;
+//    }
 
     public String getBankReturnCode() {
         return bankReturnCode;
@@ -180,5 +185,16 @@ public class BankReconciliationInfoBO {
                 ", errorInfo='" + errorInfo + '\'' +
                 ", tradeDate='" + tradeDate + '\'' +
                 '}';
+    }
+
+
+    public BankReconciliationInfoBO setBankTradeNo(String bankTradeNo) {
+        this.bankTradeNo = bankTradeNo;
+        return this;
+    }
+
+    public BankReconciliationInfoBO setBankTransactionAmount(BigDecimal bankTransactionAmount) {
+        this.bankTransactionAmount = bankTransactionAmount;
+        return this;
     }
 }
