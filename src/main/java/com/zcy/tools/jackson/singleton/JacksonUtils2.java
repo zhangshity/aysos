@@ -3,6 +3,8 @@ package com.zcy.tools.jackson.singleton;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * ObjectMapper单例工具类
@@ -18,6 +20,8 @@ public enum JacksonUtils2 {
      * 实例
      */
     INSTANCE;
+
+    private static final Logger logger = LoggerFactory.getLogger(JacksonUtils.class);
 
     /**
      * 成员变量: 创建ObjectMapper对象
@@ -39,6 +43,7 @@ public enum JacksonUtils2 {
      * @return ObjectMapper
      */
     public ObjectMapper getSingletonObjectMapper() {
+        logger.info("!!!! =   枚举日志测试 = ！！！！");
         return objectMapper;
     }
 

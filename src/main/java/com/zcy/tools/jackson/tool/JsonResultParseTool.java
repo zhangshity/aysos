@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.zcy.tools.jackson.singleton.JacksonUtils;
+import com.zcy.tools.jackson.singleton.JacksonUtils2;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ public class JsonResultParseTool {
             objectMapper.configure(DeserializationFeature.USE_BIG_DECIMAL_FOR_FLOATS, true);
             objectMapper.setNodeFactory(JsonNodeFactory.withExactBigDecimals(true));
         */
-        ObjectMapper objectMapper = JacksonUtils.INSTANCE.getSingletonObjectMapper();
+        ObjectMapper objectMapper = JacksonUtils2.INSTANCE.getSingletonObjectMapper();
         JsonNode node = objectMapper.readTree(jsonResultString);
         String code = node.get("code").asText();
         String message = node.get("message").asText();
