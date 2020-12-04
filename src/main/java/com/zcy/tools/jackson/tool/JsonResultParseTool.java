@@ -1,7 +1,10 @@
 package com.zcy.tools.jackson.tool;
 
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.JsonNodeFactory;
+import com.zcy.tools.jackson.singleton.JacksonUtils;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -19,7 +22,12 @@ public class JsonResultParseTool {
      * @throws IOException 异常
      */
     public static <T> T parseJsonResultStringAsDataObject(String jsonResultString, Class<T> valueType) throws IOException {
-        ObjectMapper objectMapper = new ObjectMapper();
+        /*
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.configure(DeserializationFeature.USE_BIG_DECIMAL_FOR_FLOATS, true);
+            objectMapper.setNodeFactory(JsonNodeFactory.withExactBigDecimals(true));
+        */
+        ObjectMapper objectMapper = JacksonUtils.INSTANCE.getSingletonObjectMapper();
         JsonNode node = objectMapper.readTree(jsonResultString);
         String code = node.get("code").asText();
         String message = node.get("message").asText();
@@ -42,7 +50,12 @@ public class JsonResultParseTool {
      * @Description JsonResult通过Json字符串形式网络传输, 需要解析成对象List
      */
     public static <T> List<T> parseJsonResultStringAsList(String jsonResultString, Class<T> valueType) throws IOException {
-        ObjectMapper objectMapper = new ObjectMapper();
+        /*
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.configure(DeserializationFeature.USE_BIG_DECIMAL_FOR_FLOATS, true);
+            objectMapper.setNodeFactory(JsonNodeFactory.withExactBigDecimals(true));
+        */
+        ObjectMapper objectMapper = JacksonUtils.INSTANCE.getSingletonObjectMapper();
         JsonNode node = objectMapper.readTree(jsonResultString);
         String code = node.get("code").asText();
         String message = node.get("message").asText();
@@ -73,7 +86,7 @@ public class JsonResultParseTool {
                 "        \"bankTradeNo\": null,\n" +
                 "        \"bankTransactionStatus\": 1,\n" +
                 "        \"bankTransactionCurrency\": \"USD\",\n" +
-                "        \"bankTransactionAmount\": 1,\n" +
+                "        \"bankTransactionAmount\": 857.0000,\n" +
                 "        \"bankReturnCode\": \"80000\",\n" +
                 "        \"bankInfo\": \"Transaction Approved\",\n" +
                 "        \"responseCode\": null,\n" +
@@ -95,7 +108,7 @@ public class JsonResultParseTool {
                 "      \"bankTradeNo\": null,\n" +
                 "      \"bankTransactionStatus\": 1,\n" +
                 "      \"bankTransactionCurrency\": \"USD\",\n" +
-                "      \"bankTransactionAmount\": 123.0,\n" +
+                "      \"bankTransactionAmount\": 123.0000,\n" +
                 "      \"bankReturnCode\": \"80099\",\n" +
                 "      \"bankInfo\": \"Transaction was rejected by bank\",\n" +
                 "      \"responseCode\": null,\n" +
@@ -128,6 +141,10 @@ public class JsonResultParseTool {
         // 解析Json成普通对象
         BankReconciliationInfoBO bankReconciliationInfoBO = JsonResultParseTool.parseJsonResultStringAsDataObject(json, BankReconciliationInfoBO.class);
         System.out.println(bankReconciliationInfoBO);
+
+
+        System.out.println("\n");
+
 
         // 解析Json数组成List
         List<BankReconciliationInfoBO> list = JsonResultParseTool.parseJsonResultStringAsList(json2, BankReconciliationInfoBO.class);
