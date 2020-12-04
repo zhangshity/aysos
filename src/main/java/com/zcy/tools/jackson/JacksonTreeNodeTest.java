@@ -1,10 +1,14 @@
 package com.zcy.tools.jackson;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import com.zcy.tools.jackson.tool.BankReconciliationInfoBO;
+
+import java.math.BigDecimal;
 
 public class JacksonTreeNodeTest {
 
@@ -18,7 +22,7 @@ public class JacksonTreeNodeTest {
                 "        \"bankTradeNo\": null,\n" +
                 "        \"bankTransactionStatus\": 1,\n" +
                 "        \"bankTransactionCurrency\": \"USD\",\n" +
-                "        \"bankTransactionAmount\": 1,\n" +
+                "        \"bankTransactionAmount\": 105.000,\n" +
                 "        \"bankReturnCode\": \"80000\",\n" +
                 "        \"bankInfo\": \"Transaction Approved\",\n" +
                 "        \"responseCode\": null,\n" +
@@ -33,8 +37,15 @@ public class JacksonTreeNodeTest {
         BankReconciliationInfoBO bankReconciliationInfoBO = null;
         // 2.-3 解析json报文
         ObjectMapper objectMapper = new ObjectMapper();
+        //objectMapper.enable(DeserializationFeature.USE_BIG_DECIMAL_FOR_FLOATS);
+        objectMapper.configure(DeserializationFeature.USE_BIG_DECIMAL_FOR_FLOATS, true);
+        objectMapper.setNodeFactory(JsonNodeFactory.withExactBigDecimals(true));
+
         // 2.-3.(1) 获取Json节点树,并判断取值
         JsonNode node = objectMapper.readTree(serviceResponse);
+
+        System.out.println(node.toPrettyString());
+
         String code = node.get("code").asText();
         String message = node.get("message").asText();
         // 2.-3.(2) 判断响应代码,如果成功data装换为实体类
@@ -44,6 +55,23 @@ public class JacksonTreeNodeTest {
         } else {
             //logger.error("订单: {},{}微服务返回对账Json报文异常！", localReconciliationInfoBO.getTradeNo(), localReconciliationInfoBO.getTradeBankCode());
         }
+
+        //======================== 反序列化测试 =======================
+        System.out.println("======================== 反序列化测试 =======================");
+        System.out.println(bankReconciliationInfoBO);
+
+        //JasonNode节点测试 精度丢失问题  Deserializing BigDecimal using JsonNode loses precision #2087
+        //https://github.com/FasterXML/jackson-databind/issues/2087
+        // 草拟吗的搞半天。也不修复 傻逼 jackson
+
+
+
+        //======================== 序列化测试 =======================
+        System.out.println("======================== 序列化测试 =======================");
+        BankReconciliationInfoBO bankReconciliationInfoBO1 = new BankReconciliationInfoBO();
+        bankReconciliationInfoBO1.setBankTransactionAmount(new BigDecimal("155.000"));
+        System.out.println(objectMapper.writeValueAsString(bankReconciliationInfoBO1));
+
 
 
 
