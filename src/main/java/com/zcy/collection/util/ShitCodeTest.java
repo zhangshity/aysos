@@ -11,12 +11,21 @@ public class ShitCodeTest {
 
         Map<String, String> postMap = new HashMap<String, String>();
         // 构造Map集合
-        postMap.put("sign_type", "sign_type1231231asdasdasdasdasd23213");
-        postMap.put("partner", "partner2343242343242asdasdasdasd34");
-        postMap.put("service", "service12342134asda134342");
-        postMap.put("partner_trans_id", "partner_trans_id123123213");
+//        postMap.put("sign_type", "sign_type1231231asdasdasdasdasd23213");
+//        postMap.put("partner", "partner2343242343242asdasdasdasd34");
+//        postMap.put("service", "service12342134asda134342");
+//        postMap.put("partner_trans_id", "partner_trans_id123123213");
 
+        postMap.put("service", "-----");
+        postMap.put("partner", "-----");
+        postMap.put("out_trade_no", "-----");
+        postMap.put("sign_type", "-----");
 
+//        postMap.put("service", "-----");
+//        postMap.put("partner", "-----");
+//        postMap.put("_input_charset", "UTF-8");
+//        postMap.put("partner_trans_id", "-----");
+//        postMap.put("sign_type", "-----");
 
 
         StringBuffer content = new StringBuffer();
