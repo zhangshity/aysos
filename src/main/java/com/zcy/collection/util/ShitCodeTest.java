@@ -16,16 +16,30 @@ public class ShitCodeTest {
 //        postMap.put("service", "service12342134asda134342");
 //        postMap.put("partner_trans_id", "partner_trans_id123123213");
 
-        postMap.put("service", "-----");
-        postMap.put("partner", "-----");
-        postMap.put("out_trade_no", "-----");
-        postMap.put("sign_type", "-----");
+//        postMap.put("service", "-----");
+//        postMap.put("partner", "-----");
+//        postMap.put("out_trade_no", "-----");
+//        postMap.put("sign_type", "-----");
 
 //        postMap.put("service", "-----");
 //        postMap.put("partner", "-----");
 //        postMap.put("_input_charset", "UTF-8");
 //        postMap.put("partner_trans_id", "-----");
 //        postMap.put("sign_type", "-----");
+
+
+        postMap.put("service", "--");
+        postMap.put("org_id", "--");
+        postMap.put("channel_type", "--");
+        postMap.put("format", "--");
+        postMap.put("timestamp", "--");
+        postMap.put("nonce_str", "--");
+        postMap.put("out_trans_id", "--");
+        postMap.put("version", "--");
+
+
+
+
 
 
         StringBuffer content = new StringBuffer();

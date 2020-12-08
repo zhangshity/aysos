@@ -6,9 +6,12 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.JsonNodeFactory;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.zcy.tools.jackson.singleton.JacksonUtils;
 import com.zcy.tools.jackson.tool.BankReconciliationInfoBO;
 
 import java.math.BigDecimal;
+import java.util.HashMap;
+import java.util.Map;
 
 public class JacksonTreeNodeTest {
 
@@ -109,5 +112,25 @@ public class JacksonTreeNodeTest {
         System.out.println(totalFee);
         System.out.println(feeType);
 
+
+
+
+
+
+        //================================== Map转换成Json字符串 ===================================================================
+        System.out.println("================================== Map转换成Json字符串 ===================================================================");
+        Map<String, String> requestParametersMap = new HashMap<>(16);
+        requestParametersMap.put("channel_type", "overseas");
+        requestParametersMap.put("format", "json");
+        requestParametersMap.put("nonce_str", "asdasdasADJFNH");
+        requestParametersMap.put("org_id", "123");
+        requestParametersMap.put("out_trans_id", "20555049841123141243265");
+        requestParametersMap.put("service", "ccc.cc.mm.as");
+        requestParametersMap.put("sign", "aasd6521465+4d1refasf1");
+        requestParametersMap.put("sign_type", "md5");
+        requestParametersMap.put("timestamp", "10055151612");
+        requestParametersMap.put("version", "1.0");
+        String requestParameters = JacksonUtils.INSTANCE.toJsonString(requestParametersMap);
+        System.out.println(requestParameters);
     }
 }
