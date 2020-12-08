@@ -55,6 +55,7 @@ public class Dom4jTest {
 
 
         //=========================================================测试2===============================
+        System.out.println("=========================================================测试2===============================");
         String xml2 = "<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\">\n" +
                 "    <SOAP-ENV:Header/>\n" +
                 "    <SOAP-ENV:Body>\n" +
@@ -154,7 +155,46 @@ public class Dom4jTest {
 
 
 
+        //=========================================================测试3===============================
+        System.out.println("=========================================================测试3===============================");
+        String xml3 = "<?xml version=\"1.0\" encoding=\"GBK\"?>\n" +
+                "<alipay>\n" +
+                "    <is_success>T</is_success>\n" +
+                "    <request>\n" +
+                "        <param name=\"partner_trans_id\">201207152001584151024</param>\n" +
+                "        <param name=\"partner\">2088331370005945</param>\n" +
+                "        <param name=\"service\">alipay.acquire.overseas.query</param>\n" +
+                "        <param name=\"_input_charset\">UTF-8</param>\n" +
+                "        <param name=\"sign\">45cc17a9e1491fc5126f492713aab03c</param>\n" +
+                "        <param name=\"sign_type\">MD5</param>\n" +
+                "    </request>\n" +
+                "    <response>\n" +
+                "        <alipay>\n" +
+                "            <alipay_buyer_login_id>132****6685</alipay_buyer_login_id>\n" +
+                "            <alipay_buyer_user_id>2088112549401700</alipay_buyer_user_id>\n" +
+                "            <alipay_pay_time>20201207152003</alipay_pay_time>\n" +
+                "            <alipay_trans_id>2020120722001401701436761112</alipay_trans_id>\n" +
+                "            <alipay_trans_status>TRADE_SUCCESS</alipay_trans_status>\n" +
+                "            <currency>HKD</currency>\n" +
+                "            <out_trade_no>201207152001584151024</out_trade_no>\n" +
+                "            <partner_trans_id>201207152001584151024</partner_trans_id>\n" +
+                "            <payment_inst>ALIPAYCN</payment_inst>\n" +
+                "            <result_code>SUCCESS</result_code>\n" +
+                "            <trans_amount>3997.60</trans_amount>\n" +
+                "        </alipay>\n" +
+                "    </response>\n" +
+                "    <sign>0caa280a9d93707d30059f551ca8c4bc</sign>\n" +
+                "    <sign_type>MD5</sign_type>\n" +
+                "</alipay>";
 
+        Document document3 = DocumentHelper.parseText(xml3);
+        Element root3 = document3.getRootElement();
+
+        Element response = root3.element("response");
+        System.out.println(response);
+
+        Element testNotExist = root3.element("good");
+        System.out.println(testNotExist);
 
     }
 }
