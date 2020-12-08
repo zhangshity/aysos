@@ -11,18 +11,19 @@ import java.io.Serializable;
  * <p>
  * 对Serialization接口官方文档的翻译和解读在package-info.java中
  */
+//public class Student { //不实现Serializable接口无法序列化
 public class Student implements Serializable {
 
-    private static final long serialVersionUID = 1234567L;
+    private static final long serialVersionUID = 1234567L; //可以不写默认
 
     private int id;
     private String name;
     private String gender;
     private transient int score;
 
-    public static long getSerialVersionUID() {
-        return serialVersionUID;
-    }
+//    public static long getSerialVersionUID() {
+//        return serialVersionUID;
+//    }
 
     public int getId() {
         return id;
