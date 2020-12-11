@@ -114,19 +114,30 @@ public class OptionalTest {
         BigDecimal amountDecimal = Optional.ofNullable(amount).map(BigDecimal::new).orElse(null);
 
         System.out.println(amountDecimal);
+
+
+
+
+
+
+
+
+
+
+
+
+        //================================== filter 运算 ==================================
+        System.out.println("================================== filter 运算 ==================================");
+        int affectedRows = 0;
+        int result = Optional.ofNullable(affectedRows).filter(row -> row == 1).orElseThrow(() -> new RuntimeException("filter 运算"));
+        System.out.println(result);
+
+
+
+
+
+
+
+
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
