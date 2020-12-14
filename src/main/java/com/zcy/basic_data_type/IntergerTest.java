@@ -1,7 +1,9 @@
 package com.zcy.basic_data_type;
 
+import java.util.Objects;
+
 public class IntergerTest {
-    public static void main(String[] args) {
+    public static void main2(String[] args) {
         int i1 = 128;
         Integer i2 = 128;
         Integer i3 = new Integer(128);
@@ -46,4 +48,25 @@ public class IntergerTest {
     int i3 = 500;
     Integer integer2 = i3; // 自动装箱
     int i4 = integer2; // 自动拆箱
+
+
+
+
+
+
+
+    //==================2020/12/12补充 Object.equals(var1,var2) 比较Integer===============
+    public static void main(String[] args) {
+        System.out.println("==================2020/12/12补充 Objects.equals(var1,var2) 比较Integer===============");
+        int i1 = 127;
+        Integer i2 = 127;
+        System.out.println(Objects.equals(i1, i2));//true
+        int i3 = 128;
+        Integer i4 = 128;
+        System.out.println(Objects.equals(i3, i4));//true
+        System.out.println(i4.equals(i3)); //true
+
+    }
+
+
 }
