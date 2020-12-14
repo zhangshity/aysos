@@ -25,39 +25,65 @@ public class ServiceA {
 
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
     public void updateMain() {
-        for (int i = 0; i <= 5; i++) {
-            serviceB.updateSomething(i);
-            // 调用内部方法
-            ((ServiceA) AopContext.currentProxy()).updateMain();
-            logger.info("ServiceA 第{}次 调用完成", i);
+        for (int i = 0; i <= 4; i++) {
+            logger.info("-------------- ServiceA 第{}次 调用开始 Begin --------------",i);
+
+//            // 测试1:  service调用                     ✔ServiceB内REQUIRE_NEW独立事务回滚,且抛出异常。被serviceA捕获,serviceA不受影响
+//            try {
+//                serviceB.updateSomething(i);
+//            } catch (Exception e) {
+//                logger.error("测试1:  serviceB调用失败", e);
+//            }
+
+
+            // 测试2:  调用内部方法
+            // 测试2.(1) 直接调用内部方法                  ✘ServiceB内REQUIRE_NEW独立事务,第3次执行中断,且抛出异常,回滚失败,未开启事务。被serviceA捕获,serviceA不受影响
+//            try {
+//                this.updateSomething(i);
+//            } catch (Exception e) {
+//                logger.error("测试2.(2):  serviceB调用失败", e);
+//            }
+            // 测试2.(2) AOP代理自我调用                  ✔ServiceB内REQUIRE_NEW独立事务回滚,且抛出异常。被serviceA捕获,serviceA不受影响 (AOP自我调用成功)
+            try {
+                ((ServiceA) AopContext.currentProxy()).updateSomething(i);
+            } catch (Exception e) {
+                logger.error("测试2.(2):  serviceB调用失败", e);
+            }
+
+
+
+            logger.info("-------------- ServiceA 第{}次 调用完成 End --------------", i);
         }
     }
+
+
 
 
     // 内部方法调用不走代理,Transactional会失效
     @Transactional(propagation = Propagation.REQUIRES_NEW, rollbackFor = Exception.class)
     public void updateSomething(int cycleIndex) {
         // 更新伪代码1
-        mapper.insert(new Student("Allen1", 15));
+        mapper.insert(new Student("Allen1-" + cycleIndex, 15));
         logger.info("更新 1 成功");
         // 更新伪代码2
-        mapper.insert(new Student("Allen2", 25));
+        mapper.insert(new Student("Allen2-" + cycleIndex, 25));
         logger.info("更新 2 成功");
         // 更新伪代码3
-        mapper.insert(new Student("Allen3", 16));
+        mapper.insert(new Student("Allen3-" + cycleIndex, 16));
+        if (cycleIndex == 3) {
+            // 伪代码抛出异常
+            throw new RuntimeException("Service B,更新 3 失败, for" + cycleIndex + "次");
+        }
         logger.info("更新 3 成功");
         // 更新伪代码4
-        mapper.insert(new Student("Allen4", 55));
+        mapper.insert(new Student("Allen4-" + cycleIndex, 55));
         logger.info("更新 4 成功");
         // 更新伪代码5
-        mapper.insert(new Student("Allen5", 24));
+        mapper.insert(new Student("Allen5-" + cycleIndex, 24));
         logger.info("更新 5 成功");
-        if (cycleIndex == 4) {
-            // 伪代码抛出异常
-            throw new RuntimeException("Service B,更新 5 失败");
-        }
         // 更新伪代码6
-        mapper.insert(new Student("Allen6", 21));
+        mapper.insert(new Student("Allen6-" + cycleIndex, 21));
         logger.info("更新 6 表成功");
     }
+
 }
