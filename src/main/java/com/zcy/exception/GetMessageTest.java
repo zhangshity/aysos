@@ -10,9 +10,8 @@ public class GetMessageTest {
         Logger logger = LoggerFactory.getLogger(GetMessageTest.class);
 
         try {
-            //int i = 1 / 0;
-            throw new RuntimeException("测试代码！异常！");
-
+            int i = 1 / 0;
+            //throw new RuntimeException("测试代码！异常！");
         } catch (Exception e) {
             System.out.println("------------- e.printStackTrace() --------------");
             e.printStackTrace();
@@ -29,25 +28,21 @@ public class GetMessageTest {
             System.out.println(e.getCause());  //Exception in thread "main" java.lang.NullPointerException
                                                           //    at com.zcy.exception.GetMessageTest.main(GetMessageTest.java:21)
 
-//            System.out.println("------------- e.getLocalizedMessage() --------------");
-//            System.out.println(e.getLocalizedMessage()); //除以零
+            System.out.println("------------- e.getLocalizedMessage() --------------");
+            System.out.println(e.getLocalizedMessage()); //除以零
 
-//            System.out.println("------------- e.getStackTrace() --------------");
-//            System.out.println(e.getStackTrace()); //[Ljava.lang.StackTraceElement;@a8a5f591
+            System.out.println("------------- e.getStackTrace() --------------");
+            System.out.println(e.getStackTrace()); //[Ljava.lang.StackTraceElement;@a8a5f591
 
-//            System.out.println("------------- e.getSuppressed() --------------");
-//            System.out.println(e.getSuppressed()); //[Ljava.lang.Throwable;@3a41cafa
+            System.out.println("------------- e.getSuppressed() --------------");
+            System.out.println(e.getSuppressed()); //[Ljava.lang.Throwable;@3a41cafa
 
             System.out.println("---====================== 日志 =======================---");
             logger.error("日志: 1-{},2-{},3-{}", "yi", "er", "san", e);
 
 
-
+            System.out.println("---====================== 日志占位符 =======================---");
+            logger.error("日志：{}", e);
         }
-
-
-
-
-
     }
 }

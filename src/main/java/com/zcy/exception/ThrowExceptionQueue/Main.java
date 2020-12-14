@@ -1,7 +1,12 @@
 package com.zcy.exception.ThrowExceptionQueue;
 
-import java.io.FileNotFoundException;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.stereotype.Component;
 
+import java.io.FileNotFoundException;
 public class Main {
     //service的private方法有异常，处理后抛出，service层不处理，还会被上层的controller捕获到吗
     public static void main(String[] args) {
@@ -9,7 +14,6 @@ public class Main {
         Controller controller = new Controller();
 
         String s = controller.controllerMethod();
-
         System.out.println(s);
 
 
