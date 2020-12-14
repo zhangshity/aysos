@@ -1,7 +1,8 @@
 package com.zcy.spring.ioc.annotation.datasource;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
-import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
+import com.mysql.cj.jdbc.MysqlDataSource;
+//import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
