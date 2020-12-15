@@ -132,5 +132,24 @@ public class JacksonTreeNodeTest {
         requestParametersMap.put("version", "1.0");
         String requestParameters = JacksonUtils.INSTANCE.toJsonString(requestParametersMap);
         System.out.println(requestParameters);
+
+
+
+
+
+
+
+
+
+
+        //================================== 空Json字符串NPE测试 ===================================================================
+        System.out.println("================================== 空Json字符串NPE测试 ===================================================================");
+        String json = "{}";
+        ObjectMapper objectMapper2 = JacksonUtils.INSTANCE.getSingletonObjectMapper();
+        JsonNode root2 = objectMapper2.readTree(json);
+        System.out.println(root2);
+
+        JsonNode something = root2.get("something");
+        System.out.println(something);
     }
 }
