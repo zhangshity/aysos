@@ -128,13 +128,16 @@ public class OptionalTest {
 
         //================================== filter 运算 ==================================
         System.out.println("================================== filter 运算 ==================================");
-        int affectedRows = 0;
+        //int affectedRows = 0;
+        int affectedRows = 1;
         int result = Optional.ofNullable(affectedRows).filter(row -> row == 1).orElseThrow(() -> new RuntimeException("filter 运算"));
         System.out.println(result);
 
 
-
-
+        //String str = " t,e,s,t      ";
+        String str = null;
+        String result2 = Optional.ofNullable(str).map(String::trim).get();
+        System.out.println(result2);
 
 
 
