@@ -196,5 +196,287 @@ public class Dom4jTest {
         Element testNotExist = root3.element("good");
         System.out.println(testNotExist);
 
+
+
+
+        //=========================================================测试4===============================
+        System.out.println("=========================================================测试4===============================");
+        String xml4 = "<SOAP-ENV:Envelope xmlns:SOAP-ENV=\"http://schemas.xmlsoap.org/soap/envelope/\">\n" +
+                "    <SOAP-ENV:Header/>\n" +
+                "    <SOAP-ENV:Body>\n" +
+                "        <ipgapi:IPGApiActionResponse xmlns:a1=\"http://ipg-online.com/ipgapi/schemas/a1\"\n" +
+                "            xmlns:ipgapi=\"http://ipg-online.com/ipgapi/schemas/ipgapi\"\n" +
+                "            xmlns:v1=\"http://ipg-online.com/ipgapi/schemas/v1\">\n" +
+                "            <ipgapi:successfully>true</ipgapi:successfully>\n" +
+                "            <ipgapi:OrderId>201112182608368082669</ipgapi:OrderId>\n" +
+                "            <v1:Billing/>\n" +
+                "            <v1:Shipping/>\n" +
+                "            <a1:TransactionValues>\n" +
+                "                <v1:CreditCardTxType>\n" +
+                "                    <v1:Type>payer auth</v1:Type>\n" +
+                "                </v1:CreditCardTxType>\n" +
+                "                <v1:CreditCardData>\n" +
+                "                    <v1:CardNumber>621486...0559</v1:CardNumber>\n" +
+                "                    <v1:ExpMonth>03</v1:ExpMonth>\n" +
+                "                    <v1:ExpYear>30</v1:ExpYear>\n" +
+                "                    <v1:Brand>UNIONPAY</v1:Brand>\n" +
+                "                </v1:CreditCardData>\n" +
+                "                <v1:Payment>\n" +
+                "                    <v1:ChargeTotal>1.65</v1:ChargeTotal>\n" +
+                "                    <v1:Currency>344</v1:Currency>\n" +
+                "                </v1:Payment>\n" +
+                "                <v1:TransactionDetails>\n" +
+                "                    <v1:OrderId>201112182608368082669</v1:OrderId>\n" +
+                "                    <v1:MerchantTransactionId>201112182608368082669</v1:MerchantTransactionId>\n" +
+                "                    <v1:TDate>1605176826</v1:TDate>\n" +
+                "                    <v1:TransactionOrigin>ECI</v1:TransactionOrigin>\n" +
+                "                </v1:TransactionDetails>\n" +
+                "                <ipgapi:IPGApiOrderResponse>\n" +
+                "                    <ipgapi:ApprovalCode>Y:ECI9:Authenticated</ipgapi:ApprovalCode>\n" +
+                "                    <ipgapi:Brand>UNIONPAY</ipgapi:Brand>\n" +
+                "                    <ipgapi:Country>CHN</ipgapi:Country>\n" +
+                "                    <ipgapi:OrderId>201112182608368082669</ipgapi:OrderId>\n" +
+                "                    <ipgapi:IpgTransactionId>69712239114</ipgapi:IpgTransactionId>\n" +
+                "                    <ipgapi:PayerSecurityLevel>1</ipgapi:PayerSecurityLevel>\n" +
+                "                    <ipgapi:PaymentType>CREDITCARD</ipgapi:PaymentType>\n" +
+                "                    <ipgapi:ProcessorApprovalCode>ECI9</ipgapi:ProcessorApprovalCode>\n" +
+                "                    <ipgapi:ReferencedTDate>1605176826</ipgapi:ReferencedTDate>\n" +
+                "                    <ipgapi:TDate>1605176826</ipgapi:TDate>\n" +
+                "                    <ipgapi:TDateFormatted>2020.11.12 15:57:06 (IST)</ipgapi:TDateFormatted>\n" +
+                "                </ipgapi:IPGApiOrderResponse>\n" +
+                "                <a1:Brand>CUP</a1:Brand>\n" +
+                "                <a1:TransactionType>PAYER_AUTH</a1:TransactionType>\n" +
+                "                <a1:TransactionState>TEMPLATE</a1:TransactionState>\n" +
+                "                <a1:UserID>1</a1:UserID>\n" +
+                "                <a1:SubmissionComponent>API</a1:SubmissionComponent>\n" +
+                "            </a1:TransactionValues>\n" +
+                "            <a1:TransactionValues>\n" +
+                "                <v1:CreditCardTxType>\n" +
+                "                    <v1:Type>sale</v1:Type>\n" +
+                "                </v1:CreditCardTxType>\n" +
+                "                <v1:CreditCardData>\n" +
+                "                    <v1:CardNumber>621486...0559</v1:CardNumber>\n" +
+                "                    <v1:ExpMonth>03</v1:ExpMonth>\n" +
+                "                    <v1:ExpYear>30</v1:ExpYear>\n" +
+                "                    <v1:Brand>UNIONPAY</v1:Brand>\n" +
+                "                </v1:CreditCardData>\n" +
+                "                <v1:Payment>\n" +
+                "                    <v1:ChargeTotal>1.62</v1:ChargeTotal>\n" +
+                "                    <v1:Currency>344</v1:Currency>\n" +
+                "                </v1:Payment>\n" +
+                "                <v1:TransactionDetails>\n" +
+                "                    <v1:OrderId>201112182608368082669</v1:OrderId>\n" +
+                "                    <v1:TDate>1605176842</v1:TDate>\n" +
+                "                    <v1:TransactionOrigin>ECI</v1:TransactionOrigin>\n" +
+                "                </v1:TransactionDetails>\n" +
+                "                <ipgapi:IPGApiOrderResponse>\n" +
+                "                    <ipgapi:ApprovalCode>Y:000000:9712240479:PPX :031710625390</ipgapi:ApprovalCode>\n" +
+                "                    <ipgapi:AVSResponse>PPX</ipgapi:AVSResponse>\n" +
+                "                    <ipgapi:Brand>UNIONPAY</ipgapi:Brand>\n" +
+                "                    <ipgapi:Country>CHN</ipgapi:Country>\n" +
+                "                    <ipgapi:OrderId>201112182608368082669</ipgapi:OrderId>\n" +
+                "                    <ipgapi:IpgTransactionId>69712240479</ipgapi:IpgTransactionId>\n" +
+                "                    <ipgapi:PayerSecurityLevel>1</ipgapi:PayerSecurityLevel>\n" +
+                "                    <ipgapi:PaymentType>CREDITCARD</ipgapi:PaymentType>\n" +
+                "                    <ipgapi:ProcessorApprovalCode>000000</ipgapi:ProcessorApprovalCode>\n" +
+                "                    <ipgapi:ProcessorCCVResponse></ipgapi:ProcessorCCVResponse>\n" +
+                "                    <ipgapi:ReferencedTDate>1605176842</ipgapi:ReferencedTDate>\n" +
+                "                    <ipgapi:TDate>1605176842</ipgapi:TDate>\n" +
+                "                    <ipgapi:TDateFormatted>2020.11.12 15:57:22 (IST)</ipgapi:TDateFormatted>\n" +
+                "                    <ipgapi:TerminalID>51038670</ipgapi:TerminalID>\n" +
+                "                </ipgapi:IPGApiOrderResponse>\n" +
+                "                <a1:ReceiptNumber>6253</a1:ReceiptNumber>\n" +
+                "                <a1:TraceNumber>031710</a1:TraceNumber>\n" +
+                "                <a1:Brand>CUP</a1:Brand>\n" +
+                "                <a1:TransactionType>SALE</a1:TransactionType>\n" +
+                "                <a1:TransactionState>CAPTURED</a1:TransactionState>\n" +
+                "                <a1:UserID>1</a1:UserID>\n" +
+                "                <a1:SubmissionComponent>API</a1:SubmissionComponent>\n" +
+                "            </a1:TransactionValues>\n" +
+                "            <a1:TransactionValues>\n" +
+                "                <v1:CreditCardTxType>\n" +
+                "                    <v1:Type>return</v1:Type>\n" +
+                "                </v1:CreditCardTxType>\n" +
+                "                <v1:CreditCardData>\n" +
+                "                    <v1:CardNumber>621486...0559</v1:CardNumber>\n" +
+                "                    <v1:ExpMonth>03</v1:ExpMonth>\n" +
+                "                    <v1:ExpYear>30</v1:ExpYear>\n" +
+                "                    <v1:Brand>UNIONPAY</v1:Brand>\n" +
+                "                </v1:CreditCardData>\n" +
+                "                <v1:Payment>\n" +
+                "                    <v1:ChargeTotal>1.1</v1:ChargeTotal>\n" +
+                "                    <v1:Currency>344</v1:Currency>\n" +
+                "                </v1:Payment>\n" +
+                "                <v1:TransactionDetails>\n" +
+                "                    <v1:OrderId>201112182608368082669</v1:OrderId>\n" +
+                "                    <v1:TDate>1605177022</v1:TDate>\n" +
+                "                    <v1:TransactionOrigin>ECI</v1:TransactionOrigin>\n" +
+                "                </v1:TransactionDetails>\n" +
+                "                <ipgapi:IPGApiOrderResponse>\n" +
+                "                    <ipgapi:ApprovalCode>Y:000000:9712263913:PPX :031710625526</ipgapi:ApprovalCode>\n" +
+                "                    <ipgapi:AVSResponse>PPX</ipgapi:AVSResponse>\n" +
+                "                    <ipgapi:Brand>UNIONPAY</ipgapi:Brand>\n" +
+                "                    <ipgapi:Country>CHN</ipgapi:Country>\n" +
+                "                    <ipgapi:OrderId>201112182608368082669</ipgapi:OrderId>\n" +
+                "                    <ipgapi:IpgTransactionId>69712263913</ipgapi:IpgTransactionId>\n" +
+                "                    <ipgapi:PaymentType>CREDITCARD</ipgapi:PaymentType>\n" +
+                "                    <ipgapi:ProcessorApprovalCode>000000</ipgapi:ProcessorApprovalCode>\n" +
+                "                    <ipgapi:ProcessorCCVResponse></ipgapi:ProcessorCCVResponse>\n" +
+                "                    <ipgapi:ReferencedTDate>1605177022</ipgapi:ReferencedTDate>\n" +
+                "                    <ipgapi:TDate>1605177022</ipgapi:TDate>\n" +
+                "                    <ipgapi:TDateFormatted>2020.11.12 16:00:22 (IST)</ipgapi:TDateFormatted>\n" +
+                "                    <ipgapi:TerminalID>51038670</ipgapi:TerminalID>\n" +
+                "                </ipgapi:IPGApiOrderResponse>\n" +
+                "                <a1:ReceiptNumber>6255</a1:ReceiptNumber>\n" +
+                "                <a1:TraceNumber>031710</a1:TraceNumber>\n" +
+                "                <a1:Brand>CUP</a1:Brand>\n" +
+                "                <a1:TransactionType>RETURN</a1:TransactionType>\n" +
+                "                <a1:TransactionState>CAPTURED</a1:TransactionState>\n" +
+                "                <a1:UserID>1</a1:UserID>\n" +
+                "                <a1:SubmissionComponent>API</a1:SubmissionComponent>\n" +
+                "            </a1:TransactionValues>\n" +
+                "            <a1:TransactionValues>\n" +
+                "                <v1:CreditCardTxType>\n" +
+                "                    <v1:Type>return</v1:Type>\n" +
+                "                </v1:CreditCardTxType>\n" +
+                "                <v1:CreditCardData>\n" +
+                "                    <v1:CardNumber>621486...0559</v1:CardNumber>\n" +
+                "                    <v1:ExpMonth>03</v1:ExpMonth>\n" +
+                "                    <v1:ExpYear>30</v1:ExpYear>\n" +
+                "                    <v1:Brand>UNIONPAY</v1:Brand>\n" +
+                "                </v1:CreditCardData>\n" +
+                "                <v1:Payment>\n" +
+                "                    <v1:ChargeTotal>0.55</v1:ChargeTotal>\n" +
+                "                    <v1:Currency>344</v1:Currency>\n" +
+                "                </v1:Payment>\n" +
+                "                <v1:TransactionDetails>\n" +
+                "                    <v1:OrderId>201112182608368082669</v1:OrderId>\n" +
+                "                    <v1:TDate>1605177076</v1:TDate>\n" +
+                "                    <v1:TransactionOrigin>ECI</v1:TransactionOrigin>\n" +
+                "                </v1:TransactionDetails>\n" +
+                "                <ipgapi:IPGApiOrderResponse>\n" +
+                "                    <ipgapi:ApprovalCode>Y:000000:9712270716:PPX :031710625578</ipgapi:ApprovalCode>\n" +
+                "                    <ipgapi:AVSResponse>PPX</ipgapi:AVSResponse>\n" +
+                "                    <ipgapi:Brand>UNIONPAY</ipgapi:Brand>\n" +
+                "                    <ipgapi:Country>CHN</ipgapi:Country>\n" +
+                "                    <ipgapi:OrderId>201112182608368082669</ipgapi:OrderId>\n" +
+                "                    <ipgapi:IpgTransactionId>69712270716</ipgapi:IpgTransactionId>\n" +
+                "                    <ipgapi:PaymentType>CREDITCARD</ipgapi:PaymentType>\n" +
+                "                    <ipgapi:ProcessorApprovalCode>000000</ipgapi:ProcessorApprovalCode>\n" +
+                "                    <ipgapi:ProcessorCCVResponse></ipgapi:ProcessorCCVResponse>\n" +
+                "                    <ipgapi:ReferencedTDate>1605177076</ipgapi:ReferencedTDate>\n" +
+                "                    <ipgapi:TDate>1605177076</ipgapi:TDate>\n" +
+                "                    <ipgapi:TDateFormatted>2020.11.12 16:01:16 (IST)</ipgapi:TDateFormatted>\n" +
+                "                    <ipgapi:TerminalID>51038670</ipgapi:TerminalID>\n" +
+                "                </ipgapi:IPGApiOrderResponse>\n" +
+                "                <a1:ReceiptNumber>6255</a1:ReceiptNumber>\n" +
+                "                <a1:TraceNumber>031710</a1:TraceNumber>\n" +
+                "                <a1:Brand>CUP</a1:Brand>\n" +
+                "                <a1:TransactionType>RETURN</a1:TransactionType>\n" +
+                "                <a1:TransactionState>CAPTURED</a1:TransactionState>\n" +
+                "                <a1:UserID>1</a1:UserID>\n" +
+                "                <a1:SubmissionComponent>API</a1:SubmissionComponent>\n" +
+                "            </a1:TransactionValues>\n" +
+                "        </ipgapi:IPGApiActionResponse>\n" +
+                "    </SOAP-ENV:Body>\n" +
+                "</SOAP-ENV:Envelope>";
+
+        String bankResponseCode4 = null;
+        String bankTxStatus4 = null;
+        String bankTxAmount4 = null;
+        String bankTxCurrencyCode4 = null;
+        String tranReturnCode4 = null;
+        String tranInfo4 = null;
+        String bankTxType = null;
+
+        Document document4 = DocumentHelper.parseText(xml4);
+        Element root4 = document4.getRootElement();
+
+        Element ipgApiActionResponse4 = Optional.ofNullable(root4.element("Body")).map(x -> x.element("IPGApiActionResponse")).orElse(null);
+        // 银行响应码
+        bankResponseCode4 = Optional.ofNullable(ipgApiActionResponse4).map(x -> x.elementText("successfully")).orElse(null);
+        if ("true".equals(bankResponseCode4)) {
+            List<Element> transactionValuesList = ipgApiActionResponse4.elements("TransactionValues");
+            // 判断报文TransactionValues节点,是否有多条数据,如为多条取最后一条的数据
+            if (transactionValuesList != null && transactionValuesList.size() > 1) {
+
+                // =================================================================================================================================================
+                // (!# 最后一条数据的<a1:TransactionType>为Return时向前取值,直到不为Return,取此条数据)
+                for (int i = transactionValuesList.size() - 1; i >= 0; i--) {
+                    bankTxType = transactionValuesList.get(i).elementText("TransactionType");
+                    System.out.println(bankTxType);
+                    if (!"RETURN".equals(bankTxType)) {
+                        bankTxStatus4 = transactionValuesList.get(i).elementText("TransactionState");
+                        bankTxAmount4 = Optional.ofNullable(transactionValuesList.get(i).element("Payment")).map(x -> x.elementText("ChargeTotal")).orElse(null);
+                        bankTxCurrencyCode4 = Optional.ofNullable(transactionValuesList.get(i).element("Payment")).map(x -> x.elementText("Currency")).orElse(null);
+                        // ApprovalCode':'分隔,数组长度>=3,tranReturnCode取前两个,tranInfo取剩余的,数组长度<3直接tranReturnCode/info均取原始值
+                        List<String> approvalCodeList = Optional.ofNullable(transactionValuesList.get(i).element("IPGApiOrderResponse"))
+                                .map(x -> x.elementText("ApprovalCode"))
+                                .map(x -> Arrays.asList(x.split(":")))
+                                .orElse(null);
+                        tranReturnCode4 = getTranReturnCode(approvalCodeList);
+                        tranInfo4 = getTranInfo(approvalCodeList);
+                        break;
+                    }
+                }
+                // =================================================================================================================================================
+
+
+            } else if (transactionValuesList != null && transactionValuesList.size() == 1) {
+                bankTxStatus4 = transactionValuesList.get(0).elementText("TransactionState");
+                bankTxAmount4 = Optional.ofNullable(transactionValuesList.get(0).element("Payment")).map(x -> x.elementText("ChargeTotal")).orElse(null);
+                bankTxCurrencyCode4 = Optional.ofNullable(transactionValuesList.get(0).element("Payment")).map(x -> x.elementText("Currency")).orElse(null);
+                // ApprovalCode':'分隔,数组长度>=3,tranReturnCode取前两个,tranInfo取剩余的,数组长度<3直接tranReturnCode/info均取原始值
+                List<String> approvalCodeList = Optional.ofNullable(transactionValuesList.get(0).element("IPGApiOrderResponse"))
+                        .map(x -> x.elementText("ApprovalCode"))
+                        .map(x -> Arrays.asList(x.split(":")))
+                        .orElse(null);
+                tranReturnCode4 = getTranReturnCode(approvalCodeList);
+                tranInfo4 = getTranInfo(approvalCodeList);
+            }
+        }
+
+
+        System.out.println("========================================");
+        System.out.println(bankTxType);
+        System.out.println(bankResponseCode4);
+        System.out.println(bankTxStatus4);
+        System.out.println(bankTxAmount4);
+        System.out.println(bankTxCurrencyCode4);
+        System.out.println(tranReturnCode4);
+        System.out.println(tranInfo4);
+
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    private static String getTranReturnCode(List<String> approvalCodeList) {
+        return approvalCodeList != null && approvalCodeList.size() >= 3 ?
+                approvalCodeList.get(0) + ":" + approvalCodeList.get(1) :
+                approvalCodeList != null ? String.join(":", approvalCodeList) : null;
+    }
+
+    private static String getTranInfo(List<String> approvalCodeList) {
+        return approvalCodeList != null && approvalCodeList.size() >= 3 ?
+                String.join(":", approvalCodeList.subList(2, approvalCodeList.size())) :
+                approvalCodeList != null ? String.join(":", approvalCodeList) : null;
     }
 }
