@@ -19,6 +19,7 @@ public class FuckingTest {
         LocalDateTime localDateTime = LocalDateTime.now();
         LocalDate localDate = LocalDate.now();
         LocalTime localTime = LocalTime.now();
+
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ISO_DATE_TIME;
         System.out.println(dateTimeFormatter.format(localDateTime));
 

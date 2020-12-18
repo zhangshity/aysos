@@ -4,7 +4,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class TestAtomicInteger {
-    private static final int THREADS_COUNT = 2;
+    private static final int THREADS_COUNT = 100;
 
     public static int count = 0;
     public static volatile int countVolatile = 0;
@@ -18,21 +18,29 @@ public class TestAtomicInteger {
     }
 
     public static void main(String[] args) throws InterruptedException {
-        Thread[] threads = new Thread[THREADS_COUNT];
-        for (int i = 0; i < threads.length; i++) {
-            threads[i] = new Thread(() -> {
-                for (int i1 = 0; i1 < 1000; i1++) {
+        // 定义线程数组
+        Thread[] threadArray = new Thread[THREADS_COUNT];
+
+        // 遍历线程数组
+        for (Thread t : threadArray) {
+            // 定义线程内容
+            t = new Thread(() -> {
+                for (int y = 0; y < 1000; y++) {
                     increase();
                 }
-                countDownLatch.countDown();
             });
-            threads[i].start();
+
+            // 启动线程
+            t.start();
         }
 
-        countDownLatch.await();
 
-        System.out.println(count);
-        System.out.println(countVolatile);
-        System.out.println(atomicInteger.get());
+        // 主线程休眠50ms,等待所有线程处理完成
+        Thread.sleep(50);
+
+        // ==================== Print Result ====================
+        System.out.println(count);                    //线程不安全
+        System.out.println(countVolatile);            //线程不安全
+        System.out.println(atomicInteger.get());      //线程安全
     }
 }

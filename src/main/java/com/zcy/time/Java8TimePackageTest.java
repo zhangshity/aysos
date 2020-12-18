@@ -2,6 +2,7 @@ package com.zcy.time;
 
 import org.joda.time.DateTime;
 import org.joda.time.DateTimeZone;
+import org.joda.time.LocalDateTime;
 
 import java.text.SimpleDateFormat;
 import java.time.Instant;
@@ -52,8 +53,11 @@ public class Java8TimePackageTest {
         DateTime dateTime1 = new DateTime();
         DateTime dateTime2 = new DateTime(new Date());
         DateTime dateTime3 = new DateTime(2020, 9, 11, 14, 52, 18);
-        System.out.println(dateTime1);
-        System.out.println(dateTime2);
-        System.out.println(dateTime3);
+        System.out.println(dateTime1); //2020-12-18T15:54:08.686+08:00
+        System.out.println(dateTime2); //2020-12-18T15:54:08.705+08:00
+        System.out.println(dateTime3); //2020-09-11T14:52:18.000+08:00
+
+        LocalDateTime localDateTime = new LocalDateTime();
+        System.out.println(localDateTime); //2020-12-18T15:54:08.725
     }
 }

@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class Simple_DemoTest {
+public class Simple_My_DemoCountTest {
 
     @Test
     public void readFile() {

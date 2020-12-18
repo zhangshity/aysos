@@ -30,7 +30,9 @@ public class ThreadLocalTest {
         
         for (int i = 0; i < 10; i++) {
             int temp = i;
-            new Thread(() -> System.out.println(Thread.currentThread().getName() + " " + temp + " " + ThreadLocalTest.add(temp))).start();
+            new Thread(() ->
+                    System.out.println(Thread.currentThread().getName() + " " + temp + " " + ThreadLocalTest.add(temp))
+            ).start();
         }
 
 
