@@ -10,6 +10,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 @Service
 @EnableAspectJAutoProxy(exposeProxy = true)  //允许代码中获取proxy类  // 暴露当前代理对象到当前线程绑定
@@ -25,18 +26,20 @@ public class ServiceA {
 
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = Exception.class)
     public void updateMain() {
+
+        //循环调用Service其他方法
         for (int i = 0; i <= 4; i++) {
             logger.info("-------------- ServiceA 第{}次 调用开始 Begin --------------",i);
 
-//            // 测试1:  service调用                     ✔ServiceB内REQUIRE_NEW独立事务回滚,且抛出异常。被serviceA捕获,serviceA不受影响
+            // ====================== 测试1:  service调用 ======================
+            //                                          ✔ServiceB内REQUIRE_NEW独立事务回滚,且抛出异常。被serviceA捕获,serviceA不受影响
 //            try {
 //                serviceB.updateSomething(i);
 //            } catch (Exception e) {
 //                logger.error("测试1:  serviceB调用失败", e);
 //            }
 
-
-            // 测试2:  调用内部方法
+            // ====================== 测试2:  调用内部方法 ======================
             // 测试2.(1) 直接调用内部方法                  ✘ServiceB内REQUIRE_NEW独立事务,第3次执行中断,且抛出异常,回滚失败,未开启事务。被serviceA捕获,serviceA不受影响
 //            try {
 //                this.updateSomething(i);
@@ -48,12 +51,25 @@ public class ServiceA {
                 ((ServiceA) AopContext.currentProxy()).updateSomething(i);
             } catch (Exception e) {
                 logger.error("测试2.(2):  serviceB调用失败", e);
+                //throw new RuntimeException("测试2.(2):  serviceB调用失败", e);
             }
 
 
-
+            mapper.insert(new Student("[" + i + "]" + " --------------------??????-------------------", 15));
             logger.info("-------------- ServiceA 第{}次 调用完成 End --------------", i);
         }
+
+
+
+
+        // 本方法 DB IO方法
+//        try {
+//            mapper.insert(new Student("Main", 0));
+//            throw new RuntimeException("Service A,更新 Main 失败！！");
+//        } catch (Exception e) {
+//            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+//            logger.error("Service A,更新失败！！", e);
+//        }
     }
 
 
