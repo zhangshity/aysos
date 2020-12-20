@@ -57,7 +57,7 @@ public class Main {
 //        for (int i = 0; i < 100; i++) {
 //            new Thread(() -> {
 //                try {
-//                    synchronized (Main.class) {
+//                    synchronized (sf) {
 //                        String date = sf.format(new Date());
 //                        Date dateParse = sf.parse(date);
 //                        String dateReformat = sf.format(dateParse);
