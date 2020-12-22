@@ -1,4 +1,4 @@
-package com.zcy.log4j;
+package com.zcy.log.log4j;
 
 import org.apache.log4j.Logger;
 

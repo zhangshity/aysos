@@ -1,4 +1,4 @@
-package com.zcy.log;
+package com.zcy.log.slf4j;
 
 import com.zcy.reference.Student;
 
