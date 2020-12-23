@@ -60,5 +60,28 @@ public class ForEach {
 
 
         logger.info("Main测试方法最终结果：{}", finalResult);
+
+
+
+
+        //============================================= 新测试 ================================================
+        System.out.println("============================================= 新测试 ================================================");
+        try {
+            for (int i = 0; i < 10; i++) {
+                try {
+                    if (i == 6) {
+                        int result = 1 / 0;
+                    }
+                    logger.info("第{}次循环", i);
+                } catch (Exception e) {
+                    //throw new RuntimeException("第" + i + "次,for循环内部异常", e);
+                    logger.error("第{}次,for循环内部异常", i, e);
+                }
+            }
+        } catch (Exception e) {
+            logger.error("主方法错误!", e);
+        }
+
+
     }
 }
