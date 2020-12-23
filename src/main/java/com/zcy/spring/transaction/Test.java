@@ -32,6 +32,7 @@ public class Test {
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Test.class);
         ServiceA serviceA = (ServiceA) context.getBean("serviceA");
         try {
+            //serviceA.testListResultOfEmptyData(); //补充测试 查询表返回list是空对象还是 null
             serviceA.updateMain();
         } catch (Exception e) {
             logger.error("Test Main 主方法捕获到异常", e);

@@ -12,6 +12,8 @@ import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
+import java.util.List;
+
 @Service
 @EnableAspectJAutoProxy(exposeProxy = true)  //允许代码中获取proxy类  // 暴露当前代理对象到当前线程绑定
 public class ServiceA {
@@ -100,6 +102,17 @@ public class ServiceA {
         // 更新伪代码6
         mapper.insert(new Student("Allen6-" + cycleIndex, 21));
         logger.info("更新 6 表成功");
+    }
+
+
+
+
+    //========================= 补充测试 查询表返回list是空对象还是 null =========================
+    public void testListResultOfEmptyData() {
+        List<Student> studentList = mapper.selectAll();
+        int size = studentList.size();
+        logger.info("学生表:{} ,学生表尺寸: {}", studentList, size);
+        studentList.forEach(student -> logger.info("学生信息: {}", student.getId()));
     }
 
 }
