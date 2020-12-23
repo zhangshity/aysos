@@ -74,12 +74,14 @@ public class ThreadPool {
         // Alibaba建议的线程池创建方式
         // 1.构造函数1,未包含 ThreadFactory线程工厂 和 RejectedExecutionHandler拒绝策略
         ExecutorService p5 = new ThreadPoolExecutor(10, 10, 1000L, TimeUnit.MILLISECONDS, new ArrayBlockingQueue<>(5));
+
         // 2.构造函数2,只包含 ThreadFactory线程工厂
         ExecutorService p6 = new ThreadPoolExecutor(10, 10, 1000L, TimeUnit.MILLISECONDS, new ArrayBlockingQueue<>(5), r -> {
             return new Thread(() -> Thread.currentThread().setName("我是一个override的ThreadFactory的自定义线程工程方法"));
         });
+
         // 3.构造函数3,只包含  RejectedExecutionHandler拒绝执行策略
-        ExecutorService p7 = new ThreadPoolExecutor(10, 10, 1000L, TimeUnit.MILLISECONDS, new ArrayBlockingQueue<>(5));
+        ExecutorService p7 = new ThreadPoolExecutor(10, 10, 1000L, TimeUnit.MILLISECONDS, new ArrayBlockingQueue<>(5), new ThreadPoolExecutor.DiscardPolicy());
 
         // 4.构造函数4,全部参数
         ExecutorService p8 = new ThreadPoolExecutor(10, 10, 1000L, TimeUnit.MILLISECONDS, new ArrayBlockingQueue<>(5), r -> {
