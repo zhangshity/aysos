@@ -128,6 +128,15 @@ public class BigDecimal2String {
 
 
 
+        // =========================== 整数小数分离 测试 ==============================================================
+        System.out.println("=========================== 整数小数分离 测试 ==============================================================");
+        BigDecimal bigDecimal10 = new BigDecimal("123.56");
+        BigDecimal[] twoParts = bigDecimal10.divideAndRemainder(BigDecimal.ONE);
+        BigDecimal integerPart = twoParts[0];
+        BigDecimal decimalPart = twoParts[1];
 
+        System.out.println("待分离测试数据: " + bigDecimal10);
+        System.out.println("整数部分: "+integerPart);
+        System.out.println("小数部分: "+decimalPart);
     }
 }
