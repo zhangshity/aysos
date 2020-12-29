@@ -134,13 +134,14 @@ public class OptionalTest {
         System.out.println(result);
 
 
-        //String str = " t,e,s,t      ";
-        String str = null;
+        String str = " t,e,s,t      ";
+        //String str = null;
         String result2 = Optional.ofNullable(str).map(String::trim).get();
         System.out.println(result2);
 
-
-
+        BigDecimal condition = new BigDecimal("0");
+        String resultFilter = Optional.ofNullable(condition).filter(x -> !x.equals(BigDecimal.ZERO)).map(Object::toString).orElse("");
+        System.out.println(resultFilter);
 
     }
 }
