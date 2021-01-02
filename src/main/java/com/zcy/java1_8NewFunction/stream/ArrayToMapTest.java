@@ -63,7 +63,7 @@ public class ArrayToMapTest {
         Map<String, String> bankResponseFieldMap1 = Arrays.stream(URLDecoder.decode(bankResponse, StandardCharsets.UTF_8.name()).split("&"))
                 .parallel()
                 .map(s -> s.split("="))
-                .collect(Collectors.toMap(s -> s[0].trim(), s -> s[1].trim()));
+                .collect(Collectors.toMap(k -> k[0].trim(), v -> v[1].trim()));
 //                .forEach(x -> System.out.printf(Arrays.toString(x)));
         System.out.println(bankResponseFieldMap1);
         System.out.println(bankResponseFieldMap1.get("z1"));
