@@ -21,19 +21,21 @@ public class BigDecimal2String {
         BigDecimal bigDecimal5 = new BigDecimal(String.valueOf(1233.128800)); //1233.1288 小数点最后00丢失(00其实无意义)
 
 
-        System.out.println(bigDecimal);
-        System.out.println(bigDecimal2);
-        System.out.println(bigDecimal3);
-        System.out.println(bigDecimal4);
-        System.out.println(bigDecimal5);
-        System.out.println(bigDecimal2.doubleValue());
+        System.out.println(bigDecimal); //1233.12879999999995561665855348110198974609375
+        System.out.println(bigDecimal2); //1233.128800
+        System.out.println(bigDecimal3); //1233.1288
+        System.out.println(bigDecimal4); //1233.1288
+        System.out.println(bigDecimal5); //1233.1288
+        System.out.println(bigDecimal2.doubleValue()); //1233.1288
 
 //        System.out.println(bigDecimal.toString());
 //        System.out.println(bigDecimal2.toString());
 
 
         double d = 12.30;
-        System.out.println(d);
+        String doubleStr = Double.toString(d);
+        System.out.println(d); //12.3
+        System.out.println(doubleStr); //12.3
 
 
 
