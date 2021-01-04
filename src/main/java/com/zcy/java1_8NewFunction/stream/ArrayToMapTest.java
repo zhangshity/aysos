@@ -44,6 +44,8 @@ public class ArrayToMapTest {
                 "z2=0&" +
                 "z3=Transaction+has+been+executed+successfully.";
 
+        String failBankResponse = "K=08c30b1976142106e8db35db5da91cd7";
+
 
         System.out.println("========================= forEach遍历添加 =========================");
         Map<String, String> bankResponseFieldMap = new ConcurrentHashMap<>(64);
@@ -60,8 +62,9 @@ public class ArrayToMapTest {
 
 
         System.out.println("========================= 普通map映射 =========================");
-        Map<String, String> bankResponseFieldMap1 = Arrays.stream(URLDecoder.decode(bankResponse, StandardCharsets.UTF_8.name()).split("&"))
+        Map<String, String> bankResponseFieldMap1 = Arrays.stream(URLDecoder.decode(failBankResponse, StandardCharsets.UTF_8.name()).split("&"))
                 .parallel()
+//                .filter(x -> x.length() > 0)
                 .map(s -> s.split("="))
                 .collect(Collectors.toMap(k -> k[0].trim(), v -> v[1].trim()));
 //                .forEach(x -> System.out.printf(Arrays.toString(x)));
