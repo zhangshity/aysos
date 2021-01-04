@@ -30,8 +30,7 @@ public class BigDecimal2String {
 
 //        System.out.println(bigDecimal.toString());
 //        System.out.println(bigDecimal2.toString());
-
-
+        System.out.println("=================================================");
         double d = 12.30;
         String doubleStr = Double.toString(d);
         System.out.println(d); //12.3
@@ -39,8 +38,29 @@ public class BigDecimal2String {
 
 
 
+        System.out.println("==================== BigDecimal构造函数valueOf(long ) 会缓存0-10的整数=============================");
+        BigDecimal val0 = BigDecimal.valueOf(0);   System.out.println(val0);  //0
+        BigDecimal val1 = BigDecimal.valueOf(1);   System.out.println(val1);  //1
+        BigDecimal val2 = BigDecimal.valueOf(2);   System.out.println(val2);  //2
+        BigDecimal val3 = BigDecimal.valueOf(3);   System.out.println(val3);  //3
+        BigDecimal val4 = BigDecimal.valueOf(4);   System.out.println(val4);  //4
+        System.out.println("==================== BigDecimal构造函数valueOf(long unscaledVal, int scale) 会缓存0-0E-15的小数(小数点后15位)=============================");
+        BigDecimal unscaledVal0 = BigDecimal.valueOf(0, 0);    System.out.println(unscaledVal0);  //0
+        BigDecimal unscaledVal1 = BigDecimal.valueOf(0, 1);    System.out.println(unscaledVal1);  //0.0
+        BigDecimal unscaledVal2 = BigDecimal.valueOf(0, 2);    System.out.println(unscaledVal2);  //0.00
+        BigDecimal unscaledVal3 = BigDecimal.valueOf(0, 3);    System.out.println(unscaledVal3);  //0.000
+        BigDecimal unscaledVal6 = BigDecimal.valueOf(0, 6);    System.out.println(unscaledVal6);  //0.000000
+        BigDecimal unscaledVal7 = BigDecimal.valueOf(0, 7);    System.out.println(unscaledVal7);  //0E-7
+        BigDecimal unscaledVal8 = BigDecimal.valueOf(0, 8);    System.out.println(unscaledVal8);  //0E-8
+        BigDecimal unscaledVal9 = BigDecimal.valueOf(0, 9);    System.out.println(unscaledVal9);  //0E-9
+        BigDecimal unscaledVal10 = BigDecimal.valueOf(0, 10);  System.out.println(unscaledVal10); //0E-10
+        BigDecimal unscaledVal15 = BigDecimal.valueOf(0, 15);  System.out.println(unscaledVal15); //0E-15
 
-        System.out.println("=================================================");
+
+
+
+
+        System.out.println("====================BigDecimal 比较=============================");
         BigDecimal b1 = BigDecimal.valueOf(100.0);
         BigDecimal b2 = BigDecimal.valueOf(0.01);
         System.out.println(b1.equals(b2));
