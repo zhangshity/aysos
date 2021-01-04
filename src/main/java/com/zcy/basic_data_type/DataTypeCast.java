@@ -22,12 +22,15 @@ public class DataTypeCast {
     //            4.转换过程中可能导致溢出或损失精度，例如：
     public static void main(String[] args) {
 
-        //溢出(b=-128)
+        // 大转小 (强制类型转换)
         int i = 128;
-        byte b = (byte) i;
-        System.out.println(b);
+        byte b = (byte) i; //溢出 byte取值[-128,127]
+        System.out.println(b); //-128
 
-
+        // 小转大 (自动类型转换)
+        int j = 789;
+        long d = j;
+        System.out.println(d); //789
     }
 
 }
