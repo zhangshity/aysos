@@ -144,12 +144,14 @@ public class JacksonTreeNodeTest {
 
         //================================== 空Json字符串NPE测试 ===================================================================
         System.out.println("================================== 空Json字符串NPE测试 ===================================================================");
-        String json = "{}";
+        String json = "{}";   //空json可以解析成 {}
+        //String json = "";     //空""字符串可以解析成""
+        //String json ="{"      //格式错误爆出异常
         ObjectMapper objectMapper2 = JacksonUtils.INSTANCE.getSingletonObjectMapper();
         JsonNode root2 = objectMapper2.readTree(json);
         System.out.println(root2);
 
         JsonNode something = root2.get("something");
-        System.out.println(something);
+        System.out.println(something); //null
     }
 }
