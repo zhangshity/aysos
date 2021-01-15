@@ -162,6 +162,18 @@
             <version>5.2.0.RELEASE</version>
         </dependency>
 
+        <!-- Spring-mvc (加载这两个依赖会包含aop相关包,两个依赖都他妈不能少,会他妈报错)-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>5.2.0.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.2.0.RELEASE</version>
+        </dependency>
+
         <!-- poi excel处理组件 -->
         <dependency>
             <groupId>org.apache.poi</groupId>
@@ -241,6 +253,11 @@
             <version>6.0.1.RELEASE</version>
         </dependency>
 
+        <!-- lombok插件编译测试 -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
 
     </dependencies>
 
