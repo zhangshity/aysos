@@ -212,7 +212,7 @@ public class PostTest {
         // =========================================  3reconciliation ==================================
         System.out.println("// ===================================================  3 reconciliation =================================================================\n");
 
-        String reconcileApi = "https://secure-uatsb.mintpayments.net/mpay/v4/purchase/" + bankOrderNumber;
+        String reconcileApi = "https://secure-uatsb.mintpayments.net/mpay/v4/purchase/" + "145615618494";
         String responseResult3 = null;
         try (
                 CloseableHttpClient httpclient3 = HttpClients.createDefault()
@@ -225,6 +225,7 @@ public class PostTest {
                 responseResult3 = EntityUtils.toString(httpResponse3.getEntity());
                 log.info("----------------------------------------");
                 log.info("网络连接信息: {}", httpRequest3.getRequestLine());
+                log.info("响应状态信息为：{} ", httpResponse3.getStatusLine());
                 log.info("响应结果为：{}", responseResult3);
                 log.info("----------------------------------------");
             }
@@ -242,8 +243,8 @@ public class PostTest {
 
 
 
-        // =========================================  4reconciliation ==================================
-        System.out.println("// ===================================================  4 reconciliation =================================================================\n");
+        // =========================================  4refund ==================================
+        System.out.println("// ===================================================  4 refund =================================================================\n");
 
         // 4.1退款新token token
         String refundToken = null;
