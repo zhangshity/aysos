@@ -1,4 +1,4 @@
-package com.zcy.net.TPC_client_server;
+package com.zcy.net.TCP_client_server;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
