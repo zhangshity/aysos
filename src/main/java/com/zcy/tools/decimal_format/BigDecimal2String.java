@@ -61,16 +61,25 @@ public class BigDecimal2String {
 
 
         System.out.println("====================BigDecimal 比较=============================");
-        BigDecimal b1 = BigDecimal.valueOf(100.0);
-        BigDecimal b2 = BigDecimal.valueOf(0.01);
-        System.out.println(b1.equals(b2));
-        System.out.println(b1.compareTo(b2) == 0);
+        BigDecimal b1 = new BigDecimal("123.5");
+        BigDecimal b2 = new BigDecimal("123.50");
+        System.out.println("b1=" + b1 + "  b2=" + b2 + "    -> result of equals():" + b1.equals(b2)); //false
+        System.out.println("b1=" + b1 + "  b2=" + b2 + "    -> result of compareTo():" + (b1.compareTo(b2) == 0)); //true
 
+        //与0比较
+        BigDecimal bd1 = new BigDecimal("0.00");
+        System.out.println(bd1.compareTo(BigDecimal.ZERO) == 0); //true
+        System.out.println(bd1.doubleValue() == 0); //true
 
-        System.out.println(b1.multiply(b2));
+        BigDecimal bd2 = new BigDecimal("0.0000");
+        System.out.println("bd2=" + bd2 + "  bd2.doubleValue()=" + bd2.doubleValue());
 
+        System.out.println(bd2.compareTo(BigDecimal.ZERO) == 0); //true
+        System.out.println(bd2.doubleValue() == 0); //true
 
-
+        double dd = 0.000;
+        int dd2 = 0;
+        System.out.println(dd + " " + dd2 + " " + (dd == dd2));
 
 
         //======================= BigDecimal 除法===================================================
