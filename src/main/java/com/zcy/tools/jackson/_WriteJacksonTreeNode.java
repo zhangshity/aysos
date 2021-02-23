@@ -7,8 +7,9 @@ import com.zcy.tools.jackson.enumeration.JacksonUtils;
 import java.io.IOException;
 import java.util.Optional;
 
-public class JasonTreeNodeModify {
+public class _WriteJacksonTreeNode {
     public static void main(String[] args) throws IOException {
+
         String bankResponse = "{\n" +
                 "    \"card\": {\n" +
                 "        \"token\": null,\n" +
