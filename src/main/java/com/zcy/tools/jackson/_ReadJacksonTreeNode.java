@@ -31,12 +31,12 @@ public class _ReadJacksonTreeNode {
                 "        \"transaction_time_utc\": \"2021-02-22 03:50:51 AM\",\n" +
                 "        \"status\": \"APPROVED\",\n" +
                 "        \"purchase_reference\": \"713378497199902721\",\n" +
-                "        \"amount\": 8791.3360,\n" +
-                "        \"surcharge_amount\": null,\n" +
+                "        \"amount\": 8791.3360,\n" +        // 测试值: 8791.3360
+                "        \"surcharge_amount\": null,\n" +   // 测试值: null
                 "        \"total_amount\": 1.33,\n" +
                 "        \"currency\": \"AUD\"\n" +
                 "    },\n" +
-                "    \"response_code\": \"success\",\n" +
+                "    \"response_code\": \"success\",\n" +   // 测试值: "success"
                 "    \"response_message\": \"Your request has been successfully processed.\"\n" +
                 "}";
 
