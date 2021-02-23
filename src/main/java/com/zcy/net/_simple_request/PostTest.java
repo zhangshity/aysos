@@ -40,6 +40,10 @@ public class PostTest {
 
     private static String transactionToken;
 
+    // 我司订单号
+    private static String reference = "140557897711";
+
+    // 银行订单号
     private static String bankOrderNumber;
 
 
@@ -159,7 +163,7 @@ public class PostTest {
                    "        \"transaction_token\": \"" + transactionToken + "\"\n" +
                    "    },\n" +
                    "    \"customer\": {\n" +
-                   "        \"reference\": \"89891234\",\n" +
+                   "        \"reference\": \"" + reference + "\",\n" +
                    "        \"email\": \"allenzhang@oceanpayment.com\",\n" +
                    "        \"accepted_terms_conditions\": \"\",\n" +
                    "        \"ip_address\": \"" + InetAddress.getLocalHost().getHostAddress() + "\",\n" +
@@ -178,7 +182,7 @@ public class PostTest {
                    "        \"holder_name\": \"Allen Chunyang Zhang\"\n" +
                    "    },\n" +
                    "    \"purchase\": {\n" +
-                   "        \"invoice_number\": \"89891234\",\n" +
+                   "        \"invoice_number\": \""+ reference+"\",\n" +
                    "        \"amount\": 100.50,\n" +
                    "        \"should_mint_apply_surcharge\": false,\n" +
                    "        \"currency\": \"AUD\"\n" +
@@ -212,14 +216,21 @@ public class PostTest {
         // =========================================  3reconciliation ==================================
         System.out.println("// ===================================================  3 reconciliation =================================================================\n");
 
-        String reconcileApi = "https://secure-uatsb.mintpayments.net/mpay/v4/purchase/" + "145615618494";
+        // 对手方订单号查询
+        //String reconcileApi = "https://secure-uatsb.mintpayments.net/mpay/v4/purchase/" + bankOrderNumber;
+        // 我司订单号查询
+        String reconcileApi = "https://secure-uatsb.mintpayments.net/mpay/v4/purchase/" + "984894654151648984";
+
         String responseResult3 = null;
         try (
                 CloseableHttpClient httpclient3 = HttpClients.createDefault()
         ) {
-            HttpGet httpRequest3 = new HttpGet(reconcileApi);
+            HttpPost httpRequest3 = new HttpPost(reconcileApi);
             httpRequest3.setHeader(HttpHeaders.AUTHORIZATION, "Bearer a1b8fd86-e0ad-3955-9953-7e5a56619c47");
             httpRequest3.setHeader(HttpHeaders.CONTENT_TYPE, "application/json");
+            httpRequest3.setEntity(new StringEntity("{\"company_token\": \"F3zb7fO8VH5u5F8kt81HqEMX12h659x\"}", StandardCharsets.UTF_8));
+
+
 
             try (CloseableHttpResponse httpResponse3 = httpclient3.execute(httpRequest3)) {
                 responseResult3 = EntityUtils.toString(httpResponse3.getEntity());
@@ -286,7 +297,7 @@ public class PostTest {
                     "        \"timezone\": \"Australia/Sydney\"\n" +
                     "    },\n" +
                     "    \"refund\": {\n" +
-                    "        \"invoice_number\": \"13412543454\",\n" +
+                    "        \"invoice_number\": \""+ reference+1500+"\",\n" +
                     "        \"amount\": 50.25,\n" +
                     "        \"currency\": \"AUD\"\n" +
                     "    }\n" +
