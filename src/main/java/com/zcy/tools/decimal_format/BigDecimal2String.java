@@ -70,6 +70,8 @@ public class BigDecimal2String {
         BigDecimal bd1 = new BigDecimal("0.00");
         System.out.println(bd1.compareTo(BigDecimal.ZERO) == 0); //true
         System.out.println(bd1.doubleValue() == 0); //true
+        System.out.println(bd1 == BigDecimal.ZERO); //false
+        System.out.println();
 
         BigDecimal bd2 = new BigDecimal("0.0000");
         System.out.println("bd2=" + bd2 + "  bd2.doubleValue()=" + bd2.doubleValue());
