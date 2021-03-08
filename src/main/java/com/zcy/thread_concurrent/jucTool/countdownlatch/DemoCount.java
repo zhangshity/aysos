@@ -1,7 +1,6 @@
-package com.zcy.thread_concurrent.countdownlatch;
+package com.zcy.thread_concurrent.jucTool.countdownlatch;
 
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @ Author: chunyang.zhang

@@ -1,4 +1,4 @@
-package com.zcy.thread_concurrent.countdownlatch;
+package com.zcy.thread_concurrent.jucTool.countdownlatch;
 
 import java.util.concurrent.CountDownLatch;
 
