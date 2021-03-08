@@ -50,8 +50,8 @@ public class ServiceA {
 //            }
             // 测试2.(2) AOP代理自我调用                  ✔ServiceB内REQUIRE_NEW独立事务回滚,且抛出异常。被serviceA捕获,serviceA不受影响 (AOP自我调用成功)
             try {
-                ((ServiceA) AopContext.currentProxy()).updateSomething(i);
-//                this.nestedMethod(i);
+//                ((ServiceA) AopContext.currentProxy()).updateSomething(i);
+                this.nestedMethod(i);
             } catch (Exception e) {
                 logger.error("测试2.(2):  serviceB调用失败", e);
                 //throw new RuntimeException("测试2.(2):  serviceB调用失败", e);
@@ -76,10 +76,10 @@ public class ServiceA {
     }
 
 
-//    // 嵌套事务
-//    private void nestedMethod(int i) {
-//        ((ServiceA) AopContext.currentProxy()).updateSomething(i);
-//    }
+    // 嵌套事务
+    private void nestedMethod(int i) {
+        ((ServiceA) AopContext.currentProxy()).updateSomething(i);
+    }
 
 
 
