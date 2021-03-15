@@ -1,4 +1,4 @@
-package com.zcy.java1_8NewFunction.stream;
+package com.zcy.java1_8NewFunction._3__stream;
 
 import org.apache.commons.lang3.RandomStringUtils;
 

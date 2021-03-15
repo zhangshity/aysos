@@ -1,16 +1,13 @@
-package com.zcy.java1_8NewFunction.stream;
+package com.zcy.java1_8NewFunction._3__stream;
 
 import java.io.UnsupportedEncodingException;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class ArrayToMapTest {
     public static void main(String[] args) throws UnsupportedEncodingException {

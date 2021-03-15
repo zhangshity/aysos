@@ -1,4 +1,4 @@
-package com.zcy.java1_8NewFunction._1_default_iterface_method;
+package com.zcy.java1_8NewFunction.Z_default_iterface_method;
 
 /**
  * @ Author: chunyang.zhang

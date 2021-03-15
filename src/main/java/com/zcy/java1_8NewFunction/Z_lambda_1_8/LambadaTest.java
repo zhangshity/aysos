@@ -1,4 +1,4 @@
-package com.zcy.java1_8NewFunction._1_lambda_1_8;
+package com.zcy.java1_8NewFunction.Z_lambda_1_8;
 
 /**
  * @ Author: chunyang.zhang

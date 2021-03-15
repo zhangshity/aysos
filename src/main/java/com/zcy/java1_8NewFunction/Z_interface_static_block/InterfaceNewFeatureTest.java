@@ -1,4 +1,4 @@
-package com.zcy.java1_8NewFunction.interface_static_block;
+package com.zcy.java1_8NewFunction.Z_interface_static_block;
 
 import java.util.HashMap;
 import java.util.Map;

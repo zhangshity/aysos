@@ -1,6 +1,4 @@
-package com.zcy.java1_8NewFunction.optional;
-
-import org.apache.zookeeper.Op;
+package com.zcy.java1_8NewFunction._2__optional;
 
 import java.math.BigDecimal;
 import java.util.HashMap;
@@ -19,7 +17,7 @@ public class OptionalTest {
      * @return
      */
     private static String fetch(String s) {
-        System.out.println("Supplier()内部实现方法: 参数:" + s + "   ：~~已执行~~");
+        System.out.println("SupplierTest()内部实现方法: 参数:" + s + "   ：~~已执行~~");
         return s;
     }
 
@@ -52,7 +50,7 @@ public class OptionalTest {
          * https://stackoverflow.com/questions/33170109/difference-between-optional-orelse-and-optional-orelseget#
          *
          * orElse(T other)无论前面Optional容器是null还是non-null，都会执行orElse里的方法，
-         * orElseGet(Supplier<? extends T> other)并不会，只有Optional容器是null才会执行orElseGet中的方法
+         * orElseGet(SupplierTest<? extends T> other)并不会，只有Optional容器是null才会执行orElseGet中的方法
          *
          * 如果service无异常抛出的情况下，Optional使用orElse或者orElseGet的返回结果都是一样的
          *
