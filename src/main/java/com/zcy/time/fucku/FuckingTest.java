@@ -22,10 +22,14 @@ public class FuckingTest {
         LocalDate toLocalDate = localDateTime.toLocalDate();
         LocalTime toLocalTime = localDateTime.toLocalTime();
         LocalDateTime ofLocalDateTime = LocalDateTime.of(toLocalDate, toLocalTime);
+        LocalDateTime diyDatePart = LocalDateTime.now().with(LocalDate.MIN);
+        LocalDateTime diyTimePart = LocalDateTime.now().with(LocalTime.MIDNIGHT);
 
         System.out.println(toLocalDate);
         System.out.println(toLocalTime);
         System.out.println(ofLocalDateTime);
+        System.out.println(diyDatePart);
+        System.out.println(diyTimePart);
 
         System.out.println("================== 格式化时间 ==================");
         DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ISO_DATE_TIME;
