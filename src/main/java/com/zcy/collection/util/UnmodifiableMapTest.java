@@ -39,17 +39,39 @@ public class UnmodifiableMapTest {
         constantMap.put("key5", "################# [hahahahahahahhahh misc}@@@@@@@@###########");
         System.out.println(constantMap); // 成功被修改
 
-        // 安全map 常量测试
-        System.out.println(unmodifiableConstantMap);
-        unmodifiableConstantMap.put("key5", "################# [hahahahahahahhahh misc}@@@@@@@@###########"); // Exception in thread "main" java.lang.UnsupportedOperationException
-        System.out.println(unmodifiableConstantMap);                                                          //     at java.util.Collections$UnmodifiableMap.put(Collections.java:1459)
-                                                                                                              //     at com.zcy.collection.util.UnmodifiableMapTest.main(UnmodifiableMapTest.java:38)
+//        // 安全map 常量测试
+//        System.out.println(unmodifiableConstantMap);
+//        unmodifiableConstantMap.put("key5", "################# [hahahahahahahhahh misc}@@@@@@@@###########"); // Exception in thread "main" java.lang.UnsupportedOperationException
+//        System.out.println(unmodifiableConstantMap);                                                          //     at java.util.Collections$UnmodifiableMap.put(Collections.java:1459)
+//                                                                                                              //     at com.zcy.collection.util.UnmodifiableMapTest.main(UnmodifiableMapTest.java:38)
+//
+//        // 安全map 常量测试
+//        System.out.println(unmodifiableConstantMap2);
+//        unmodifiableConstantMap2.put("key5", "################# [hahahahahahahhahh misc}@@@@@@@@###########"); // Exception in thread "main" java.lang.UnsupportedOperationException
+//        System.out.println(unmodifiableConstantMap2);                                                          //     at java.util.Collections$UnmodifiableMap.put(Collections.java:1459)
+//                                                                                                               //     at com.zcy.collection.util.UnmodifiableMapTest.main(UnmodifiableMapTest.java:52)
 
-        // 安全map 常量测试
-        System.out.println(unmodifiableConstantMap2);
-        unmodifiableConstantMap2.put("key5", "################# [hahahahahahahhahh misc}@@@@@@@@###########"); // Exception in thread "main" java.lang.UnsupportedOperationException
-        System.out.println(unmodifiableConstantMap2);                                                          //     at java.util.Collections$UnmodifiableMap.put(Collections.java:1459)
-                                                                                                               //     at com.zcy.collection.util.UnmodifiableMapTest.main(UnmodifiableMapTest.java:52)
+
+
+
+
+        // 额外测试 1.被
+        Map<String, String> originalMap = new HashMap<>();
+        for (int i = 0; i < 10; i++) {
+            originalMap.put("key" + i, "value" + i);
+        }
+
+        Map<String, String> afterUnmodifiableMap = Collections.unmodifiableMap(originalMap);
+
+        // 原始map修改
+        originalMap.put("key1", "asdasdas89d4984984123!!!!!!!!!!!!#######################");
+        System.out.println(originalMap); // {key1=asdasdas89d4984984123!!!!!!!!!!!!#######################, key2=value2, key0=value0, key5=value5, key6=value6, key3=value3, key4=value4, key9=value9, key7=value7, key8=value8}
+
+        // 被修饰的返回的map修改
+        System.out.println(afterUnmodifiableMap.get("key1")); //原始数据被修改，视图也会修改: asdasdas89d4984984123!!!!!!!!!!!!#######################
+//        afterUnmodifiableMap.put("key1", "asdasdas89d4984984123!!!!!!!!!!!!#######################");      // Exception in thread "main" java.lang.UnsupportedOperationException
+//        System.out.println(afterUnmodifiableMap);                                                          //     at java.util.Collections$UnmodifiableMap.put(Collections.java:1459)
+//                                                                                                           //     at com.zcy.collection.util.UnmodifiableMapTest.main(UnmodifiableMapTest.java:71)
 
     }
 }
