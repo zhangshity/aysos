@@ -14,7 +14,7 @@ package com.zcy.basic_data_type;
  * <p> |低  ------------------------------------>  高
  * <p> |byte,short,char—> int —> long—> float —> double
  */
-public class DataTypeCast {
+public class __2_TypeCast {
     //    数据类型转换必须满足如下规则：
     //            1.不能对boolean类型进行类型转换。
     //            2.不能把对象类型转换成不相关类的对象。

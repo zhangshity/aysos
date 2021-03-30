@@ -1,6 +1,6 @@
 package com.zcy.basic_data_type;
 
-public class JavaNumber {
+public class __1_Number {
     public static void main(String[] args) {
 
         int binary = 0b1001;        //二进制定义 (前缀0b、0B)

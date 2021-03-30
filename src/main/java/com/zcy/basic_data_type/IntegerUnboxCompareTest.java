@@ -2,7 +2,7 @@ package com.zcy.basic_data_type;
 
 import java.util.Objects;
 
-public class IntergerTest {
+public class IntegerUnboxCompareTest {
     public static void main2(String[] args) {
         int i1 = 128;
         Integer i2 = 128;
