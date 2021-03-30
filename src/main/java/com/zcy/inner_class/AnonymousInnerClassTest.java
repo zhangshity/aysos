@@ -1,0 +1,85 @@
+package com.zcy.inner_class;
+
+import java.util.ArrayList;
+import java.util.List;
+
+/**
+ * 《匿名内部类的测试》
+ *
+ * @author Allen.C.Y.Zhang
+ */
+public class AnonymousInnerClassTest {
+    public static void main(String[] args) {
+
+        //-----------------------------------------------------------------------
+        // i.g. one step create 一步创建
+        Runnable anonymousRunnable = new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("典型匿名内部类");
+            }
+        };
+
+
+        // means the same way. 等价于相同写法 two step create 二步创建
+        class myRunnable implements Runnable {
+            @Override
+            public void run() {
+                System.out.println("手动创建的类");
+            }
+        }
+        Runnable runnable = new myRunnable();
+
+
+        //-----------------------------------------------------------------------
+        // 集合的应用
+        // one step crete and assignment
+        List<String> anonymousList = new ArrayList<String>() {
+            // 内部类变量
+            int i = 666;
+
+            // 内部类代码块
+            {
+                for (int j = 0; j < 10; j++) {
+                    add("value" + j);
+                }
+                System.out.println("匿名内部类代码块" + i);
+                this.print_i();
+            }
+
+            // 内部类方法
+            private void print_i() {
+                System.out.println(i);
+            }
+        };
+        System.out.println(anonymousList); // 打印 [value0, value1, value2, value3, value4, value5, value6, value7, value8, value9]
+
+
+        // means the same way. two step crete and assignment
+        class myList extends ArrayList<String> {
+            // 变量
+            int i = 888;
+
+            // 代码块
+            {
+                for (int j = 0; j < 10; j++) {
+                    add("value" + j);
+                }
+                System.out.println("手动创建类代码块" + i);
+                this.print_i();
+            }
+
+            // 方法
+            private void print_i() {
+                System.out.println(i);
+            }
+        }
+
+        List<String> list = new myList();
+
+        System.out.println(list);// 打印 [value0, value1, value2, value3, value4, value5, value6, value7, value8, value9]
+
+
+
+    }
+}
