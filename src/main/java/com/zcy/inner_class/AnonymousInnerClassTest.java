@@ -1,7 +1,9 @@
 package com.zcy.inner_class;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * 《匿名内部类的测试》
@@ -32,7 +34,8 @@ public class AnonymousInnerClassTest {
 
 
         //-----------------------------------------------------------------------
-        // 集合的应用
+        System.out.println("-----------------------------------------------------------------------");
+        // 集合的应用 list
         // one step crete and assignment
         List<String> anonymousList = new ArrayList<String>() {
             // 内部类变量
@@ -81,5 +84,59 @@ public class AnonymousInnerClassTest {
 
 
 
+
+        //-----------------------------------------------------------------------
+        System.out.println("-----------------------------------------------------------------------");
+        // 集合的应用 map
+        // one step crete and assignment
+        Map<String, String> anonymousMap = new HashMap<String, String>(64) {
+            // 内部类变量
+            int i = 666;
+
+            // 内部类代码块
+            {
+                for (int j = 0; j < 10; j++) {
+                    put("key" + i, "value" + j);
+                }
+                System.out.println("匿名内部类代码块" + i);
+                this.print_i();
+            }
+
+            // 内部类方法
+            private void print_i() {
+                System.out.println(i);
+            }
+        };
+        System.out.println(anonymousMap); // 打印
+
+
+        // means the same way. two step crete and assignment
+        class myMap extends HashMap<String, String> {
+            // 变量
+            int i = 888;
+
+            // 代码块
+            {
+                for (int j = 0; j < 10; j++) {
+                    put("key" + i, "value" + j);
+                }
+                System.out.println("手动创建类代码块" + i);
+                this.print_i();
+            }
+
+            // 构造方法
+//            public HashMap() {
+//            }
+
+
+            // 方法
+            private void print_i() {
+                System.out.println(i);
+            }
+        }
+
+        Map<String, String> map = new myMap();
+
+        System.out.println(map);// 打印 [value0, value1, value2, value3, value4, value5, value6, value7, value8, value9]
     }
 }
