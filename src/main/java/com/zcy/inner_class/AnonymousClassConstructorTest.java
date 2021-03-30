@@ -17,8 +17,10 @@ public class AnonymousClassConstructorTest {
 
         // 显示继承调用
         Calculator c2 = new Add(1, 2);
-        System.out.println(c2.getResult()); // 0
-        
+        System.out.println(c2.getResult()); // 0       一般类（也就是具有显式名字的类）的所有构造函数默认都是调用父类的无参构造的，
+                                                       // 而匿名类因为没有名字，只能由构造代码块代替，也就无所谓的有参和无参构造函数了，
+                                                       // 它在初始化时直接调用了父类的同参数构造，然后再调用了自己的构造代码块，
+
 
 
         // 显示继承调用2

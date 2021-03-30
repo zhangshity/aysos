@@ -125,8 +125,9 @@ public class AnonymousInnerClassTest {
             }
 
             // 构造方法
-//            public HashMap() {
-//            }
+            public myMap(int initialCapacity) {
+                super(initialCapacity);
+            }
 
 
             // 方法
@@ -135,7 +136,7 @@ public class AnonymousInnerClassTest {
             }
         }
 
-        Map<String, String> map = new myMap();
+        Map<String, String> map = new myMap(64);
 
         System.out.println(map);// 打印 [value0, value1, value2, value3, value4, value5, value6, value7, value8, value9]
     }
