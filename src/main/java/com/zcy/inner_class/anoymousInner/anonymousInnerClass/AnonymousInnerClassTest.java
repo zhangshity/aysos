@@ -1,4 +1,4 @@
-package com.zcy.inner_class;
+package com.zcy.inner_class.anoymousInner.anonymousInnerClass;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -13,6 +13,7 @@ import java.util.Map;
 public class AnonymousInnerClassTest {
     public static void main(String[] args) {
 
+        // 1.典型的匿名内部类创建 (两种方式)
         //-----------------------------------------------------------------------
         // i.g. one step create 一步创建
         Runnable anonymousRunnable = new Runnable() {
@@ -33,6 +34,7 @@ public class AnonymousInnerClassTest {
         Runnable runnable = new myRunnable();
 
 
+        // 2.集合List的匿名内部类创建 （2种方式）
         //-----------------------------------------------------------------------
         System.out.println("-----------------------------------------------------------------------");
         // 集合的应用 list
@@ -84,7 +86,7 @@ public class AnonymousInnerClassTest {
 
 
 
-
+        // 3.集合Map的匿名内部类创建 （2种方式）
         //-----------------------------------------------------------------------
         System.out.println("-----------------------------------------------------------------------");
         // 集合的应用 map

@@ -1,4 +1,4 @@
-package com.zcy.inner_class;
+package com.zcy.inner_class.__1_standardTest;
 
 public class StaticNestedClassTest {
     private Integer i;
