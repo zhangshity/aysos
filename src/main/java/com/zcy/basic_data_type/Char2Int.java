@@ -6,10 +6,10 @@ public class Char2Int {
         String s2 = "2asc";
 
 
-        System.out.println(s.charAt(0));
-        System.out.println(Character.getNumericValue(s.charAt(0)) == 1);
+        System.out.println(s.charAt(0)); // 1
+        System.out.println(Character.getNumericValue(s.charAt(0)) == 1); // true
 
-        //ascii 
-        System.out.println((int) s2.charAt(0));
+        //char转换为int ,实际得到的是: 对应ascii码的值
+        System.out.println((int) s2.charAt(0)); // ascii值: 50
     }
 }
