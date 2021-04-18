@@ -6,260 +6,297 @@
 
     <groupId>com.zcy</groupId>
     <artifactId>aysos</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
-    <dependencies>
-        <!-- junit4 -->
-        <!-- https://mvnrepository.com/artifact/junit/junit -->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.13.1</version>
-            <scope>test</scope>
-        </dependency>
+    <modules>
+        <module>basic</module>
+    </modules>
 
-        <!-- junit5 jupiter -->
-        <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
-        <!--<dependency>-->
-        <!--<groupId>org.junit.jupiter</groupId>-->
-        <!--<artifactId>junit-jupiter-api</artifactId>-->
-        <!--<version>5.3.1</version>-->
-        <!--<scope>test</scope>-->
-        <!--</dependency>-->
+    <properties>
+<!--        <maven.compiler.source>8</maven.compiler.source>-->
+<!--        <maven.compiler.target>8</maven.compiler.target>-->
+        <lombok.version>1.18.20</lombok.version>
+        <junit.version>4.13.1</junit.version>
+        <slf4j-api.version>1.7.30</slf4j-api.version>
+        <log4j.version>1.2.17</log4j.version>
+        <log4j-api.version>2.11.2</log4j-api.version>
+        <log4j-core.version>2.13.2</log4j-core.version>
+        <log4j-to-slf4j.version>2.11.2</log4j-to-slf4j.version>
+        <mysql-connector-java-5.1>5.1.47</mysql-connector-java-5.1>
+        <mysql-connector-java-8.0>8.0.17</mysql-connector-java-8.0>
+        <ojdbc.version>8</ojdbc.version>
+        <c3p0.version>0.9.5.4</c3p0.version>
+        <mybatis.version>3.5.6</mybatis.version>
+        <mybatis-spring.version>2.0.6</mybatis-spring.version>
+        <rocketmq-client.version>4.3.0</rocketmq-client.version>
+        <zookeeper.version>3.5.5</zookeeper.version>
+        <maven-plugin-api.version>3.0</maven-plugin-api.version>
+        <maven-plugin-annotations.version>3.4</maven-plugin-annotations.version>
+        <spring-context.version>5.2.0.RELEASE</spring-context.version>
+        <spring-core.version>5.2.0.RELEASE</spring-core.version>
+        <spring-beans.version>5.2.0.RELEASE</spring-beans.version>
+        <spring-test.version>5.2.0.RELEASE</spring-test.version>
+        <spring-aop.version>5.2.0.RELEASE</spring-aop.version>
+        <spring-aspects.version>5.2.0.RELEASE</spring-aspects.version>
+        <spring-web.version>5.2.0.RELEASE</spring-web.version>
+        <spring-webmvc.version>5.2.0.RELEASE</spring-webmvc.version>
+        <poi.version>4.1.2</poi.version>
+        <jackson-databind.version>2.11.0</jackson-databind.version>
+        <jackson-core.version>2.11.0</jackson-core.version>
+        <jackson-annotations.version>2.11.0</jackson-annotations.version>
+        <jackson-dataformat-xml.version>2.11.0</jackson-dataformat-xml.version>
+        <joda-time.version>2.10.6</joda-time.version>
+        <httpclient.version>4.5.12</httpclient.version>
+        <commons-lang3.version>3.11</commons-lang3.version>
+        <commons-text.version>1.9</commons-text.version>
+        <dom4j.version>1.6.1</dom4j.version>
+        <jedis.version>3.3.0</jedis.version>
+        <redisson.version>3.14.0</redisson.version>
+        <lettuce-core.version>6.0.1.RELEASE</lettuce-core.version>
+    </properties>
 
-        <!-- SLF4J 日志门面 -->
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.30</version>
-        </dependency>
+    <dependencyManagement>
+        <dependencies>
+            <!-- lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <!-- junit4 -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!-- SLF4J 日志门面 -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j-api.version}</version>
+            </dependency>
+            <!-- log4j -->
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>${log4j.version}</version>
+            </dependency>
+            <!-- log4j 2  -->
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-api</artifactId>
+                <version>${log4j-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-core</artifactId>
+                <version>${log4j-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.logging.log4j</groupId>
+                <artifactId>log4j-to-slf4j</artifactId>
+                <version>${log4j-to-slf4j.version}</version>
+            </dependency>
+
+            <!-- ================== MySQL JDBC ================== -->
+            <!-- jdbc-mysql-connector-java(5.1)-->
+<!--            <dependency>-->
+<!--                <groupId>mysql</groupId>-->
+<!--                <artifactId>mysql-connector-java</artifactId>-->
+<!--                <version>${mysql-connector-java-5.1}</version>-->
+<!--            </dependency>-->
+            <!-- jdbc-mysql-connector-java(8.0)-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-java-8.0}</version>
+            </dependency>
+            <!-- jdbc-oracle -->
+<!--            <dependency>-->
+<!--                <groupId>com.oracle</groupId>-->
+<!--                <artifactId>ojdbc</artifactId>-->
+<!--                <version>${ojdbc.version}</version>-->
+<!--            </dependency>-->
+
+            <!-- c3p0连接池-->
+            <dependency>
+                <groupId>com.mchange</groupId>
+                <artifactId>c3p0</artifactId>
+                <version>${c3p0.version}</version>
+            </dependency>
+
+            <!-- mybatis -->
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis</artifactId>
+                <version>${mybatis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mybatis</groupId>
+                <artifactId>mybatis-spring</artifactId>
+                <version>${mybatis-spring.version}</version>
+            </dependency>
 
 
-        <!-- log4j -->
-        <!-- https://mvnrepository.com/artifact/log4j/log4j -->
-        <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>1.2.17</version>
-        </dependency>
 
-        <!-- log4j 2  -->
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-api</artifactId>
-            <version>2.11.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-core</artifactId>
-            <version>2.13.2</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.logging.log4j</groupId>
-            <artifactId>log4j-to-slf4j</artifactId>
-            <version>2.11.2</version>
-        </dependency>
-
-        <!-- RocketMQ客户端依赖 -->
-        <dependency>
-            <groupId>org.apache.rocketmq</groupId>
-            <artifactId>rocketmq-client</artifactId>
-            <version>4.3.0</version>
-        </dependency>
-        <!-- zookeeper -->
-        <dependency>
-            <groupId>org.apache.zookeeper</groupId>
-            <artifactId>zookeeper</artifactId>
-            <version>3.5.5</version>
-        </dependency>
-
-        <!-- mysql jdbc连接 -->
-        <!-- jdbc-mysql-connector-java(5.1)-->
-        <!--        <dependency>-->
-        <!--            <groupId>mysql</groupId>-->
-        <!--            <artifactId>mysql-connector-java</artifactId>-->
-        <!--            <version>5.1.47</version>-->
-        <!--        </dependency>-->
-        <!-- jdbc-mysql-connector-java(8.0)-->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.17</version>
-        </dependency>
-        <!-- jdbc-oracle -->
-        <!--        <dependency>-->
-        <!--            <groupId>com.oracle</groupId>-->
-        <!--            <artifactId>ojdbc</artifactId>-->
-        <!--            <version>8</version>-->
-        <!--        </dependency>-->
-
-        <!-- mybatis -->
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis</artifactId>
-            <version>3.5.6</version>
-        </dependency>
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis-spring</artifactId>
-            <version>2.0.6</version>
-        </dependency>
+            <!-- RocketMQ客户端依赖 -->
+            <dependency>
+                <groupId>org.apache.rocketmq</groupId>
+                <artifactId>rocketmq-client</artifactId>
+                <version>${rocketmq-client.version}</version>
+            </dependency>
+            <!-- zookeeper -->
+            <dependency>
+                <groupId>org.apache.zookeeper</groupId>
+                <artifactId>zookeeper</artifactId>
+                <version>${zookeeper.version}</version>
+            </dependency>
 
 
+            <!-- ================== Maven Plugin ================== -->
+            <dependency>
+                <groupId>org.apache.maven</groupId>
+                <artifactId>maven-plugin-api</artifactId>
+                <version>${maven-plugin-api.version}</version>
+            </dependency>
+            <!-- dependencies to annotations -->
+            <dependency>
+                <groupId>org.apache.maven.plugin-tools</groupId>
+                <artifactId>maven-plugin-annotations</artifactId>
+                <version>${maven-plugin-annotations.version}</version>
+                <scope>provided</scope>
+            </dependency>
 
-        <!-- c3p0连接池-->
-        <dependency>
-            <groupId>com.mchange</groupId>
-            <artifactId>c3p0</artifactId>
-            <version>0.9.5.4</version>
-        </dependency>
 
-        <dependency>
-            <groupId>org.apache.maven</groupId>
-            <artifactId>maven-plugin-api</artifactId>
-            <version>3.0</version>
-        </dependency>
+            <!-- ================== Spring Framework ================== -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring-context.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-beans</artifactId>
+                <version>${spring-beans.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-test</artifactId>
+                <version>${spring-test.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!-- Spring-AOP (加载这两个依赖会包含aop相关包,两个依赖都他妈不能少,会他妈报错)-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
+                <version>${spring-aop.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aspects</artifactId>
+                <version>${spring-aspects.version}</version>
+            </dependency>
+            <!-- Spring-MVC (加载这两个依赖会包含aop相关包,两个依赖都他妈不能少,会他妈报错)-->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-web</artifactId>
+                <version>${spring-web.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-webmvc</artifactId>
+                <version>${spring-webmvc.version}</version>
+            </dependency>
 
-        <!-- dependencies to annotations -->
-        <dependency>
-            <groupId>org.apache.maven.plugin-tools</groupId>
-            <artifactId>maven-plugin-annotations</artifactId>
-            <version>3.4</version>
-            <scope>provided</scope>
-        </dependency>
 
-        <!-- Spring框架 -->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
-            <version>5.2.0.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-            <version>5.2.0.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-beans</artifactId>
-            <version>5.2.0.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test</artifactId>
-            <version>5.2.0.RELEASE</version>
-            <scope>test</scope>
-        </dependency>
-        <!-- Spring-AOP (加载这两个依赖会包含aop相关包,两个依赖都他妈不能少,会他妈报错)-->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-aop</artifactId>
-            <version>5.2.0.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-aspects</artifactId>
-            <version>5.2.0.RELEASE</version>
-        </dependency>
 
-        <!-- Spring-mvc (加载这两个依赖会包含aop相关包,两个依赖都他妈不能少,会他妈报错)-->
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>5.2.0.RELEASE</version>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
-            <version>5.2.0.RELEASE</version>
-        </dependency>
+            <!-- poi excel处理组件 -->
+            <dependency>
+                <groupId>org.apache.poi</groupId>
+                <artifactId>poi</artifactId>
+                <version>${poi.version}</version>
+            </dependency>
 
-        <!-- poi excel处理组件 -->
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi</artifactId>
-            <version>4.1.2</version>
-        </dependency>
+            <!-- Jackson 相关依赖 -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson-databind.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-core</artifactId>
+                <version>${jackson-core.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-annotations</artifactId>
+                <version>${jackson-annotations.version}</version>
+            </dependency>
+            <!-- Jackson解析XML需要依赖 -->
+            <dependency>
+                <groupId>com.fasterxml.jackson.dataformat</groupId>
+                <artifactId>jackson-dataformat-xml</artifactId>
+                <version>${jackson-dataformat-xml.version}</version>
+            </dependency>
 
-        <!-- Jackson 相关依赖 -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.11.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-core</artifactId>
-            <version>2.11.0</version>
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-annotations</artifactId>
-            <version>2.11.0</version>
-        </dependency>
-        <!-- Jackson解析XML需要依赖 -->
-        <dependency>
-            <groupId>com.fasterxml.jackson.dataformat</groupId>
-            <artifactId>jackson-dataformat-xml</artifactId>
-            <version>2.11.0</version>
-        </dependency>
+            <dependency>
+                <groupId>joda-time</groupId>
+                <artifactId>joda-time</artifactId>
+                <version>${joda-time.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
 
-        <dependency>
-            <groupId>joda-time</groupId>
-            <artifactId>joda-time</artifactId>
-            <version>2.10.6</version>
-        </dependency>
 
-        <!-- httpclient -->
-        <dependency>
-            <groupId>org.apache.httpcomponents</groupId>
-            <artifactId>httpclient</artifactId>
-            <version>4.5.12</version>
-        </dependency>
+            <!-- ================== Apache Common ================== -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-text</artifactId>
+                <version>${commons-text.version}</version>
+            </dependency>
 
-        <!-- Apache common tools -->
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-lang3</artifactId>
-            <version>3.11</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-text</artifactId>
-            <version>1.9</version>
-        </dependency>
+            <!-- dom4j -->
+            <dependency>
+                <groupId>dom4j</groupId>
+                <artifactId>dom4j</artifactId>
+                <version>${dom4j.version}</version>
+            </dependency>
 
-        <!-- dom4j -->
-        <dependency>
-            <groupId>dom4j</groupId>
-            <artifactId>dom4j</artifactId>
-            <version>1.6.1</version>
-        </dependency>
 
-        <!-- Redis 三大组件测试 -->
-        <dependency>
-            <groupId>redis.clients</groupId>
-            <artifactId>jedis</artifactId>
-            <version>3.3.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.redisson</groupId>
-            <artifactId>redisson</artifactId>
-            <version>3.14.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.lettuce</groupId>
-            <artifactId>lettuce-core</artifactId>
-            <version>6.0.1.RELEASE</version>
-        </dependency>
-
-        <!-- lombok插件编译测试 -->
-        <!--        <dependency>-->
-        <!--            <groupId>org.projectlombok</groupId>-->
-        <!--            <artifactId>lombok</artifactId>-->
-        <!--        </dependency>-->
-
-    </dependencies>
+            <!-- Redis 三大组件测试 -->
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${jedis.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.lettuce</groupId>
+                <artifactId>lettuce-core</artifactId>
+                <version>${lettuce-core.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
     <build>
         <plugins>

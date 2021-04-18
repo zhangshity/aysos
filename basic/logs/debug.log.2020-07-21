@@ -1,0 +1,53 @@
+2020-07-21 19:30:51  [ main:0 ] - [ DEBUG ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@7a46a697
+2020-07-21 19:30:51  [ main:20 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2020-07-21 19:30:51  [ main:101 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/_circular_dependency/BeanConfig.class]
+2020-07-21 19:30:51  [ main:102 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/_circular_dependency/StudentA.class]
+2020-07-21 19:30:51  [ main:103 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/_circular_dependency/StudentB.class]
+2020-07-21 19:30:51  [ main:103 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/_circular_dependency/StudentC.class]
+2020-07-21 19:30:51  [ main:107 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/_circular_dependency/Main.class]
+2020-07-21 19:30:51  [ main:108 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/_circular_dependency/StudentA.class]
+2020-07-21 19:30:51  [ main:108 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/_circular_dependency/StudentB.class]
+2020-07-21 19:30:51  [ main:108 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/_circular_dependency/StudentC.class]
+2020-07-21 19:30:51  [ main:207 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2020-07-21 19:30:51  [ main:210 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2020-07-21 19:30:51  [ main:218 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2020-07-21 19:30:51  [ main:222 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2020-07-21 19:30:51  [ main:238 ] - [ DEBUG ]  Creating shared instance of singleton bean 'main'
+2020-07-21 19:30:51  [ main:251 ] - [ DEBUG ]  Creating shared instance of singleton bean 'beanConfig'
+2020-07-21 19:30:51  [ main:255 ] - [ DEBUG ]  Creating shared instance of singleton bean 'studentA'
+2020-07-21 19:30:51  [ main:295 ] - [ DEBUG ]  Creating shared instance of singleton bean 'studentB'
+2020-07-21 19:30:51  [ main:299 ] - [ DEBUG ]  Creating shared instance of singleton bean 'studentC'
+2020-07-21 19:30:51  [ main:302 ] - [ DEBUG ]  Creating shared instance of singleton bean 'say'
+2020-07-21 19:31:06  [ main:0 ] - [ DEBUG ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@7a46a697
+2020-07-21 19:31:06  [ main:16 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2020-07-21 19:31:06  [ main:85 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/_circular_dependency/BeanConfig.class]
+2020-07-21 19:31:06  [ main:87 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/_circular_dependency/StudentA.class]
+2020-07-21 19:31:06  [ main:88 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/_circular_dependency/StudentB.class]
+2020-07-21 19:31:06  [ main:88 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/_circular_dependency/StudentC.class]
+2020-07-21 19:31:06  [ main:93 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/_circular_dependency/StudentA.class]
+2020-07-21 19:31:06  [ main:93 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/_circular_dependency/StudentB.class]
+2020-07-21 19:31:06  [ main:93 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/_circular_dependency/StudentC.class]
+2020-07-21 19:31:06  [ main:172 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2020-07-21 19:31:06  [ main:174 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2020-07-21 19:31:06  [ main:176 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2020-07-21 19:31:06  [ main:177 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2020-07-21 19:31:06  [ main:186 ] - [ DEBUG ]  Creating shared instance of singleton bean 'main'
+2020-07-21 19:31:06  [ main:190 ] - [ DEBUG ]  Creating shared instance of singleton bean 'beanConfig'
+2020-07-21 19:31:06  [ main:191 ] - [ DEBUG ]  Creating shared instance of singleton bean 'studentA'
+2020-07-21 19:31:06  [ main:200 ] - [ DEBUG ]  Creating shared instance of singleton bean 'studentB'
+2020-07-21 19:31:06  [ main:201 ] - [ DEBUG ]  Creating shared instance of singleton bean 'studentC'
+2020-07-21 19:31:06  [ main:203 ] - [ DEBUG ]  Creating shared instance of singleton bean 'say'
+2020-07-21 20:04:33  [ main:0 ] - [ DEBUG ]  Refreshing org.springframework.context.annotation.AnnotationConfigApplicationContext@7a46a697
+2020-07-21 20:04:33  [ main:14 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2020-07-21 20:04:33  [ main:79 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/_circular_dependency/StudentA.class]
+2020-07-21 20:04:33  [ main:80 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/_circular_dependency/StudentB.class]
+2020-07-21 20:04:33  [ main:80 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/_circular_dependency/StudentC.class]
+2020-07-21 20:04:33  [ main:157 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2020-07-21 20:04:33  [ main:159 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2020-07-21 20:04:33  [ main:161 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2020-07-21 20:04:33  [ main:162 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2020-07-21 20:04:33  [ main:170 ] - [ DEBUG ]  Creating shared instance of singleton bean 'beanConfig'
+2020-07-21 20:04:33  [ main:175 ] - [ DEBUG ]  Creating shared instance of singleton bean 'studentA'
+2020-07-21 20:04:33  [ main:184 ] - [ DEBUG ]  Creating shared instance of singleton bean 'studentB'
+2020-07-21 20:04:33  [ main:185 ] - [ DEBUG ]  Creating shared instance of singleton bean 'studentC'
+2020-07-21 20:04:33  [ main:187 ] - [ DEBUG ]  Creating shared instance of singleton bean 'say'

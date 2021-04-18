@@ -1,0 +1,21 @@
+2019-03-20 16:17:28  [ main:0 ] - [ DEBUG ]  debug
+2019-03-20 16:26:36  [ main:0 ] - [ DEBUG ]  main function start >>>
+2019-03-20 16:27:26  [ main:0 ] - [ DEBUG ]  main function start >>>
+2019-03-20 16:27:26  [ main:2 ] - [ DEBUG ]  main function start <<<
+2019-03-20 16:29:58  [ main:0 ] - [ DEBUG ]  main function start >>>
+2019-03-20 16:29:58  [ main:2 ] - [ DEBUG ]  main function start <<<
+2019-03-20 16:30:15  [ main:1 ] - [ DEBUG ]  main function start >>>
+2019-03-20 16:30:15  [ main:3 ] - [ ERROR ]  错误信息： [%s]
+java.lang.ArithmeticException: / by zero
+	at com.com.zcy.log4j.TestLog4j.main(TestLog4j.java:28)
+2019-03-20 16:30:15  [ main:5 ] - [ DEBUG ]  main function start <<<
+2019-03-20 16:31:00  [ main:0 ] - [ DEBUG ]  main function start >>>
+2019-03-20 16:31:00  [ main:2 ] - [ ERROR ]  Error Message:
+java.lang.ArithmeticException: / by zero
+	at com.com.zcy.log4j.TestLog4j.main(TestLog4j.java:28)
+2019-03-20 16:31:00  [ main:4 ] - [ DEBUG ]  main function start <<<
+2019-03-20 16:31:24  [ main:0 ] - [ DEBUG ]  main function start >>>
+2019-03-20 16:31:24  [ main:2 ] - [ ERROR ]  Error Message:
+java.lang.ArithmeticException: / by zero
+	at com.com.zcy.log4j.TestLog4j.main(TestLog4j.java:28)
+2019-03-20 16:31:24  [ main:4 ] - [ DEBUG ]  main function end <<<

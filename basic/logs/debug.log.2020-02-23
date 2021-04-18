@@ -1,0 +1,7 @@
+2020-02-23 02:11:38  [ main:0 ] - [ DEBUG ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7b1d7fff
+2020-02-23 02:11:38  [ main:153 ] - [ DEBUG ]  Loaded 1 bean definitions from class path resource [applicationContext.xml]
+2020-02-23 02:11:39  [ main:186 ] - [ DEBUG ]  Creating shared instance of singleton bean 'helloworld'
+2020-02-23 18:58:28  [ main:0 ] - [ DEBUG ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@7b1d7fff
+2020-02-23 18:58:28  [ main:166 ] - [ DEBUG ]  Loaded 2 bean definitions from class path resource [applicationContext.xml]
+2020-02-23 18:58:28  [ main:201 ] - [ DEBUG ]  Creating shared instance of singleton bean 'helloworld'
+2020-02-23 18:58:28  [ main:220 ] - [ DEBUG ]  Creating shared instance of singleton bean 'person'

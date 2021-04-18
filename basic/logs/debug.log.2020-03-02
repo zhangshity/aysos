@@ -1,0 +1,248 @@
+2020-03-02 18:31:43  [ main:0 ] - [ DEBUG ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@136432db
+2020-03-02 18:31:43  [ main:368 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/configuration_bean/Allen.class]
+2020-03-02 18:31:43  [ main:370 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/configuration_bean/Bruce.class]
+2020-03-02 18:31:43  [ main:386 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/configuration_bean/PersonConfiguration.class]
+2020-03-02 18:31:43  [ main:391 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/datasource/DataSourceConfiguration.class]
+2020-03-02 18:31:43  [ main:392 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic/Audi.class]
+2020-03-02 18:31:43  [ main:393 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic/Porsche.class]
+2020-03-02 18:31:43  [ main:394 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic/SetAutowire.class]
+2020-03-02 18:31:43  [ main:395 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic2/Audi.class]
+2020-03-02 18:31:43  [ main:396 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic2/Bmw.class]
+2020-03-02 18:31:43  [ main:397 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic2/Execute.class]
+2020-03-02 18:31:43  [ main:398 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/interface_injection/Allen.class]
+2020-03-02 18:31:43  [ main:399 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/interface_injection/Bruce.class]
+2020-03-02 18:31:43  [ main:400 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/interface_injection/PersonInvoke.class]
+2020-03-02 18:31:43  [ main:444 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/jsr/JsrDAO.class]
+2020-03-02 18:31:43  [ main:447 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/jsr/JsrService.class]
+2020-03-02 18:31:43  [ main:467 ] - [ DEBUG ]  Loaded 27 bean definitions from class path resource [applicationContext.xml]
+2020-03-02 18:31:43  [ main:498 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2020-03-02 18:31:43  [ main:521 ] - [ DEBUG ]  Failed to introspect @Bean methods on class [org.springframework.aop.aspectj.AspectJExpressionPointcut]: java.lang.IllegalStateException: Failed to introspect annotated methods on class org.springframework.aop.aspectj.AspectJExpressionPointcut
+2020-03-02 18:31:43  [ main:674 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2020-03-02 18:31:43  [ main:675 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2020-03-02 18:31:43  [ main:680 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2020-03-02 18:31:43  [ main:681 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2020-03-02 18:31:43  [ main:687 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
+2020-03-02 18:31:43  [ main:734 ] - [ DEBUG ]  Creating shared instance of singleton bean 'configAllen'
+2020-03-02 18:31:43  [ main:735 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2020-03-02 18:31:43  [ main:739 ] - [ WARN ]  Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configAllen' defined in file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/configuration_bean/Allen.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0': Cannot create inner bean '(inner bean)#6b2ea799' of type [org.springframework.aop.aspectj.AspectJMethodBeforeAdvice] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#6b2ea799': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [org.springframework.aop.aspectj.AspectJMethodBeforeAdvice] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+2020-03-02 18:39:11  [ main:0 ] - [ DEBUG ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@136432db
+2020-03-02 18:39:11  [ main:245 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/configuration_bean/Allen.class]
+2020-03-02 18:39:11  [ main:247 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/configuration_bean/Bruce.class]
+2020-03-02 18:39:11  [ main:259 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/configuration_bean/PersonConfiguration.class]
+2020-03-02 18:39:11  [ main:262 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/datasource/DataSourceConfiguration.class]
+2020-03-02 18:39:11  [ main:263 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic/Audi.class]
+2020-03-02 18:39:11  [ main:263 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic/Porsche.class]
+2020-03-02 18:39:11  [ main:264 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic/SetAutowire.class]
+2020-03-02 18:39:11  [ main:265 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic2/Audi.class]
+2020-03-02 18:39:11  [ main:265 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic2/Bmw.class]
+2020-03-02 18:39:11  [ main:266 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic2/Execute.class]
+2020-03-02 18:39:11  [ main:267 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/interface_injection/Allen.class]
+2020-03-02 18:39:11  [ main:267 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/interface_injection/Bruce.class]
+2020-03-02 18:39:11  [ main:268 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/interface_injection/PersonInvoke.class]
+2020-03-02 18:39:11  [ main:298 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/jsr/JsrDAO.class]
+2020-03-02 18:39:11  [ main:301 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/jsr/JsrService.class]
+2020-03-02 18:39:11  [ main:314 ] - [ DEBUG ]  Loaded 27 bean definitions from class path resource [applicationContext.xml]
+2020-03-02 18:39:11  [ main:336 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2020-03-02 18:39:11  [ main:352 ] - [ DEBUG ]  Failed to introspect @Bean methods on class [org.springframework.aop.aspectj.AspectJExpressionPointcut]: java.lang.IllegalStateException: Failed to introspect annotated methods on class org.springframework.aop.aspectj.AspectJExpressionPointcut
+2020-03-02 18:39:11  [ main:445 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2020-03-02 18:39:11  [ main:447 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2020-03-02 18:39:11  [ main:451 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2020-03-02 18:39:12  [ main:453 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2020-03-02 18:39:12  [ main:458 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
+2020-03-02 18:39:12  [ main:516 ] - [ DEBUG ]  Creating shared instance of singleton bean 'configAllen'
+2020-03-02 18:39:12  [ main:516 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0'
+2020-03-02 18:39:12  [ main:523 ] - [ WARN ]  Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'configAllen' defined in file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/configuration_bean/Allen.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.aop.aspectj.AspectJPointcutAdvisor#0': Cannot create inner bean '(inner bean)#6b2ea799' of type [org.springframework.aop.aspectj.AspectJMethodBeforeAdvice] while setting constructor argument; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name '(inner bean)#6b2ea799': Lookup method resolution failed; nested exception is java.lang.IllegalStateException: Failed to introspect Class [org.springframework.aop.aspectj.AspectJMethodBeforeAdvice] from ClassLoader [sun.misc.Launcher$AppClassLoader@18b4aac2]
+2020-03-02 21:30:08  [ main:0 ] - [ DEBUG ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@136432db
+2020-03-02 21:30:08  [ main:222 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/configuration_bean/Allen.class]
+2020-03-02 21:30:08  [ main:224 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/configuration_bean/Bruce.class]
+2020-03-02 21:30:08  [ main:234 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/configuration_bean/PersonConfiguration.class]
+2020-03-02 21:30:08  [ main:238 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/datasource/DataSourceConfiguration.class]
+2020-03-02 21:30:08  [ main:238 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic/Audi.class]
+2020-03-02 21:30:08  [ main:239 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic/Porsche.class]
+2020-03-02 21:30:08  [ main:239 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic/SetAutowire.class]
+2020-03-02 21:30:08  [ main:240 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic2/Audi.class]
+2020-03-02 21:30:08  [ main:240 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic2/Bmw.class]
+2020-03-02 21:30:08  [ main:241 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic2/Execute.class]
+2020-03-02 21:30:08  [ main:241 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/interface_injection/Allen.class]
+2020-03-02 21:30:08  [ main:242 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/interface_injection/Bruce.class]
+2020-03-02 21:30:08  [ main:242 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/interface_injection/PersonInvoke.class]
+2020-03-02 21:30:08  [ main:270 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/jsr/JsrDAO.class]
+2020-03-02 21:30:08  [ main:273 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/jsr/JsrService.class]
+2020-03-02 21:30:08  [ main:275 ] - [ DEBUG ]  Loaded 24 bean definitions from class path resource [applicationContext.xml]
+2020-03-02 21:30:08  [ main:297 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2020-03-02 21:30:08  [ main:402 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2020-03-02 21:30:08  [ main:404 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2020-03-02 21:30:08  [ main:406 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2020-03-02 21:30:08  [ main:407 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2020-03-02 21:30:08  [ main:414 ] - [ DEBUG ]  Creating shared instance of singleton bean 'configAllen'
+2020-03-02 21:30:08  [ main:421 ] - [ DEBUG ]  Creating shared instance of singleton bean 'configBruce'
+2020-03-02 21:30:08  [ main:422 ] - [ DEBUG ]  Creating shared instance of singleton bean 'personConfiguration'
+2020-03-02 21:30:08  [ main:437 ] - [ DEBUG ]  Creating shared instance of singleton bean 'dataSourceConfiguration'
+2020-03-02 21:30:08  [ main:441 ] - [ DEBUG ]  Found key 'jdbc.driver' in PropertySource 'class path resource [db.properties]' with value of type String
+2020-03-02 21:30:08  [ main:443 ] - [ DEBUG ]  Found key 'jdbc.url' in PropertySource 'class path resource [db.properties]' with value of type String
+2020-03-02 21:30:08  [ main:444 ] - [ DEBUG ]  Found key 'jdbc.username' in PropertySource 'class path resource [db.properties]' with value of type String
+2020-03-02 21:30:08  [ main:444 ] - [ DEBUG ]  Found key 'jdbc.password' in PropertySource 'class path resource [db.properties]' with value of type String
+2020-03-02 21:30:08  [ main:447 ] - [ DEBUG ]  Creating shared instance of singleton bean 'audi'
+2020-03-02 21:30:08  [ main:447 ] - [ DEBUG ]  Creating shared instance of singleton bean 'porsche'
+2020-03-02 21:30:08  [ main:448 ] - [ DEBUG ]  Creating shared instance of singleton bean 'setAutowire'
+2020-03-02 21:30:08  [ main:475 ] - [ DEBUG ]  Creating shared instance of singleton bean 'audi2'
+2020-03-02 21:30:08  [ main:475 ] - [ DEBUG ]  Creating shared instance of singleton bean 'bmw2'
+2020-03-02 21:30:08  [ main:476 ] - [ DEBUG ]  Creating shared instance of singleton bean 'execute'
+2020-03-02 21:30:08  [ main:478 ] - [ DEBUG ]  Creating shared instance of singleton bean 'allen'
+2020-03-02 21:30:08  [ main:478 ] - [ DEBUG ]  Creating shared instance of singleton bean 'bruce'
+2020-03-02 21:30:08  [ main:479 ] - [ DEBUG ]  Creating shared instance of singleton bean 'personInvoke'
+2020-03-02 21:30:08  [ main:480 ] - [ DEBUG ]  Creating shared instance of singleton bean 'helloworld'
+2020-03-02 21:30:08  [ main:480 ] - [ DEBUG ]  Creating shared instance of singleton bean 'person'
+2020-03-02 21:30:08  [ main:505 ] - [ DEBUG ]  Creating shared instance of singleton bean 'jsrDAO'
+2020-03-02 21:30:08  [ main:505 ] - [ DEBUG ]  Creating shared instance of singleton bean 'jsrService'
+2020-03-02 21:30:08  [ main:511 ] - [ DEBUG ]  Creating shared instance of singleton bean 'myAspect'
+2020-03-02 21:30:08  [ main:511 ] - [ DEBUG ]  Creating shared instance of singleton bean 'businessClass'
+2020-03-02 21:30:08  [ main:512 ] - [ DEBUG ]  Creating shared instance of singleton bean 'getPerson'
+2020-03-02 21:30:08  [ main:525 ] - [ DEBUG ]  Creating shared instance of singleton bean 'dataSource'
+2020-03-02 21:30:08  [ main:574 ] - [ DEBUG ]  Creating shared instance of singleton bean 'dataSource2'
+2020-03-02 21:30:08  [ MLog-Init-Reporter:597 ] - [ INFO ]  MLog clients using slf4j logging.
+2020-03-02 21:30:08  [ MLog-Init-Reporter:606 ] - [ DEBUG ]  Reading VM config for path list /com/mchange/v2/log/default-mchange-log.properties, /mchange-commons.properties, /c3p0.properties, hocon:/reference,/application,/c3p0,/, /mchange-log.properties, /
+2020-03-02 21:30:08  [ MLog-Init-Reporter:606 ] - [ DEBUG ]  The configuration file for resource identifier '/mchange-commons.properties' could not be found. Skipping.
+2020-03-02 21:30:08  [ MLog-Init-Reporter:606 ] - [ DEBUG ]  The configuration file for resource identifier '/c3p0.properties' could not be found. Skipping.
+2020-03-02 21:30:08  [ MLog-Init-Reporter:607 ] - [ DEBUG ]  The configuration file for resource identifier 'hocon:/reference,/application,/c3p0,/' could not be found. Skipping.
+2020-03-02 21:30:08  [ MLog-Init-Reporter:607 ] - [ DEBUG ]  The configuration file for resource identifier '/mchange-log.properties' could not be found. Skipping.
+2020-03-02 21:30:08  [ main:608 ] - [ DEBUG ]  The configuration file for resource identifier '/mchange-commons.properties' could not be found. Skipping.
+2020-03-02 21:30:08  [ main:608 ] - [ DEBUG ]  The configuration file for resource identifier '/mchange-log.properties' could not be found. Skipping.
+2020-03-02 21:30:08  [ main:608 ] - [ DEBUG ]  The configuration file for resource identifier 'hocon:/reference,/application,/c3p0,/' could not be found. Skipping.
+2020-03-02 21:30:08  [ main:608 ] - [ DEBUG ]  The configuration file for resource identifier '/c3p0.properties' could not be found. Skipping.
+2020-03-02 21:30:09  [ main:737 ] - [ INFO ]  Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+2020-03-02 21:30:09  [ main:758 ] - [ DEBUG ]  MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=1hge2kka8174n5c41hdp5y3|5609159b,name=1hge2kka8174n5c41hdp5y3|5609159b registered.
+2020-03-02 21:30:09  [ main:773 ] - [ DEBUG ]  MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=1hge2kka8174n5c41hdp5y3|5609159b,name=1hge2kka8174n5c41hdp5y3|5609159b unregistered, in order to be reregistered after update.
+2020-03-02 21:30:09  [ main:774 ] - [ DEBUG ]  MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=1hge2kka8174n5c41hdp5y3|5609159b,name=1hge2kka8174n5c41hdp5y3|5609159b registered.
+2020-03-02 21:30:09  [ main:781 ] - [ DEBUG ]  Creating shared instance of singleton bean 'getAudi'
+2020-03-02 21:30:09  [ main:781 ] - [ DEBUG ]  Creating shared instance of singleton bean 'getBmw'
+2020-03-02 21:30:49  [ main:0 ] - [ DEBUG ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@136432db
+2020-03-02 21:30:49  [ main:226 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/configuration_bean/Allen.class]
+2020-03-02 21:30:49  [ main:228 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/configuration_bean/Bruce.class]
+2020-03-02 21:30:49  [ main:238 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/configuration_bean/PersonConfiguration.class]
+2020-03-02 21:30:49  [ main:241 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/datasource/DataSourceConfiguration.class]
+2020-03-02 21:30:49  [ main:241 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic/Audi.class]
+2020-03-02 21:30:49  [ main:242 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic/Porsche.class]
+2020-03-02 21:30:49  [ main:242 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic/SetAutowire.class]
+2020-03-02 21:30:49  [ main:243 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic2/Audi.class]
+2020-03-02 21:30:49  [ main:243 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic2/Bmw.class]
+2020-03-02 21:30:49  [ main:244 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic2/Execute.class]
+2020-03-02 21:30:49  [ main:244 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/interface_injection/Allen.class]
+2020-03-02 21:30:49  [ main:245 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/interface_injection/Bruce.class]
+2020-03-02 21:30:49  [ main:245 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/interface_injection/PersonInvoke.class]
+2020-03-02 21:30:49  [ main:272 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/jsr/JsrDAO.class]
+2020-03-02 21:30:49  [ main:275 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/jsr/JsrService.class]
+2020-03-02 21:30:49  [ main:282 ] - [ DEBUG ]  Loaded 25 bean definitions from class path resource [applicationContext.xml]
+2020-03-02 21:30:49  [ main:303 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2020-03-02 21:30:49  [ main:409 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2020-03-02 21:30:49  [ main:411 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2020-03-02 21:30:49  [ main:413 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2020-03-02 21:30:49  [ main:414 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2020-03-02 21:30:49  [ main:417 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
+2020-03-02 21:30:49  [ main:479 ] - [ DEBUG ]  Creating shared instance of singleton bean 'configAllen'
+2020-03-02 21:30:49  [ main:483 ] - [ DEBUG ]  Creating shared instance of singleton bean 'configBruce'
+2020-03-02 21:30:49  [ main:483 ] - [ DEBUG ]  Creating shared instance of singleton bean 'personConfiguration'
+2020-03-02 21:30:49  [ main:500 ] - [ DEBUG ]  Creating shared instance of singleton bean 'dataSourceConfiguration'
+2020-03-02 21:30:49  [ main:503 ] - [ DEBUG ]  Found key 'jdbc.driver' in PropertySource 'class path resource [db.properties]' with value of type String
+2020-03-02 21:30:49  [ main:504 ] - [ DEBUG ]  Found key 'jdbc.url' in PropertySource 'class path resource [db.properties]' with value of type String
+2020-03-02 21:30:49  [ main:505 ] - [ DEBUG ]  Found key 'jdbc.username' in PropertySource 'class path resource [db.properties]' with value of type String
+2020-03-02 21:30:49  [ main:512 ] - [ DEBUG ]  Found key 'jdbc.password' in PropertySource 'class path resource [db.properties]' with value of type String
+2020-03-02 21:30:49  [ main:512 ] - [ DEBUG ]  Creating shared instance of singleton bean 'audi'
+2020-03-02 21:30:49  [ main:513 ] - [ DEBUG ]  Creating shared instance of singleton bean 'porsche'
+2020-03-02 21:30:49  [ main:514 ] - [ DEBUG ]  Creating shared instance of singleton bean 'setAutowire'
+2020-03-02 21:30:49  [ main:529 ] - [ DEBUG ]  Creating shared instance of singleton bean 'audi2'
+2020-03-02 21:30:49  [ main:530 ] - [ DEBUG ]  Creating shared instance of singleton bean 'bmw2'
+2020-03-02 21:30:49  [ main:531 ] - [ DEBUG ]  Creating shared instance of singleton bean 'execute'
+2020-03-02 21:30:49  [ main:532 ] - [ DEBUG ]  Creating shared instance of singleton bean 'allen'
+2020-03-02 21:30:49  [ main:533 ] - [ DEBUG ]  Creating shared instance of singleton bean 'bruce'
+2020-03-02 21:30:49  [ main:533 ] - [ DEBUG ]  Creating shared instance of singleton bean 'personInvoke'
+2020-03-02 21:30:49  [ main:535 ] - [ DEBUG ]  Creating shared instance of singleton bean 'helloworld'
+2020-03-02 21:30:49  [ main:535 ] - [ DEBUG ]  Creating shared instance of singleton bean 'person'
+2020-03-02 21:30:49  [ main:552 ] - [ DEBUG ]  Creating shared instance of singleton bean 'jsrDAO'
+2020-03-02 21:30:49  [ main:553 ] - [ DEBUG ]  Creating shared instance of singleton bean 'jsrService'
+2020-03-02 21:30:49  [ main:564 ] - [ DEBUG ]  Creating shared instance of singleton bean 'myAspect'
+2020-03-02 21:30:49  [ main:565 ] - [ DEBUG ]  Creating shared instance of singleton bean 'businessClass'
+2020-03-02 21:30:49  [ main:565 ] - [ DEBUG ]  Creating shared instance of singleton bean 'getPerson'
+2020-03-02 21:30:49  [ main:581 ] - [ DEBUG ]  Creating shared instance of singleton bean 'dataSource'
+2020-03-02 21:30:49  [ main:636 ] - [ DEBUG ]  Creating shared instance of singleton bean 'dataSource2'
+2020-03-02 21:30:50  [ MLog-Init-Reporter:658 ] - [ INFO ]  MLog clients using slf4j logging.
+2020-03-02 21:30:50  [ MLog-Init-Reporter:662 ] - [ DEBUG ]  Reading VM config for path list /com/mchange/v2/log/default-mchange-log.properties, /mchange-commons.properties, /c3p0.properties, hocon:/reference,/application,/c3p0,/, /mchange-log.properties, /
+2020-03-02 21:30:50  [ MLog-Init-Reporter:662 ] - [ DEBUG ]  The configuration file for resource identifier '/mchange-commons.properties' could not be found. Skipping.
+2020-03-02 21:30:50  [ MLog-Init-Reporter:662 ] - [ DEBUG ]  The configuration file for resource identifier '/c3p0.properties' could not be found. Skipping.
+2020-03-02 21:30:50  [ MLog-Init-Reporter:662 ] - [ DEBUG ]  The configuration file for resource identifier 'hocon:/reference,/application,/c3p0,/' could not be found. Skipping.
+2020-03-02 21:30:50  [ MLog-Init-Reporter:662 ] - [ DEBUG ]  The configuration file for resource identifier '/mchange-log.properties' could not be found. Skipping.
+2020-03-02 21:30:50  [ main:664 ] - [ DEBUG ]  The configuration file for resource identifier '/mchange-commons.properties' could not be found. Skipping.
+2020-03-02 21:30:50  [ main:664 ] - [ DEBUG ]  The configuration file for resource identifier '/mchange-log.properties' could not be found. Skipping.
+2020-03-02 21:30:50  [ main:664 ] - [ DEBUG ]  The configuration file for resource identifier 'hocon:/reference,/application,/c3p0,/' could not be found. Skipping.
+2020-03-02 21:30:50  [ main:665 ] - [ DEBUG ]  The configuration file for resource identifier '/c3p0.properties' could not be found. Skipping.
+2020-03-02 21:30:50  [ main:779 ] - [ INFO ]  Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+2020-03-02 21:30:50  [ main:802 ] - [ DEBUG ]  MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=1hge2kka8174o11v36i673|d6e7bab,name=1hge2kka8174o11v36i673|d6e7bab registered.
+2020-03-02 21:30:50  [ main:833 ] - [ DEBUG ]  MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=1hge2kka8174o11v36i673|d6e7bab,name=1hge2kka8174o11v36i673|d6e7bab unregistered, in order to be reregistered after update.
+2020-03-02 21:30:50  [ main:833 ] - [ DEBUG ]  MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=1hge2kka8174o11v36i673|d6e7bab,name=1hge2kka8174o11v36i673|d6e7bab registered.
+2020-03-02 21:30:50  [ main:849 ] - [ DEBUG ]  Creating shared instance of singleton bean 'getAudi'
+2020-03-02 21:30:50  [ main:850 ] - [ DEBUG ]  Creating shared instance of singleton bean 'getBmw'
+2020-03-02 21:31:52  [ main:0 ] - [ DEBUG ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@136432db
+2020-03-02 21:31:52  [ main:230 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/configuration_bean/Allen.class]
+2020-03-02 21:31:52  [ main:232 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/configuration_bean/Bruce.class]
+2020-03-02 21:31:52  [ main:242 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/configuration_bean/PersonConfiguration.class]
+2020-03-02 21:31:52  [ main:245 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/datasource/DataSourceConfiguration.class]
+2020-03-02 21:31:52  [ main:246 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic/Audi.class]
+2020-03-02 21:31:52  [ main:247 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic/Porsche.class]
+2020-03-02 21:31:52  [ main:247 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic/SetAutowire.class]
+2020-03-02 21:31:52  [ main:248 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic2/Audi.class]
+2020-03-02 21:31:52  [ main:248 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic2/Bmw.class]
+2020-03-02 21:31:52  [ main:248 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/generic2/Execute.class]
+2020-03-02 21:31:52  [ main:249 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/interface_injection/Allen.class]
+2020-03-02 21:31:52  [ main:249 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/interface_injection/Bruce.class]
+2020-03-02 21:31:52  [ main:250 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/annotation/interface_injection/PersonInvoke.class]
+2020-03-02 21:31:52  [ main:277 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/jsr/JsrDAO.class]
+2020-03-02 21:31:52  [ main:279 ] - [ DEBUG ]  Identified candidate component class: file [/Users/zhangchunyang/Documents/IdeaProjects/aysos/target/classes/com/com.zcy/spring/ioc/jsr/JsrService.class]
+2020-03-02 21:31:52  [ main:287 ] - [ DEBUG ]  Loaded 25 bean definitions from class path resource [applicationContext.xml]
+2020-03-02 21:31:52  [ main:308 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalConfigurationAnnotationProcessor'
+2020-03-02 21:31:52  [ main:414 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerProcessor'
+2020-03-02 21:31:52  [ main:415 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.event.internalEventListenerFactory'
+2020-03-02 21:31:52  [ main:417 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalAutowiredAnnotationProcessor'
+2020-03-02 21:31:52  [ main:418 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.context.annotation.internalCommonAnnotationProcessor'
+2020-03-02 21:31:52  [ main:421 ] - [ DEBUG ]  Creating shared instance of singleton bean 'org.springframework.aop.config.internalAutoProxyCreator'
+2020-03-02 21:31:52  [ main:476 ] - [ DEBUG ]  Creating shared instance of singleton bean 'configAllen'
+2020-03-02 21:31:52  [ main:479 ] - [ DEBUG ]  Creating shared instance of singleton bean 'configBruce'
+2020-03-02 21:31:52  [ main:479 ] - [ DEBUG ]  Creating shared instance of singleton bean 'personConfiguration'
+2020-03-02 21:31:52  [ main:495 ] - [ DEBUG ]  Creating shared instance of singleton bean 'dataSourceConfiguration'
+2020-03-02 21:31:52  [ main:497 ] - [ DEBUG ]  Found key 'jdbc.driver' in PropertySource 'class path resource [db.properties]' with value of type String
+2020-03-02 21:31:52  [ main:497 ] - [ DEBUG ]  Found key 'jdbc.url' in PropertySource 'class path resource [db.properties]' with value of type String
+2020-03-02 21:31:52  [ main:498 ] - [ DEBUG ]  Found key 'jdbc.username' in PropertySource 'class path resource [db.properties]' with value of type String
+2020-03-02 21:31:52  [ main:504 ] - [ DEBUG ]  Found key 'jdbc.password' in PropertySource 'class path resource [db.properties]' with value of type String
+2020-03-02 21:31:52  [ main:504 ] - [ DEBUG ]  Creating shared instance of singleton bean 'audi'
+2020-03-02 21:31:52  [ main:505 ] - [ DEBUG ]  Creating shared instance of singleton bean 'porsche'
+2020-03-02 21:31:52  [ main:505 ] - [ DEBUG ]  Creating shared instance of singleton bean 'setAutowire'
+2020-03-02 21:31:52  [ main:517 ] - [ DEBUG ]  Creating shared instance of singleton bean 'audi2'
+2020-03-02 21:31:52  [ main:517 ] - [ DEBUG ]  Creating shared instance of singleton bean 'bmw2'
+2020-03-02 21:31:52  [ main:518 ] - [ DEBUG ]  Creating shared instance of singleton bean 'execute'
+2020-03-02 21:31:52  [ main:520 ] - [ DEBUG ]  Creating shared instance of singleton bean 'allen'
+2020-03-02 21:31:52  [ main:521 ] - [ DEBUG ]  Creating shared instance of singleton bean 'bruce'
+2020-03-02 21:31:52  [ main:522 ] - [ DEBUG ]  Creating shared instance of singleton bean 'personInvoke'
+2020-03-02 21:31:52  [ main:523 ] - [ DEBUG ]  Creating shared instance of singleton bean 'helloworld'
+2020-03-02 21:31:52  [ main:523 ] - [ DEBUG ]  Creating shared instance of singleton bean 'person'
+2020-03-02 21:31:52  [ main:533 ] - [ DEBUG ]  Creating shared instance of singleton bean 'jsrDAO'
+2020-03-02 21:31:52  [ main:535 ] - [ DEBUG ]  Creating shared instance of singleton bean 'jsrService'
+2020-03-02 21:31:52  [ main:542 ] - [ DEBUG ]  Creating shared instance of singleton bean 'myAspect'
+2020-03-02 21:31:53  [ main:543 ] - [ DEBUG ]  Creating shared instance of singleton bean 'businessClass'
+2020-03-02 21:31:53  [ main:543 ] - [ DEBUG ]  Creating shared instance of singleton bean 'getPerson'
+2020-03-02 21:31:53  [ main:553 ] - [ DEBUG ]  Creating shared instance of singleton bean 'dataSource'
+2020-03-02 21:31:53  [ main:589 ] - [ DEBUG ]  Creating shared instance of singleton bean 'dataSource2'
+2020-03-02 21:31:53  [ MLog-Init-Reporter:604 ] - [ INFO ]  MLog clients using slf4j logging.
+2020-03-02 21:31:53  [ MLog-Init-Reporter:608 ] - [ DEBUG ]  Reading VM config for path list /com/mchange/v2/log/default-mchange-log.properties, /mchange-commons.properties, /c3p0.properties, hocon:/reference,/application,/c3p0,/, /mchange-log.properties, /
+2020-03-02 21:31:53  [ MLog-Init-Reporter:608 ] - [ DEBUG ]  The configuration file for resource identifier '/mchange-commons.properties' could not be found. Skipping.
+2020-03-02 21:31:53  [ MLog-Init-Reporter:608 ] - [ DEBUG ]  The configuration file for resource identifier '/c3p0.properties' could not be found. Skipping.
+2020-03-02 21:31:53  [ MLog-Init-Reporter:609 ] - [ DEBUG ]  The configuration file for resource identifier 'hocon:/reference,/application,/c3p0,/' could not be found. Skipping.
+2020-03-02 21:31:53  [ MLog-Init-Reporter:609 ] - [ DEBUG ]  The configuration file for resource identifier '/mchange-log.properties' could not be found. Skipping.
+2020-03-02 21:31:53  [ main:610 ] - [ DEBUG ]  The configuration file for resource identifier '/mchange-commons.properties' could not be found. Skipping.
+2020-03-02 21:31:53  [ main:611 ] - [ DEBUG ]  The configuration file for resource identifier '/mchange-log.properties' could not be found. Skipping.
+2020-03-02 21:31:53  [ main:611 ] - [ DEBUG ]  The configuration file for resource identifier 'hocon:/reference,/application,/c3p0,/' could not be found. Skipping.
+2020-03-02 21:31:53  [ main:611 ] - [ DEBUG ]  The configuration file for resource identifier '/c3p0.properties' could not be found. Skipping.
+2020-03-02 21:31:53  [ main:682 ] - [ INFO ]  Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+2020-03-02 21:31:53  [ main:701 ] - [ DEBUG ]  MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=1hge2kka8174pdonfj59ap|d6e7bab,name=1hge2kka8174pdonfj59ap|d6e7bab registered.
+2020-03-02 21:31:53  [ main:716 ] - [ DEBUG ]  MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=1hge2kka8174pdonfj59ap|d6e7bab,name=1hge2kka8174pdonfj59ap|d6e7bab unregistered, in order to be reregistered after update.
+2020-03-02 21:31:53  [ main:717 ] - [ DEBUG ]  MBean: com.mchange.v2.c3p0:type=PooledDataSource,identityToken=1hge2kka8174pdonfj59ap|d6e7bab,name=1hge2kka8174pdonfj59ap|d6e7bab registered.
+2020-03-02 21:31:53  [ main:726 ] - [ DEBUG ]  Creating shared instance of singleton bean 'getAudi'
+2020-03-02 21:31:53  [ main:727 ] - [ DEBUG ]  Creating shared instance of singleton bean 'getBmw'
