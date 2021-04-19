@@ -40,12 +40,51 @@ public class __2_TypeCast {
      * <p> long:  在内存中占8个字节，共64位。第1位符号位; 接下来63位为数值位,它表示的数值有2的63次方; 平分正负，数值范围是 [-2^63 , 2^63-1]
      * <p> float: 在内存中占4个字节，共32位。第1位符号位; 接下来的8位为指数域; 剩下的23位为小数域。(也就是说，浮点数在内存中的二进制值不是直接转换为十进制数值的，而是按照上述公式计算而来，通过这个公式，虽然只用到了4个字节，但是浮点数却比长整型的最大值要大。)
      * <p>
-     * <p> (归根结底，long存放的是数值，而float存放的则是一种逻辑规则。  (-1)^sign × fraction × 2^exponent
+     * <p> (归根结底，long存放的是数值，而float存放的则是一种逻辑规则。  (-1)^sign × 2^exponent × fraction
      * <p>（exponent中存储的数值是0（-127+127）到255（128+127））
      * <p>
      * <p> 参考: https://blog.csdn.net/realYuzhou/article/details/106961396
      */
     public void misc() {
     }
+}
 
+
+
+
+/**
+ * 各种类型转换 (复杂类型, String Number primitive)
+ */
+class KindOfTypeCast {
+    public static void main(String[] args) {
+        // String -> Number or primitive
+        String str = "123";
+
+        Integer integer = Integer.valueOf(str);
+        int i = Integer.parseInt(str);
+
+        Long aLong = Long.valueOf(str);
+        long l = Long.parseLong(str);
+
+        Short aShort = Short.valueOf(str);
+        short s = Short.parseShort(str);
+
+        Byte aByte = Byte.valueOf(str);
+        byte b = Byte.parseByte(str);
+
+        System.out.println("str=" + str + " -> " + integer + "|" + i
+                + " " + aLong + "|" + l
+                + " " + aShort + "|" + s
+                + " " + aByte + "|" + b);
+
+
+        // Number -> primitive (unbox)
+        System.out.println("=========== Abstract Number Class Method ===========");
+        System.out.println(integer.byteValue());
+        System.out.println(integer.shortValue());
+        System.out.println(integer.intValue());
+        System.out.println(integer.longValue());
+        System.out.println(integer.doubleValue());
+        System.out.println(integer.floatValue());
+    }
 }
