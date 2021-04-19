@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oceanpayment.opgateway.mapper.RefundMapper">
+    <resultMap type="com.oceanpayment.opgateway.pojo.bo.RefundInfoBO" id="RefundInfoMap">
+        <result column="up_id" jdbcType="NUMERIC" property="refundId"/>
+        <result column="up_refund_number" jdbcType="VARCHAR" property="merchantRefundId"/>
+        <result column="up_queryno" jdbcType="VARCHAR" property="bankRefundId"/>
+        <result column="up_currency" jdbcType="VARCHAR" property="currency"/>
+        <result column="up_amount" jdbcType="VARCHAR" property="amount"/>
+        <result column="up_status" jdbcType="NUMERIC" property="processingStatus"/>
+        <result column="up_reason" jdbcType="VARCHAR" property="refundReason"/>
+    </resultMap>
+
+    <resultMap type="com.oceanpayment.opgateway.pojo.bo.RefundQueryGatewayBO" id="RefundQueryGatewayMap">
+        <result column="gw_no" jdbcType="NUMERIC" property="gwNo"/>
+        <result column="gw_mer_no" jdbcType="NUMERIC" property="merNo"/>
+        <result column="gw_md5key" jdbcType="VARCHAR" property="md5key"/>
+        <result column="gw_status" jdbcType="NUMERIC" property="gwStatus"/>
+        <result column="mer_clear_status" jdbcType="NUMERIC" property="merClearStatus"/>
+    </resultMap>
+
+    <!-- 退款信息查询 -->
+    <select id="selectRefundInfo" resultMap="RefundInfoMap">
+        SELECT up_id,
+        up_refund_number,
+        up_currency,
+        up_amount,
+        up_status,
+        up_reason,
+        up_queryno
+        FROM ccps_unnormal_process
+        <where>
+            <choose>
+                <when test="refundId != null">
+                    AND up_id = #{refundId,jdbcType=BIGINT}
+                </when>
+                <when test="merchantRefundId != null and merchantRefundId != ''">
+                    AND up_refund_number = #{merchantRefundId,jdbcType=VARCHAR}
+                </when>
+                <otherwise>
+                    AND up_id = #{refundId,jdbcType=BIGINT}
+                </otherwise>
+            </choose>
+            AND up_mer_no = #{merchantNo,jdbcType=BIGINT}  <!-- 商户号 -->
+            AND up_gw_no = #{gatewayNo,jdbcType=BIGINT}    <!-- 终端号 -->
+            AND up_type IN (1, 5)                          <!-- 异常交易类型: 1退款 5解冻变退款 -->
+        </where>
+        ORDER BY up_id DESC
+    </select>
+
+    <!-- 查询退款请求终端号信息 -->
+    <select id="selectRefundQueryGatewayInfo" resultMap="RefundQueryGatewayMap">
+        SELECT gt.gw_mer_no, gt.gw_no, gt.gw_md5key, gt.gw_status, mer.mer_clear_status
+        FROM ccps_gateway gt
+                     LEFT JOIN ccps_merchant mer ON gt.gw_mer_no = mer.mer_no
+        WHERE gt.gw_no = #{gwNo,jdbcType=BIGINT}
+    </select>
+
+    <!-- 根据终端号查询IP地址校验标志 (是否开启IP校验) -->
+    <select id="selectIpCheckFlagByGwNo" resultType="_int">
+        SELECT gw_ipcheck
+        FROM ccps_gateway
+        WHERE gw_no = #{gwNo,jdbcType=BIGINT}
+    </select>
+
+    <!-- 根据商户号和IP地址统计数量 -->
+    <select id="countRecordByMerNoAndIp" resultType="int">
+        SELECT COUNT(*)
+        FROM ccps_mer_checkip
+        WHERE mc_type = 1
+          AND (mc_mer_no = #{merNo,jdbcType=BIGINT} OR mc_mer_no = 0)
+          AND mc_ip = #{ip,jdbcType=VARCHAR}
+    </select>
+</mapper>

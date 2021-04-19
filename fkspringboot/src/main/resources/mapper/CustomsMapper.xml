@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.oceanpayment.opgateway.mapper.CustomsMapper">
+    <resultMap type="com.oceanpayment.opgateway.pojo.dto.customs.CustomsQueryResultDTO" id="CustomsInfoMap">
+        <result column="tr_no" jdbcType="VARCHAR" property="tradeNo"/>
+        <result column="tr_reference" jdbcType="VARCHAR" property="tradeReference"/>
+        <result column="tr_status" jdbcType="NUMERIC" property="tradeStatus"/>
+        <result column="tr_bankamout" jdbcType="NUMERIC" property="tradeBankAmount"/>
+        <result column="tr_bankcurrency" jdbcType="VARCHAR" property="tradeBankCurrency"/>
+        <result column="tr_bankreturncode" jdbcType="VARCHAR" property="bankReturnCode"/>
+        <result column="tr_bankinfo" jdbcType="VARCHAR" property="bankInfo"/>
+        <result column="tr_tranreturncode" jdbcType="VARCHAR" property="tranReturnCode"/>
+        <result column="tr_traninfo" jdbcType="VARCHAR" property="tranInfo"/>
+        <result column="tr_bank_code" jdbcType="VARCHAR" property="bankCode"/>
+        <result column="bank_check_url" jdbcType="VARCHAR" property="bankCheckUrl"/>
+        <result column="tr_batchno" jdbcType="VARCHAR" property="batchNo"/>
+        <result column="tr_authorizeld" jdbcType="VARCHAR" property="authorizationNo"/>
+        <result column="tr_bank_pid" jdbcType="VARCHAR" property="bankPid"/>
+        <result column="tr_bankorderno" jdbcType="VARCHAR" property="bankOrderNo"/>
+        <result column="tr_queryno" jdbcType="VARCHAR" property="queryNo"/>
+        <result column="tr_auth_type" jdbcType="NUMERIC" property="tradeAuthType"/>
+        <result column="tr_cha_code" jdbcType="NUMERIC" property="tradeChannelCode"/>
+        <result column="tr_mer_no" jdbcType="NUMERIC" property="tradeMerchantNo"/>
+        <result column="tr_datetime" jdbcType="TIMESTAMP" property="tradeDatetime"/>
+        <result column="tr_paystarttime" jdbcType="TIMESTAMP" property="tradePayStartTime"/>
+        <result column="bank_refund_bean" jdbcType="VARCHAR" property="bankRefundBean"/>
+        <result column="tr_pm_id" jdbcType="INTEGER" property="paymentMethodId" />
+        <result column="tr_whether_3d" jdbcType="NUMERIC" property="whether3d"/>
+        <result column="cha_is_3d" jdbcType="NUMERIC" property="channelIs3d"/>
+        <result column="cha_merno" jdbcType="VARCHAR" property="channelMerchantNo"/>
+        <result column="curr_code" jdbcType="VARCHAR" property="currencyCode"/>
+        <result column="cha_secure_secret" jdbcType="VARCHAR" property="channelSecureSecret"/>
+        <result column="cha_vpc_accesscode" jdbcType="VARCHAR" property="channelVpcAccessCode"/>
+        <result column="cha_vpc_user" jdbcType="VARCHAR" property="chaVpcUser"/>
+        <result column="cha_vpc_password" jdbcType="VARCHAR" property="chaVpcPassword"/>
+        <result column="cha_obligate1" jdbcType="VARCHAR" property="chaObligate1"/>
+        <result column="cha_obligate2" jdbcType="VARCHAR" property="chaObligate2"/>
+        <result column="ci_parameter_1" jdbcType="VARCHAR" property="ciParameter1"/>
+        <result column="ci_parameter_2" jdbcType="VARCHAR" property="ciParameter2"/>
+        <result column="ci_parameter_3" jdbcType="VARCHAR" property="ciParameter3"/>
+        <result column="ci_parameter_4" jdbcType="VARCHAR" property="ciParameter4"/>
+        <result column="ci_parameter_5" jdbcType="VARCHAR" property="ciParameter5"/>
+        <result column="ci_parameter_6" jdbcType="VARCHAR" property="ciParameter6"/>
+        <result column="ci_parameter_7" jdbcType="VARCHAR" property="ciParameter7"/>
+        <result column="ci_parameter_8" jdbcType="VARCHAR" property="ciParameter8"/>
+        <result column="cha_falg" jdbcType="VARCHAR" property="channelFlag"/>
+        <result column="cha_mcc" jdbcType="NUMERIC" property="chaMcc"/>
+        <result column="tr_refundment_amount" jdbcType="NUMERIC" property="refundAmount"/>
+    </resultMap>
+
+    <!-- 海关上送信息查询 -->
+    <select id="selectCustomsInfo" resultMap="CustomsInfoMap">
+        SELECT a.it_send_status,
+               a.it_error_info,
+               a.it_tr_no,
+               a.it_mer_orderno,
+               a.it_pay_currency,
+               a.it_pay_amount,
+               a.it_date
+        FROM ccps_import_trade a,
+             (SELECT it_send_status, MAX(it_id) it_id, it_tr_no, MAX(it_date) it_date
+              FROM ccps_import_trade
+              WHERE it_mer_no = #{account,jdbcType=VARCHAR}
+                AND it_gw_no = #{terminal,jdbcType=VARCHAR}
+                AND it_tr_no IN (?, ?, ?)
+              GROUP BY it_tr_no, it_send_status
+                     ) b
+        WHERE a.it_id = b.it_id
+        ORDER BY a.it_date, a.it_id
+    </select>
+</mapper>
