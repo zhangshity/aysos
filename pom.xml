@@ -25,7 +25,7 @@
 <!--        <maven.compiler.source>8</maven.compiler.source>-->
 <!--        <maven.compiler.target>8</maven.compiler.target>-->
         <spring-boot-starter-parent.version>2.3.8.RELEASE</spring-boot-starter-parent.version>
-        <spring-boot-starter.version>2.3.10.RELEASE</spring-boot-starter.version>
+<!--        <spring-boot-starter.version>2.3.10.RELEASE</spring-boot-starter.version>-->
         <lombok.version>1.18.20</lombok.version>
         <junit.version>4.13.1</junit.version>
         <slf4j-api.version>1.7.30</slf4j-api.version>
@@ -337,4 +337,27 @@
         </plugins>
     </build>
 
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <spring.profiles.active>dev</spring.profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <spring.profiles.active>test</spring.profiles.active>
+            </properties>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <spring.profiles.active>prod</spring.profiles.active>
+            </properties>
+        </profile>
+    </profiles>
 </project>

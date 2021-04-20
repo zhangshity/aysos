@@ -1,0 +1,14 @@
+spring:
+  # ================= Redis =================
+  redis:
+    host: 127.0.0.1
+    port: 6379
+  # ================= 数据源 =================
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:oracle:thin:@192.168.11.155:1521:pdbdev
+    username: ccps
+    password: Dev_PtNz2021
+
+
+

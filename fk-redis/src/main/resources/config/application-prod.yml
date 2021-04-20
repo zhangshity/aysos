@@ -1,25 +1,25 @@
 spring:
   # ================= 开发工具 =================
   devtools:
-    add-properties: true
+    add-properties: false
   # ================= Redis =================
-#  redis:
-#    password: '{cipher}cf3df2d3c6258e97aa5496c3f96222a527f8dbfbe0ded4e784216358ff0ec298'
-#    sentinel:
-#      master: devmaster
-#      nodes:
-#        - 192.168.11.152:26379
-#        - 192.168.11.153:26379
-#        - 192.168.11.154:26379
+  redis:
+    password: '{cipher}cf3df2d3c6258e97aa5496c3f96222a527f8dbfbe0ded4e784216358ff0ec298'
+    sentinel:
+      master: mirrormaster
+      nodes:
+        - 192.168.11.152:26379
+        - 192.168.11.153:26379
+        - 192.168.11.154:26379
   # ================= 数据源 =================
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       master:
         driver-class-name: oracle.jdbc.OracleDriver
-        url: jdbc:oracle:thin:@192.168.11.155:1521:pdbdev
-        username: ccps
-        password: Dev_PtNz2021
+        url: jdbc:oracle:thin:@192.168.11.155:1521:pdbmirror
+        username: ccps_dev
+        password: Read_Op2021
         initial-size: 20
         max-active: 500
         min-idle: 10
@@ -38,9 +38,9 @@ spring:
       slave:
         enabled: true
         driver-class-name: oracle.jdbc.OracleDriver
-        url: jdbc:oracle:thin:@192.168.11.155:1521:pdbtest
-        username: ccps
-        password: Test_PjeW2021
+        url: jdbc:oracle:thin:@192.168.11.155:1521:pdbmirror
+        username: ccps_dev
+        password: Read_Op2021
         initial-size: 20
         max-active: 500
         min-idle: 10
@@ -72,8 +72,8 @@ spring:
     hikari:
       master:
         driver-class-name: oracle.jdbc.OracleDriver
-        jdbc-url: jdbc:oracle:thin:@192.168.11.155:1521:pdbdev
-        username: ccps
+        jdbc-url: 6017e22080e747c8c89374a2d430241b446f7527bbf8f115f0a770796cd1c16e5cc2e6ac99c7ca2deb235092956f80ec
+        username: 63d6ee4a01ef2da1054672ddeda2961c
         password: 3c12f7f9f43bd54344ebc38f47674ded
         minimum-idle: 5
         maximum-pool-size: 15
@@ -86,9 +86,9 @@ spring:
       slave:
         enabled: true
         driver-class-name: oracle.jdbc.OracleDriver
-        jdbc-url: jdbc:oracle:thin:@192.168.11.155:1521:pdbtest
-        username: ccps
-        password: Test_PjeW2021
+        jdbc-url: 6017e22080e747c8c89374a2d430241b446f7527bbf8f115f0a770796cd1c16e4aa9a845a0d62f9819362719c2d108b7
+        username: 63d6ee4a01ef2da1054672ddeda2961c
+        password: d0016e31e01c35a75307300470ed2286
         minimum-idle: 5
         maximum-pool-size: 15
         auto-commit: true
@@ -97,5 +97,3 @@ spring:
         max-lifetime: 1800000
         connection-timeout: 30000
         connection-test-query: SELECT 1 FROM DUAL
-
-

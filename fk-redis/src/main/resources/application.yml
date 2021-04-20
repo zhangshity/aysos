@@ -1,0 +1,29 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+
+
+spring:
+  profiles:
+    active: dev
+
+
+logging:
+  level:
+    root: info
+#    web: debug
+#    com.oceanpayment.opgateway.common.config.datasource: debug  #数据源
+#    com.oceanpayment.opgateway.controller: debug  #controller层
+#    com.oceanpayment.opgateway.service: debug  #service层
+#    com.oceanpayment.opgateway.mapper: debug  #mapper层
+
+# ================= Mybatis =================
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.oceanpayment.opgateway.pojo.entity
+  configuration:
+    map-underscore-to-camel-case: true
+    call-setters-on-nulls: true
+
+

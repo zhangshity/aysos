@@ -1,25 +1,25 @@
 spring:
   # ================= 开发工具 =================
   devtools:
-    add-properties: true
+    add-properties: false
   # ================= Redis =================
-#  redis:
-#    password: '{cipher}cf3df2d3c6258e97aa5496c3f96222a527f8dbfbe0ded4e784216358ff0ec298'
-#    sentinel:
-#      master: devmaster
-#      nodes:
-#        - 192.168.11.152:26379
-#        - 192.168.11.153:26379
-#        - 192.168.11.154:26379
+  redis:
+    password: '{cipher}cf3df2d3c6258e97aa5496c3f96222a527f8dbfbe0ded4e784216358ff0ec298'
+    sentinel:
+      master: testmaster
+      nodes:
+        - 192.168.11.152:26379
+        - 192.168.11.153:26379
+        - 192.168.11.154:26379
   # ================= 数据源 =================
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
     druid:
       master:
         driver-class-name: oracle.jdbc.OracleDriver
-        url: jdbc:oracle:thin:@192.168.11.155:1521:pdbdev
+        url: jdbc:oracle:thin:@192.168.11.155:1521:pdbtest
         username: ccps
-        password: Dev_PtNz2021
+        password: Test_PjeW2021
         initial-size: 20
         max-active: 500
         min-idle: 10
@@ -72,9 +72,9 @@ spring:
     hikari:
       master:
         driver-class-name: oracle.jdbc.OracleDriver
-        jdbc-url: jdbc:oracle:thin:@192.168.11.155:1521:pdbdev
+        jdbc-url: jdbc:oracle:thin:@192.168.11.155:1521:pdbtest
         username: ccps
-        password: 3c12f7f9f43bd54344ebc38f47674ded
+        password: Test_PjeW2021
         minimum-idle: 5
         maximum-pool-size: 15
         auto-commit: true
@@ -97,5 +97,3 @@ spring:
         max-lifetime: 1800000
         connection-timeout: 30000
         connection-test-query: SELECT 1 FROM DUAL
-
-
