@@ -6,8 +6,6 @@ import lombok.Data;
  * 退款信息查询条件DTO
  * <p>Title: </p>
  * <p>Description: </p>
- * <p>Copyright: Copyright (c) 2021 版权</p>
- * <p>Company: Oceanpayment</p>
  * @author Allen.C.Y.Zhang
  * @version V2.0
  * @date 2021-02-26 19:20:39

@@ -4,8 +4,6 @@ package com.test.fkredis.common.constant;
  * 状态枚举
  * <p>Title: </p>
  * <p>Description: 零散的状态和标志整合</p>
- * <p>Copyright: Copyright (c) 2021 版权</p>
- * <p>Company: Oceanpayment</p>
  * @author Allen.C.Y.Zhang
  * @version V1.0
  * @date 2021-03-02 09:25:45

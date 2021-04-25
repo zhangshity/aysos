@@ -14,9 +14,7 @@ import java.util.Map;
 /**
  * 全局统一异常处理
  * <p>Title: GlobalExceptionHandler</p>
- * <p>Description:  //TODO 业务确定是否都是 rest风格返回，可改成@RestControllerAdvice替换 [Allen.C.Y.Zhang,20210225,2个月内]</p>
- * <p>Copyright: Copyright (c) 2021 版权</p>
- * <p>Company: Oceanpayment</p>
+ * <p>Description:
  * @author Allen.C.Y.Zhang
  * @version V1.0
  * @date 2021-02-25 10:36:26

@@ -26,6 +26,9 @@
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <spring-boot-starter-parent.version>2.3.8.RELEASE</spring-boot-starter-parent.version>
+        <druid-spring-boot-starter.version>1.2.5</druid-spring-boot-starter.version>
+        <pagehelper-spring-boot-starter.version>1.2.13</pagehelper-spring-boot-starter.version>
+        <springfox-boot-starter.version>3.0.0</springfox-boot-starter.version>
         <lombok.version>1.18.20</lombok.version>
         <junit.version>4.13.1</junit.version>
         <slf4j-api.version>1.7.30</slf4j-api.version>
@@ -75,6 +78,24 @@
 <!--                <type>pom</type>-->
 <!--                <scope>import</scope>-->
 <!--            </dependency>-->
+            <!-- Druid 连接池 -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-starter</artifactId>
+                <version>${druid-spring-boot-starter.version}</version>
+            </dependency>
+            <!-- PageHelper -->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper-spring-boot-starter.version}</version>
+            </dependency>
+            <!-- springfox (Swagger3) -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-boot-starter</artifactId>
+                <version>${springfox-boot-starter.version}</version>
+            </dependency>
             <!-- lombok -->
             <dependency>
                 <groupId>org.projectlombok</groupId>

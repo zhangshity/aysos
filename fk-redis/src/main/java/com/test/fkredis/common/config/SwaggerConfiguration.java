@@ -19,8 +19,6 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * Swagger配置
  * <p>Title: SwaggerConfiguration</p>
  * <p>Description: Swagger API文档配置 </p>
- * <p>Copyright: Copyright (c) 2021 版权</p>
- * <p>Company: Oceanpayment</p>
  * @author Allen.C.Y.Zhang
  * @version V1.0
  * @date 2021-02-24 15:05:00

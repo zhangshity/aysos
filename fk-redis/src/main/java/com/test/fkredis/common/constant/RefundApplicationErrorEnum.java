@@ -4,8 +4,6 @@ package com.test.fkredis.common.constant;
  * 退款申请API响应信息枚举
  * <p>Title: </p>
  * <p>Description: 响应信息枚举</p>
- * <p>Copyright: Copyright (c) 2021 版权</p>
- * <p>Company: Oceanpayment</p>
  * @author Allen.C.Y.Zhang
  * @version V1.0
  * @date 2021-03-02 11:33:45

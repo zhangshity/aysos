@@ -1,8 +1,8 @@
 package com.test.fkredis.service.impl;
 
-import com.oceanpayment.opgateway.common.config.datasource.framework.DataSourceContext;
-import com.oceanpayment.opgateway.common.config.datasource.switcher.SwitchDataSource;
-import com.oceanpayment.opgateway.mapper.DemoMapper;
+//import com.test.fkredis.common.config.datasource.framework.DataSourceContext;
+//import com.test.fkredis.common.config.datasource.switcher.SwitchDataSource;
+import com.test.fkredis.mapper.DemoMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,11 +20,11 @@ public class TestServiceImpl {
         return record;
     }
 
-    @SwitchDataSource(DataSourceContext.SLAVE)
-    public List<Map<String, String>> demoServiceSlave() {
-//        DataSourceContext.setDataSource(DataSourceContext.DATASOURCE_SLAVE);
-        List<Map<String, String>> record = demoMapper.selectTradeRecord();
-//        DataSourceContext.clearDataSource();
-        return record;
-    }
+//    @SwitchDataSource(DataSourceContext.SLAVE)
+//    public List<Map<String, String>> demoServiceSlave() {
+////        DataSourceContext.setDataSource(DataSourceContext.DATASOURCE_SLAVE);
+//        List<Map<String, String>> record = demoMapper.selectTradeRecord();
+////        DataSourceContext.clearDataSource();
+//        return record;
+//    }
 }

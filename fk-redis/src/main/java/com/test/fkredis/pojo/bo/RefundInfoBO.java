@@ -10,8 +10,6 @@ import java.math.BigDecimal;
  * 退款信息
  * <p>Title: </p>
  * <p>Description: </p>
- * <p>Copyright: Copyright (c) 2021 版权</p>
- * <p>Company: Oceanpayment</p>
  * @author Allen.C.Y.Zhang
  * @version V2.0
  * @date 2021-04-01 15:28

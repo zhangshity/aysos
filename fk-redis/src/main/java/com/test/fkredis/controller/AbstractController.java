@@ -11,8 +11,6 @@ import javax.servlet.http.HttpServletResponse;
  * 抽象父类Controller
  * <p>Title: </p>
  * <p>Description: </p>
- * <p>Copyright: Copyright (c) 2021 版权</p>
- * <p>Company: Oceanpayment</p>
  * @author Allen.C.Y.Zhang
  * @version V2.0
  * @date 2021-03-01 09:28:35

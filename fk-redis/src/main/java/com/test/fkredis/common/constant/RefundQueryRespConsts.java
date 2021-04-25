@@ -8,8 +8,6 @@ import java.util.Map;
  * 退款信息查询API响应信息
  * <p>Title: RefundQueryRespConsts
  * <p>Description: 响应码码和响应信息映射
- * <p>Copyright: Copyright (c) 2021 版权
- * <p>Company: Oceanpayment
  * @author Allen.C.Y.Zhang
  * @version V1.0
  * @date 2021-04-07 15:48:59

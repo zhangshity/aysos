@@ -8,8 +8,6 @@ import org.springframework.context.ApplicationContextAware;
  * ApplicationContext工具类
  * <p>Title: ApplicationContextUtils</p>
  * <p>Description: </p>
- * <p>Copyright: Copyright (c) 2021 版权</p>
- * <p>Company: Oceanpayment</p>
  * @author Allen.C.Y.Zhang
  * @version V1.0
  * @date 2021-03-05 20:32

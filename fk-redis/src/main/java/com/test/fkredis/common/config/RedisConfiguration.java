@@ -14,8 +14,6 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
  * Redis配置
  * <p>Title: RedisConfiguration
  * <p>Description: Jackson序列化
- * <p>Copyright: Copyright (c) 2021 版权
- * <p>Company: Oceanpayment
  * @author Allen.C.Y.Zhang
  * @version V1.0
  * @date 2021-03-17 09:56

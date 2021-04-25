@@ -2,7 +2,7 @@ package com.test.fkredis.pojo.bo;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
+//import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -17,7 +17,7 @@ import java.time.Instant;
 @Data
 @Accessors(chain = true)
 @ApiModel
-@JacksonXmlRootElement(localName = "response")
+//@JacksonXmlRootElement(localName = "response")
 @XmlRootElement(name = "response")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class Student {

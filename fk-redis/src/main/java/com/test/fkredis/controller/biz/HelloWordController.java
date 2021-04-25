@@ -2,12 +2,11 @@ package com.test.fkredis.controller.biz;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator;
-import com.oceanpayment.opgateway.common.util.XmlUtils;
-import com.oceanpayment.opgateway.mapper.DemoMapper;
-import com.oceanpayment.opgateway.pojo.bo.Student;
-import com.oceanpayment.opgateway.service.impl.TestServiceImpl;
+//import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+//import com.fasterxml.jackson.dataformat.xml.ser.ToXmlGenerator;
+import com.test.fkredis.mapper.DemoMapper;
+import com.test.fkredis.pojo.bo.Student;
+import com.test.fkredis.service.impl.TestServiceImpl;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -65,32 +64,32 @@ public class HelloWordController {
         return student;
     }
 
-    @GetMapping(path = "/xml", produces = {MediaType.APPLICATION_XML_VALUE})
-    public Student xml() {
-        logger.debug("xml() !!! !!!! ");
-        Student student = new Student();
-        student.setName("Xml" + RandomStringUtils.randomAlphanumeric(3)).setAge(21).setScore(95.88).setTimestampUtc(Instant.now());
-        return student;
-    }
+//    @GetMapping(path = "/xml", produces = {MediaType.APPLICATION_XML_VALUE})
+//    public Student xml() {
+//        logger.debug("xml() !!! !!!! ");
+//        Student student = new Student();
+//        student.setName("Xml" + RandomStringUtils.randomAlphanumeric(3)).setAge(21).setScore(95.88).setTimestampUtc(Instant.now());
+//        return student;
+//    }
 
-    @GetMapping(path = "/xml/jaxb", produces = {MediaType.APPLICATION_XML_VALUE})
-    public String xmlJaxb() {
-        logger.debug("xml() !!! !!!! ");
-        Student student = new Student();
-        student.setName("Xml" + RandomStringUtils.randomAlphanumeric(3)).setAge(21).setScore(95.88).setTimestampUtc(Instant.now());
-        return XmlUtils.ObjectToXmlWhitProlog(student);
-    }
+//    @GetMapping(path = "/xml/jaxb", produces = {MediaType.APPLICATION_XML_VALUE})
+//    public String xmlJaxb() {
+//        logger.debug("xml() !!! !!!! ");
+//        Student student = new Student();
+//        student.setName("Xml" + RandomStringUtils.randomAlphanumeric(3)).setAge(21).setScore(95.88).setTimestampUtc(Instant.now());
+//        return XmlUtils.ObjectToXmlWhitProlog(student);
+//    }
 
-    @GetMapping(path = "/xml/prolog", produces = {MediaType.APPLICATION_XML_VALUE})
-    public String xmlProlog() throws JsonProcessingException {
-        logger.debug("xml() !!! !!!! ");
-        Student student = new Student();
-        student.setName("Xml" + RandomStringUtils.randomAlphanumeric(3)).setAge(21).setScore(95.88).setTimestampUtc(Instant.now());
-
-        ObjectMapper mapper = new XmlMapper().configure(ToXmlGenerator.Feature.WRITE_XML_DECLARATION, true);
-
-        return mapper.writeValueAsString(student);
-    }
+//    @GetMapping(path = "/xml/prolog", produces = {MediaType.APPLICATION_XML_VALUE})
+//    public String xmlProlog() throws JsonProcessingException {
+//        logger.debug("xml() !!! !!!! ");
+//        Student student = new Student();
+//        student.setName("Xml" + RandomStringUtils.randomAlphanumeric(3)).setAge(21).setScore(95.88).setTimestampUtc(Instant.now());
+//
+//        ObjectMapper mapper = new XmlMapper().configure(ToXmlGenerator.Feature.WRITE_XML_DECLARATION, true);
+//
+//        return mapper.writeValueAsString(student);
+//    }
 
     @GetMapping(path = "bean",produces = {MediaType.APPLICATION_XML_VALUE})
     public String[] beanNamesInSpringContext() {
