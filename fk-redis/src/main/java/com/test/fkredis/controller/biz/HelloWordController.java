@@ -51,9 +51,9 @@ public class HelloWordController {
     public String helloWorld() {
         logger.debug("hello,world!!! !!!! ");
         List<Map<String, String>> record = service.demoServiceMaster();
-        List<Map<String, String>> record2 = service.demoServiceSlave();
+//        List<Map<String, String>> record2 = service.demoServiceSlave();
         String s = RandomStringUtils.randomAlphanumeric(5);
-        return "hello,world! _______ " + s + "_____________" + record.toString() + "\n" + record2.toString();
+        return "hello,world! _______ " + s + "_____________" + record.toString() + "\n";
     }
 
     @GetMapping(path = "/json")
