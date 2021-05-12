@@ -1,6 +1,6 @@
 package com.zcy.string_test;
 
-public class SourceCodeTest {
+public class _SourceCodeTest {
     public static void main(String[] args) {
 
         /**
@@ -14,8 +14,8 @@ public class SourceCodeTest {
         System.out.println("".isEmpty());
 
         //Object的HashCode() 和 Object中的toString()
-        SourceCodeTest sourceCodeTest = new SourceCodeTest();
-        SourceCodeTest sourceCodeTest1 = new SourceCodeTest();
+        _SourceCodeTest sourceCodeTest = new _SourceCodeTest();
+        _SourceCodeTest sourceCodeTest1 = new _SourceCodeTest();
         System.out.println(sourceCodeTest.hashCode() + " " + sourceCodeTest1.hashCode());
         System.out.println(sourceCodeTest.toString() + " " + sourceCodeTest1.toString());
         //String重写了hashCode方法,返回的不是真正的hashcode
