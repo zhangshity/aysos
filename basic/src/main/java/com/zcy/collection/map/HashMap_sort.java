@@ -19,7 +19,7 @@ public class HashMap_sort {
         }
 
         //排序遍历 Map(需先放入List才能用Collections工具类)
-        System.out.println("排序遍历 Map(需先放入List才能用Collections工具类)");
+        System.out.println("------------ 排序遍历 Map(需先放入List才能用Collections工具类) -----------");
 
         List<Entry<String, Integer>> list = new ArrayList<>(map.entrySet());
         Collections.sort(list, new Comparator<Entry<String, Integer>>() {

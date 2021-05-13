@@ -5,7 +5,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.*;
 
-public class HashMap_put {
+public class HashMap_put_reflect {
 
     public static void main(String[] args) throws NoSuchMethodException, NoSuchFieldException, InvocationTargetException, IllegalAccessException {
 
@@ -51,22 +51,22 @@ public class HashMap_put {
         //数组容量
         Method method = clazz.getDeclaredMethod("capacity");
         method.setAccessible(true);
-        System.out.println("capacity : " + method.invoke(hashMap) + "      数组容量");
+        System.out.println("capacity : " + method.invoke(hashMap) + "      数组容量"); //16
 
         //负载因子(默认0.75)
         Field field1 = clazz.getDeclaredField("loadFactor");
         field1.setAccessible(true);
-        System.out.println("loadFactor : " + field1.get(hashMap) + "      负载因子(默认0.75)");
+        System.out.println("loadFactor : " + field1.get(hashMap) + "      负载因子(默认0.75)"); //0.75
 
         //扩容阈值(大于此数字才扩容)
         Field field2 = clazz.getDeclaredField("threshold");
         field2.setAccessible(true);
-        System.out.println("threshold : " + field2.get(hashMap) + "      扩容阈值(大于此数字才扩容)");
+        System.out.println("threshold : " + field2.get(hashMap) + "      扩容阈值(大于此数字才扩容)"); //12
 
         //容器内实际数据量
         Field field4 = clazz.getDeclaredField("size");
         field4.setAccessible(true);
-        System.out.println("size : " + field4.get(hashMap) + "      容器内实际数据量");
+        System.out.println("size : " + field4.get(hashMap) + "      容器内实际数据量"); //3
 
         //Field field3 = clazz.getDeclaredField("table");
         //field3.setAccessible(true);
