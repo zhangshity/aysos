@@ -1,6 +1,6 @@
 # Are you stupid or something?
 
-                                                                                  Written by CHUNYANG ZHANG
+                                                                                  Written by CY ZHANG
 ---
 ### Java验证库及刷题库
 ##### Java代码验证记录留存
