@@ -67,7 +67,14 @@ public class HashMap_reflectTest {
     }
 
 
-
+    /**
+     * 反射获取属性
+     * @param hashMap 哈希map
+     * @throws NoSuchMethodException
+     * @throws InvocationTargetException
+     * @throws IllegalAccessException
+     * @throws NoSuchFieldException
+     */
     public static void getPropertiesByReflect(Map<String,String> hashMap) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, NoSuchFieldException {
         System.out.println("\n------------------------------ 反射获取 ------------------------------");
         Class<?> clazz = hashMap.getClass();
