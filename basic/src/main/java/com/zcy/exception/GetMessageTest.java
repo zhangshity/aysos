@@ -10,8 +10,14 @@ public class GetMessageTest {
         Logger logger = LoggerFactory.getLogger(GetMessageTest.class);
 
         try {
-            int i = 1 / 0;
+            // int i = 1 / 0;
             //throw new RuntimeException("测试代码！异常！");
+
+            try {
+                int i = 1 / 0;
+            } catch (Exception e) {
+                throw new RuntimeException("嵌套错误！", e);
+            }
         } catch (Exception e) {
             System.out.println("------------- e.printStackTrace() --------------");
             e.printStackTrace();
