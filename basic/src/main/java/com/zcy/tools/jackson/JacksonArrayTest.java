@@ -47,6 +47,32 @@ public class JacksonArrayTest {
 //        System.out.println(data);
 
 
+        JsonNode node = com.zcy.tools.jackson.enumeration.JacksonUtils.getObjectMapper().readTree(json);
+        System.out.println(node.isArray()); //false
+        System.out.println(node.get("data").isArray()); //false
 
+
+        String json2 = "{\n" +
+                "\"name\":\"Bill Gates\",\n" +
+                "\"age\":62,\n" +
+                "\"cars\":[ \"Porsche\", \"BMW\", \"Volvo\" ]\n" +
+                "}";
+        JsonNode node2 = com.zcy.tools.jackson.enumeration.JacksonUtils.getObjectMapper().readTree(json2);
+        System.out.println(node2.isArray()); //false
+        System.out.println(node2.get("cars").isArray()); //true
+
+
+        String json3 = "{\n" +
+                "    \"name\": \"Bill Gates\",\n" +
+                "    \"age\": 62,\n" +
+                "    \"cars\": [\n" +
+                "       { \"name\": \"Porsche\",  \"models\": [ \"911\", \"Taycan\" ] },\n" +
+                "       { \"name\": \"BMW\", \"models\": [ \"M5\", \"M3\", \"X5\" ] },\n" +
+                "       { \"name\": \"Volvo\", \"models\": [ \"XC60\", \"V60\" ] }\n" +
+                "    ]\n" +
+                "}";
+        JsonNode node3 = com.zcy.tools.jackson.enumeration.JacksonUtils.getObjectMapper().readTree(json3);
+        System.out.println(node3.isArray()); //false
+        System.out.println(node3.get("cars").isArray()); //true
     }
 }
