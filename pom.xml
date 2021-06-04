@@ -60,7 +60,7 @@
         <jackson-annotations.version>2.11.0</jackson-annotations.version>
         <jackson-dataformat-xml.version>2.11.0</jackson-dataformat-xml.version>
         <joda-time.version>2.10.6</joda-time.version>
-        <httpclient.version>4.5.12</httpclient.version>
+        <httpclient.version>4.5.13</httpclient.version>
         <commons-lang3.version>3.11</commons-lang3.version>
         <commons-text.version>1.9</commons-text.version>
         <dom4j.version>1.6.1</dom4j.version>
