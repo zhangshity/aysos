@@ -1,4 +1,4 @@
-package com.zcy.jmeter;//package com.com.zcy.jmeter;
+package com.zcy.testing.jmeter;//package com.com.zcy.testing.jmeter;
 //
 //import java.io.*;
 //import java.net.Socket;

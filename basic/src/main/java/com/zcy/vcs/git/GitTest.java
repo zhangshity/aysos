@@ -1,4 +1,4 @@
-package com.zcy.git;
+package com.zcy.vcs.git;
 
 public class GitTest {
     public static void main(String[] args) {

@@ -1,9 +1,6 @@
-package com.zcy.leetcode;
+package com.zcy._1FAQ.leetcode;
 
-import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class PowNo50Test {
 

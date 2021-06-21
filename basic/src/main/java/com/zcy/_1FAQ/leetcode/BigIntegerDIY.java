@@ -1,4 +1,4 @@
-package com.zcy.leetcode;
+package com.zcy._1FAQ.leetcode;
 
 import java.math.BigInteger;
 
