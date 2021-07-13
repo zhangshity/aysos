@@ -23,7 +23,7 @@ public class BubbleSort {
      * 另一种理解方式:最后一次左右比较,右边的j+1小于数组长度 (j+1 = arr.length-i) 故 (j=arr.length-i-1)
      *
      * @param arr 整型数组
-     * @see com.zcy.leetcode.BubbleSortAndTuning#bubbleSort(Integer[])
+     * @see com.zcy._1FAQ.leetcode.BubbleSortAndTuning#bubbleSort(Integer[])
      */
     public static void bubbleSort(int[] arr) {
         for (int i = 0; i < arr.length; i++) { //控制循轮数
@@ -46,7 +46,7 @@ public class BubbleSort {
      * Tuning: 在外层for控制循环次数层内,加入标志<code>boolean</code>flag(判断有无左右交换),无交换break出循环
      *
      * @param arr 整型数组
-     * @see com.zcy.leetcode.BubbleSortAndTuning#bubbleSortTuning(Integer[])
+     * @see com.zcy._1FAQ.leetcode.BubbleSortAndTuning#bubbleSortTuning(Integer[])
      */
     public static void tuningBubbleSort(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
