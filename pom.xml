@@ -23,6 +23,8 @@
         <module>fk-redis</module>
         <module>spring-gateway</module>
         <module>springboot-test-controller</module>
+        <module>fk-camel-spring</module>
+        <module>fk-camel-springboot</module>
     </modules>
 
     <properties>
