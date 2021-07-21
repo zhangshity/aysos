@@ -9,36 +9,46 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>springboot-test-controller</artifactId>
+    <artifactId>fk-camel-springboot</artifactId>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <spring-boot.version>2.3.2.RELEASE</spring-boot.version>
+        <camel-spring-boot-bom.version>3.11.0</camel-spring-boot-bom.version>
     </properties>
 
     <dependencyManagement>
-        <!-- 此子项目的spring-boot版本 -->
         <dependencies>
+            <!-- Camel BOM -->
             <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-starter-parent</artifactId>
-                <version>${spring-boot.version}</version>
+                <groupId>org.apache.camel.springboot</groupId>
+                <artifactId>camel-spring-boot-bom</artifactId>
+                <version>${camel-spring-boot-bom.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+            <!-- ... other BOMs or dependencies ... -->
         </dependencies>
     </dependencyManagement>
 
     <dependencies>
+        <!-- Camel Starter -->
+        <dependency>
+            <groupId>org.apache.camel.springboot</groupId>
+            <artifactId>camel-spring-boot-starter</artifactId>
+        </dependency>
+        <!-- ... other dependencies ... -->
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
     </dependencies>
+
 
 </project>
