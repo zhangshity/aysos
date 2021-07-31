@@ -1,13 +1,12 @@
 package com.zcy.collection._1_traversal;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 /**
- * 对于集合 【while遍历】 需要借助迭代器
+ * 最常见的遍历
  */
-public class Traversal_1_While {
+public class Traversal_2_2Fori {
     public static void main(String[] args) {
 
         List<String> list = new ArrayList<>();
@@ -25,12 +24,8 @@ public class Traversal_1_While {
         System.out.println(list); //[test01, test02, test03, test04, test05, test06, test07, test08, test09, test10, test10]
 
 
-        /**
-         * ArrayList重写的Iterator
-         */
-        Iterator<String> iterator = list.iterator();
-        while (iterator.hasNext()) {
-            System.out.println(iterator.next());
+        for (int i = 0; i < list.size(); i++) {
+            System.out.println(list.get(i));
         }
 
 
