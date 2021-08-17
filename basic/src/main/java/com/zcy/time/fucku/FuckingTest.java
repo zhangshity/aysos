@@ -2,6 +2,7 @@ package com.zcy.time.fucku;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.temporal.TemporalAdjusters;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -71,5 +72,26 @@ public class FuckingTest {
         System.out.println(period.getDays());
         System.out.println(period.getMonths());
         System.out.println(period.getYears());
+
+
+        System.out.println("================== 每月最后一天 ==================");
+        LocalDate l1 = LocalDate.of(2021, 5, 31);
+        LocalDate l2 = l1.minusMonths(1).with(TemporalAdjusters.lastDayOfMonth());
+        LocalDate l3 = l2.minusMonths(1).with(TemporalAdjusters.lastDayOfMonth());
+        LocalDate l4 = l3.minusMonths(1).with(TemporalAdjusters.lastDayOfMonth());
+        LocalDate l5 = l4.minusMonths(1).with(TemporalAdjusters.lastDayOfMonth());
+        LocalDate l6 = l5.minusMonths(1).with(TemporalAdjusters.lastDayOfMonth());
+        LocalDate l7 = l6.minusMonths(1).with(TemporalAdjusters.lastDayOfMonth());
+        LocalDate l8 = l7.minusMonths(1).with(TemporalAdjusters.lastDayOfMonth());
+        LocalDate l9 = l8.minusMonths(1).with(TemporalAdjusters.lastDayOfMonth());
+        LocalDate l10 = l9.minusMonths(1).with(TemporalAdjusters.lastDayOfMonth());
+        LocalDate l11 = l10.minusMonths(1).with(TemporalAdjusters.lastDayOfMonth());
+        System.out.println(l1 + "\n" + l2 + "\n" + l3 + "\n" + l4 + "\n" + l5 + "\n" + l6 + "\n" + l7 + "\n" + l8 + "\n" + l9 + "\n" + l10 + "\n" + l11);
+
+
+        System.out.println("================== TemporalAdjusters 时间调整器 ==================");
+        LocalDateTime localDateTime_1 = LocalDateTime.now();//.of(2021, 5, 31, 14, 35, 26);
+        LocalDateTime statistics = localDateTime_1.with(TemporalAdjusters.next(DayOfWeek.FRIDAY));
+        System.out.println(statistics);
     }
 }
