@@ -26,11 +26,13 @@ public class Main {
 
         // 发布配置
         boolean publishConfig = configService.publishConfig(dataId, group, content);
-        LOGGER.info("publishConfig: {}", publishConfig);
+        LOGGER.info("publishConfig1: {}", publishConfig);
+        wait2Sync();
 
         // 获取nacos配置中心配置
         String config = configService.getConfig(dataId, group, 1000);
-        LOGGER.info("getConfig: {}", config);
+        LOGGER.info("getConfig1: {}", config);
+        wait2Sync();
 
         // 监听配置
         configService.addListener(dataId, group, new PropertiesListener() {
@@ -41,8 +43,8 @@ public class Main {
         });
 
         // 更新配置
-        boolean updateConfig = configService.publishConfig(dataId, group, "connectTimeoutInMills=3000");
-        LOGGER.info("updateConfig: {}", updateConfig);
+        boolean updateConfig = configService.publishConfig(dataId, group, "server.port=8089");
+        LOGGER.info("publishConfig2: {}", updateConfig);
         wait2Sync();
 
         // 删除配置
@@ -51,7 +53,7 @@ public class Main {
 //        wait2Sync();
 
         config = configService.getConfig(dataId, group, 5000);
-        LOGGER.info("getConfig: {}", config);
+        LOGGER.info("getConfig2: {}", config);
     }
 
     private static void wait2Sync() {
