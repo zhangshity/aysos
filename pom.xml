@@ -27,12 +27,14 @@
         <module>fk-camel-spring</module>
         <module>fk-camel-springboot</module>
         <module>fk-embed-tomcat-spring-mvc</module>
+        <module>fk-nacos-basic</module>
+        <module>fk-nacos-springboot</module>
     </modules>
 
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
-        <!-- pom -->
+        <!-- BOM -->
         <spring-boot-dependencies.version>2.3.8.RELEASE</spring-boot-dependencies.version>
         <spring-cloud-dependencies.version>Hoxton.SR9</spring-cloud-dependencies.version>
         <spring-cloud-alibaba-dependencies.version>2021.1</spring-cloud-alibaba-dependencies.version>
