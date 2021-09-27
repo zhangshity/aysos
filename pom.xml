@@ -27,7 +27,7 @@
         <module>fk-camel-spring</module>
         <module>fk-camel-springboot</module>
         <module>fk-embed-tomcat-spring-mvc</module>
-        <module>fk-nacos-basic</module>
+        <module>fk-nacos-client</module>
         <module>fk-nacos-springboot</module>
     </modules>
 
