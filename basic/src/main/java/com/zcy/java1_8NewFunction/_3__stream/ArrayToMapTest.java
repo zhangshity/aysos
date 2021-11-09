@@ -68,6 +68,15 @@ public class ArrayToMapTest {
         System.out.println(bankResponseFieldMap1);
         System.out.println(bankResponseFieldMap1.get("z1"));
 
+        // 新理解
+        System.out.println("");
+        String threshold = "threshold=200&channel=lx&timeout=60";
+        Map<Object, Object> objectObjectMap = Arrays.stream(threshold.split("&"))
+                .map(exp -> exp.split("="))
+                .collect(Collectors.toMap(k -> k[0], v -> v[1]));
+        System.out.println("threshold: " + threshold);
+        System.out.println("Collectors.toMap: " + objectObjectMap);
+
 
         System.out.println("========================= flatMap =========================");
         List<String> list = Arrays.stream(URLDecoder.decode(bankResponse, StandardCharsets.UTF_8.name()).split("&"))
