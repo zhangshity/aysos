@@ -29,6 +29,7 @@
         <module>fk-embed-tomcat-spring-mvc</module>
         <module>fk-nacos-client</module>
         <module>fk-nacos-springboot</module>
+        <module>fk-aop-log</module>
     </modules>
 
     <properties>
