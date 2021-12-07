@@ -1,6 +1,6 @@
-package com.fk.fkaoplog.controller;
+package com.fk.fkaoplog.solution1.controller;
 
-import com.fk.fkaoplog.pojo.Student;
+import com.fk.fkaoplog.solution1.pojo.Student;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

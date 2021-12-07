@@ -1,4 +1,4 @@
-package com.fk.fkaoplog.pojo;
+package com.fk.fkaoplog.solution1.pojo;
 
 import lombok.Data;
 
