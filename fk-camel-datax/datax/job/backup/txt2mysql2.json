@@ -1,0 +1,52 @@
+{
+  "job": {
+    "content": [
+      {
+        "reader": {
+          "name": "txtfilereader",
+          "parameter": {
+            "path": [
+              "D:\data\server\data\sftp\datax\demo.txt"
+            ],
+            "column": [
+              {
+                "index": 0,
+                "type": "string"
+              },
+              {
+                "index": 1,
+                "type": "string"
+              }
+            ],
+            "fieldDelimiter": "|",
+            "skipHeader": "false"
+          }
+        },
+        "writer": {
+          "name": "mysqlwriter",
+          "parameter": {
+            "column": [
+              "id",
+              "user_name"
+            ],
+            "connection": [
+              {
+                "jdbcUrl": "jdbc:mysql://db.airloan.com.cn:3301/loan_facilitation?serverTimezone=Asia/Shanghai&characterEncoding=utf8&useSSL=false",
+                "table": [
+                  "user_info"
+                ]
+              }
+            ],
+            "password": "infore#Tec@Test",
+            "username": "console"
+          }
+        }
+      }
+    ],
+    "setting": {
+      "speed": {
+        "channel": 6
+      }
+    }
+  }
+}

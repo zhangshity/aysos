@@ -1,0 +1,12 @@
+
+server:
+  port: 8090
+ftp:
+  username:
+  passwd:
+  path:
+  options: readLock=rename&delay=10s&binary=true&filter=#zipFileFilter&delete=true&recursive=true
+  # url: ftp://${ftp.username}@${ftp.path}/?password=${ftp.passwd}&${ftp.options}
+  url: file:D:\data
+  # ??????
+  local-dir: ${ftp.url}/gfloan/?fileName=$simple{date:now:yyyyMMdd}/$simple{file:onlyname}
