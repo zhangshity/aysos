@@ -1,4 +1,4 @@
-package com.zcy.spring.transaction;
+package com.zcy.spring.mybatis;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,10 +7,12 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @EnableAspectJAutoProxy(exposeProxy = true)  //允许代码中获取proxy类  // 暴露当前代理对象到当前线程绑定
-@ComponentScan("com.zcy.spring.transaction")
-public class Test {
+@ComponentScan({"com.zcy.spring.mybatis",
+        "com.zcy.spring.transaction.config",
+        "com.zcy.spring.transaction.dao"})
+public class MybatisListResult {
 
-    private static final Logger logger = LoggerFactory.getLogger(Test.class);
+    private static final Logger logger = LoggerFactory.getLogger(MybatisListResult.class);
 
     // 测试表语句 (附加快速清理表数据语句: truncate table student)
     // 建表语句:
@@ -28,11 +30,11 @@ public class Test {
 
     public static void main(String[] args) {
         System.out.println("------------------- 开始Main方法 -----------------------");
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Test.class);
-        ServiceA serviceA = (ServiceA) context.getBean("serviceA"); //名称获取
-        //ServiceA serviceA = (ServiceA) context.getBean(ServiceA.class); //类型获取
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(MybatisListResult.class);
+        StudentService service = context.getBean(StudentService.class);
+
         try {
-            serviceA.updateMain();
+            service.testListResultOfEmptyData(); //补充测试 查询表返回list是 ✔空对象 还是 ✘null
         } catch (Exception e) {
             logger.error("Test Main 主方法捕获到异常", e);
         }

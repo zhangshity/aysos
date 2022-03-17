@@ -10,7 +10,8 @@ import org.springframework.context.annotation.PropertySource;
 import java.beans.PropertyVetoException;
 
 @Configuration
-@PropertySource("classpath:mybatis/opdb.properties") //相当于<context:property-placeholder location="db.properties"/>
+//@PropertySource("classpath:mybatis/opdb.properties") //相当于<context:property-placeholder location="db.properties"/>
+@PropertySource("classpath:mybatis/local-db.properties") //相当于<context:property-placeholder location="db.properties"/>
 @MapperScan("com.zcy.spring.transaction.dao")//配置mybatis mapper扫描路径
 public class DataSourceConfiguration {
 

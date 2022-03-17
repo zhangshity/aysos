@@ -6,15 +6,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.aop.framework.AopContext;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
-
-import java.util.List;
+import org.springframework.transaction.interceptor.TransactionAspectSupport;
 
 @Service
-@EnableAspectJAutoProxy(exposeProxy = true)  //允许代码中获取proxy类  // 暴露当前代理对象到当前线程绑定
 public class ServiceA {
 
     public static final Logger logger = LoggerFactory.getLogger(ServiceA.class);
@@ -40,36 +37,41 @@ public class ServiceA {
 //                logger.error("测试1:  serviceB调用失败", e);
 //            }
 
-            // ====================== 测试2:  调用内部方法 ======================
-            // 测试2.(1) 直接调用内部方法                  ✘ServiceB内REQUIRE_NEW独立事务,第3次执行中断,且抛出异常,回滚失败,未开启事务。被serviceA捕获,serviceA不受影响
+
+            // ====================== 测试2:  this调用内部方法 ======================
+            // 测试2.(1) this调用内部方法                  ✘ServiceB内REQUIRE_NEW独立事务,第3次执行中断,且抛出异常,回滚失败,未开启事务。被serviceA捕获,serviceA不受影响
 //            try {
 //                this.updateSomething(i);
 //            } catch (Exception e) {
 //                logger.error("测试2.(2):  serviceB调用失败", e);
 //            }
             // 测试2.(2) AOP代理自我调用                  ✔ServiceB内REQUIRE_NEW独立事务回滚,且抛出异常。被serviceA捕获,serviceA不受影响 (AOP自我调用成功)
-            try {
+//            try {
 //                ((ServiceA) AopContext.currentProxy()).updateSomething(i);
+//            } catch (Exception e) {
+//                logger.error("测试2.(2):  serviceB调用失败", e);
+//                //throw new RuntimeException("测试2.(2):  serviceB调用失败", e);
+//            }
+            // 测试2.(3) AOP代理内嵌调用                  ✔ServiceB内REQUIRE_NEW独立事务回滚,且抛出异常。被内嵌方法捕获并上抛给serviceA,serviceA不受影响 (AOP内嵌调用成功,不受代码位置影响)
+            try {
                 this.nestedMethod(i);
             } catch (Exception e) {
-                logger.error("测试2.(2):  serviceB调用失败", e);
-                //throw new RuntimeException("测试2.(2):  serviceB调用失败", e);
+                logger.error("测试2.(3):  serviceB调用失败", e);
             }
 
-
-            mapper.insert(new Student("[" + i + "]" + " --------------------??????-------------------", 15));
+            mapper.insert(new Student("外部事务域 ServiceA 第[" + i + "]次调用完成!" + " --------------------!!!!!!-------------------", 15));
             logger.info("-------------- ServiceA 第{}次 调用完成 End --------------", i);
         }
 
 
 
 
-        // 本方法 DB IO方法
+        // 测试3 手动回滚
 //        try {
-//            mapper.insert(new Student("Main", 0));
+//            mapper.insert(new Student("Main手动回滚测试", 0));
 //            throw new RuntimeException("Service A,更新 Main 失败！！");
 //        } catch (Exception e) {
-//            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly();
+//            TransactionAspectSupport.currentTransactionStatus().setRollbackOnly(); //配置 @Transactional注解 手动回滚
 //            logger.error("Service A,更新失败！！", e);
 //        }
     }
@@ -109,15 +111,5 @@ public class ServiceA {
         logger.info("更新 6 表成功");
     }
 
-
-
-
-    //========================= 补充测试 查询表返回list是空对象还是 null =========================
-    public void testListResultOfEmptyData() {
-        List<Student> studentList = mapper.selectAll();
-        int size = studentList.size();
-        logger.info("学生表:{} ,学生表尺寸: {}", studentList, size);
-        studentList.forEach(student -> logger.info("学生信息: {}", student.getId()));
-    }
 
 }
