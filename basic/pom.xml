@@ -179,7 +179,7 @@
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-webmvc</artifactId>
-            <version>5.2.0.RELEASE</version>
+            <version>5.3.18</version>
         </dependency>
 
         <!-- poi excel处理组件 -->
