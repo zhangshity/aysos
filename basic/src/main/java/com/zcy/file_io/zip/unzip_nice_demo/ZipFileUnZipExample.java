@@ -19,7 +19,7 @@ public class ZipFileUnZipExample {
 
     public static void main(String[] args) {
 
-        Path source = Paths.get("C:\\Users\\52576\\Desktop\\2022040001_img_20220523_20220523000195036537.zip");
+        Path source = Paths.get("C:\\Users\\52576\\Desktop\\2022040001_img_20220601_20220601000199793173.zip");
         Path target = Paths.get("C:\\Users\\52576\\Desktop");
 
         try {
