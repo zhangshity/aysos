@@ -1,4 +1,4 @@
-package com.fk.fkaoplog.aop;
+package com.fk.fkaoplog.solution1.aop;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import lombok.extern.slf4j.Slf4j;

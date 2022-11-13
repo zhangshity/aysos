@@ -1,0 +1,52 @@
+{
+  "job": {
+    "content": [
+      {
+        "reader": {
+          "name": "txtfilereader",
+          "parameter": {
+            "path": [
+              "${CURRENT_FILE_PATH}"
+            ],
+            "column": [
+              {
+                "index": 0,
+                "type": "string"
+              },
+              {
+                "index": 1,
+                "type": "string"
+              }
+            ],
+            "fieldDelimiter": "|",
+            "skipHeader": "false"
+          }
+        },
+        "writer": {
+          "name": "mysqlwriter",
+          "parameter": {
+            "column": [
+              "id",
+              "user_name"
+            ],
+            "connection": [
+              {
+                "jdbcUrl": "${JDBC_URL}",
+                "table": [
+                  "user_info"
+                ]
+              }
+            ],
+            "password": "${spring.datasource.dynamic.datasource.master.password}",
+            "username": "${spring.datasource.dynamic.datasource.master.username}"
+          }
+        }
+      }
+    ],
+    "setting": {
+      "speed": {
+        "channel": 6
+      }
+    }
+  }
+}

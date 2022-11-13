@@ -93,5 +93,17 @@ public class FuckingTest {
         LocalDateTime localDateTime_1 = LocalDateTime.now();//.of(2021, 5, 31, 14, 35, 26);
         LocalDateTime statistics = localDateTime_1.with(TemporalAdjusters.next(DayOfWeek.FRIDAY));
         System.out.println(statistics);
+
+
+        System.out.println("================== 格式转换 ==================");
+        String settleDate = "20201028";
+        DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("yyyyMMdd");
+        DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("yyyy/MM/dd");
+
+        System.out.println(LocalDate.parse(settleDate,formatter1));
+
+        System.out.println(LocalDate.parse(settleDate, DateTimeFormatter.ofPattern("yyyyMMdd")).format(DateTimeFormatter.ofPattern("yyyy/MM/dd")));
+
+
     }
 }

@@ -14,7 +14,8 @@ import javax.sql.DataSource;
 import java.io.IOException;
 
 @Configuration
-@PropertySource("classpath:mybatis/opdb.properties")
+//@PropertySource("classpath:mybatis/opdb.properties")
+@PropertySource("classpath:mybatis/local-db.properties")
 public class SessionFactoryConfiguration {
 
     //mybatis-config.xml配置文件的路径

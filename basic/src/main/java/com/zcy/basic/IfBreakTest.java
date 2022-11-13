@@ -13,7 +13,7 @@ public class IfBreakTest {
                 System.out.println("外层if打印！开始");
                 if (instance.flag2.equals("b")) {
                     System.out.println("内层if打印！");
-                    break;
+                    break; // 打破循环
                 }
                 System.out.println("外层if打印！结束");
             }

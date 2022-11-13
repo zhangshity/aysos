@@ -1,14 +1,13 @@
 package com.zcy.spring.transaction;
 
-import org.mybatis.spring.annotation.MapperScan;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
-
-@ComponentScan("com.com.zcy.spring.transaction")
-@MapperScan("com.zcy.spring.transaction")
+@EnableAspectJAutoProxy(exposeProxy = true)  //允许代码中获取proxy类  // 暴露当前代理对象到当前线程绑定
+@ComponentScan("com.zcy.spring.transaction")
 public class Test {
 
     private static final Logger logger = LoggerFactory.getLogger(Test.class);
@@ -30,9 +29,9 @@ public class Test {
     public static void main(String[] args) {
         System.out.println("------------------- 开始Main方法 -----------------------");
         AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(Test.class);
-        ServiceA serviceA = (ServiceA) context.getBean("serviceA");
+        ServiceA serviceA = (ServiceA) context.getBean("serviceA"); //名称获取
+        //ServiceA serviceA = (ServiceA) context.getBean(ServiceA.class); //类型获取
         try {
-            //serviceA.testListResultOfEmptyData(); //补充测试 查询表返回list是空对象还是 null
             serviceA.updateMain();
         } catch (Exception e) {
             logger.error("Test Main 主方法捕获到异常", e);
