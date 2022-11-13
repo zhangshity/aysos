@@ -77,7 +77,7 @@
         <joda-time.version>2.10.6</joda-time.version>
         <httpclient.version>4.5.12</httpclient.version>
         <commons-lang3.version>3.11</commons-lang3.version>
-        <commons-text.version>1.9</commons-text.version>
+        <commons-text.version>1.10.0</commons-text.version>
         <jedis.version>3.3.0</jedis.version>
         <redisson.version>3.14.0</redisson.version>
         <lettuce-core.version>6.0.1.RELEASE</lettuce-core.version>
