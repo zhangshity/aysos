@@ -18,6 +18,9 @@ import java.util.concurrent.*;
  * <p>
  * Executors工具类
  * 提供了创建线程池的方法
+ *
+ * @author zcy
+ * @since 2020-07-17
  */
 public class ThreadPool {
 
