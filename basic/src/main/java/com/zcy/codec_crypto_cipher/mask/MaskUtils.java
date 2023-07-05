@@ -1,4 +1,4 @@
-package com.zcy.codec.mask;
+package com.zcy.codec_crypto_cipher.mask;
 
 import org.apache.commons.lang3.StringUtils;
 

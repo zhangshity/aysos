@@ -1,8 +1,6 @@
-package com.zcy.codec.message_digest;
+package com.zcy.codec_crypto_cipher.message_digest;
 
 import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.commons.codec.digest.Md5Crypt;
-import sun.security.provider.MD5;
 
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
