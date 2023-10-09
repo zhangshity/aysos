@@ -1,4 +1,4 @@
-package com.zcy.time.threadSafe_SimpleDateFormat;
+package com.zcy.date_time.threadSafe_SimpleDateFormat;
 
 import java.text.SimpleDateFormat;
 
