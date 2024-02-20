@@ -1,0 +1,26 @@
+* []
+
+```javascript
+ var merge = function (nums1, m, nums2, n) {
+
+    let i = 0;
+    let j = 0;
+
+    nums1.splice(m);
+
+
+    while (j < n ) {
+      //只要还没处理完第二个数组就一直循环
+
+      if (i >= (m + j ) || nums2[j] <= nums1[i]) {
+        //i >= (m + j )：第一个数组已经遍历完了，则直接插入
+        //nums2[j] <= nums1[i]：数组2的数据比数组1的小，则插入
+        nums1.splice(i, 0, nums2[j]);
+        j++;
+      }
+      i++;
+    }
+
+  };
+```
+
