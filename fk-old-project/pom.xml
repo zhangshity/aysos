@@ -17,7 +17,7 @@
     <artifactId>fk-old-project</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
-    <name>fk-redis</name>
+    <name>fk-old-project</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
