@@ -20,7 +20,7 @@
     <modules>
         <module>basic</module>
         <module>fkspringboot</module>
-        <module>fk-redis</module>
+        <module>fk-old-project</module>
         <module>fk-mq</module>
         <module>spring-gateway</module>
         <module>fk-api-test</module>

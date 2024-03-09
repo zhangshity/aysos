@@ -14,7 +14,7 @@
     </parent>
 
     <groupId>com.test</groupId>
-    <artifactId>fk-redis</artifactId>
+    <artifactId>fk-old-project</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <name>fk-redis</name>
