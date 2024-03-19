@@ -40,7 +40,7 @@ public class WaitSleepNotifyDemo {
         }).start();
 
         //主线程休眠100ms,保证线程A先于线程B运行
-        Thread.sleep(100);
+        Thread.sleep(3000);
 
         //定义线程B run()方法
         new Thread(new Runnable() {
