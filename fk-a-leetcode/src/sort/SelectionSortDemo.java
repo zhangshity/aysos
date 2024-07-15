@@ -26,7 +26,7 @@ public class SelectionSortDemo {
                 }
             }
 
-            // 最大值最小值交换swap
+            // 起始值最小值交换swap
             int tmp = array[i];
             array[i] = array[min];
             array[min] = tmp;
