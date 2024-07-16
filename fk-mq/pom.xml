@@ -39,10 +39,15 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.rocketmq</groupId>-->
+<!--            <artifactId>rocketmq-client</artifactId>-->
+<!--            <version>4.9.7</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>org.apache.rocketmq</groupId>
-            <artifactId>rocketmq-client</artifactId>
-            <version>4.9.7</version>
+            <artifactId>rocketmq-client-java</artifactId>
+            <version>5.0.7</version>
         </dependency>
     </dependencies>
 </project>
