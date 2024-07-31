@@ -1,0 +1,43 @@
+server:
+  port: 2596
+  servlet:
+    context-path: /
+
+logging:
+  level:
+    root: info
+    com.gateway.demo.trigger_demo.mybatis.com.gateway.demo.trigger_demo.PersonMapper: debug
+    com.gateway.demo.trigger_demo.PersonMapper: debug
+
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:mysql://localhost:3306/test?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&allowMultiQueries=true}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:123456}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  batch:
+    job:
+      enabled: false
+    initialize-schema: NEVER
+
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+#    default-executor-type: batch
+
+xxl:
+  job:
+    enabled: true
+    admin:
+      addresses: ${XXL_JOB_URL:http://localhost:8080/xxl-job-admin}
+    accessToken: ${XXL_JOB_TOKEN:}
+    executor:
+      appname: ${XXL_JOB_APPNAME:springbatch}
+      address: ""
+      ip: ""
+      port: 9837
+      logpath: /data/log-center/xxl-job/jobhandler
+      logretentiondays: -1
+
+

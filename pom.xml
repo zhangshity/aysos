@@ -31,6 +31,7 @@
         <module>fk-nacos-client</module>
         <module>fk-nacos-springboot</module>
         <module>fk-aop-log</module>
+        <module>fk-spring-batch</module>
     </modules>
 
     <properties>
