@@ -1,4 +1,4 @@
-package com.zcy.crypto;
+package com.zcy.codec_crypto_cipher;
 
 import javax.crypto.Cipher;
 import javax.crypto.SecretKey;
