@@ -22,8 +22,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 
-@Configuration
-@EnableBatchProcessing
+//@Configuration
+//@EnableBatchProcessing
 public class MybatisOfficialSpringBatchConfig {
 
     private static final Logger log = LoggerFactory.getLogger(MybatisOfficialSpringBatchConfig.class);

@@ -34,7 +34,7 @@ import java.util.List;
 
 
 @Slf4j
-@Configuration
+//@Configuration
 public class MybatisCustomizeSpringBatchConfig {
     @Resource
     private SqlSessionFactory sqlSessionFactory;

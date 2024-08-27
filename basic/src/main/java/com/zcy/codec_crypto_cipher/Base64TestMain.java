@@ -36,18 +36,18 @@ public class Base64TestMain {
 
         // Base64本质就是对一段2进制数组进行编码，编码后的结果同样也是一个2进制数组
 
+        System.out.println("======Base64 字节数组(二进制数组运算)编码======");
+        byte[] byteArr = {0b0000_0001, 0b0000_0010, 0b0000_011, 0b0000_0100}; // 进制 1, 2, 3, 4
+        byte[] base64byteArr = java.util.Base64.getEncoder().encode(byteArr);
+        byte[] byteArr2 = java.util.Base64.getDecoder().decode(base64byteArr);
+        System.out.println("byteArr: " + Arrays.toString(byteArr)); //[1, 2, 3, 4]
+        System.out.println("base64byteArr: " + Arrays.toString(base64byteArr));
+        System.out.println("byteArr2: " + Arrays.toString(byteArr2)); //[1, 2, 3, 4]
+        System.out.println("Arrays.equals(byteArr, byteArr2) = " + Arrays.equals(byteArr, byteArr2)); // true
 
 
-
-
-        byte[] byteArr = {0b0000_0001,0b0000_0011};
-
-
-        java.util.Base64.getEncoder().encode();
-
-
-        String encoded2 = java.util
-                .Base64.getEncoder().encodeToString(strByteArr_default);
+//        String encoded2 = java.util
+//                .Base64.getEncoder().encodeToString(strByteArr_default);
 
 
         // Base64 编码
