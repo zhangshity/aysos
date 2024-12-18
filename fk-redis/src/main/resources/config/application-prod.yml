@@ -1,0 +1,99 @@
+#spring:
+#  # ================= 开发工具 =================
+#  devtools:
+#    add-properties: false
+#  # ================= Redis =================
+#  redis:
+#    password: '{cipher}cf3df2d3c6258e97aa5496c3f96222a527f8dbfbe0ded4e784216358ff0ec298'
+#    sentinel:
+#      master: mirrormaster
+#      nodes:
+#        - 192.168.11.152:26379
+#        - 192.168.11.153:26379
+#        - 192.168.11.154:26379
+#  # ================= 数据源 =================
+#  datasource:
+#    type: com.alibaba.druid.pool.DruidDataSource
+#    druid:
+#      master:
+#        driver-class-name: oracle.jdbc.OracleDriver
+#        url: jdbc:oracle:thin:@192.168.11.155:1521:pdbmirror
+#        username: ccps_dev
+#        password: Read_Op2021
+#        initial-size: 20
+#        max-active: 500
+#        min-idle: 10
+#        max-wait: 60000
+#        pool-prepared-statements: true
+#        max-pool-prepared-statement-per-connection-size: 20
+#        # max-open-prepared-statements:
+#        validation-query: SELECT 1 FROM DUAL
+#        validation-query-timeout: 600
+#        test-on-borrow: false
+#        test-on-return: false
+#        test-while-idle: true
+#        time-between-eviction-runs-millis: 60000
+#        min-evictable-idle-time-millis: 300000
+#        max-evictable-idle-time-millis: 900000
+#      slave:
+#        enabled: true
+#        driver-class-name: oracle.jdbc.OracleDriver
+#        url: jdbc:oracle:thin:@192.168.11.155:1521:pdbmirror
+#        username: ccps_dev
+#        password: Read_Op2021
+#        initial-size: 20
+#        max-active: 500
+#        min-idle: 10
+#        max-wait: 60000
+#        pool-prepared-statements: true
+#        max-pool-prepared-statement-per-connection-size: 20
+#        # max-open-prepared-statements:
+#        validation-query: SELECT 1 FROM DUAL
+#        validation-query-timeout: 1800
+#        test-on-borrow: false
+#        test-on-return: false
+#        test-while-idle: true
+#        time-between-eviction-runs-millis: 60000
+#        min-evictable-idle-time-millis: 300000
+#        max-evictable-idle-time-millis: 900000
+#      filter:
+#        stat:
+#          enabled: true
+#          db-type: oracle
+#          log-slow-sql: true
+#          slow-sql-millis: 1000
+#          merge-sql: true
+#        wall:
+#          enabled: true
+#          db-type: oracle
+#          config:
+#            delete-allow: false
+#            drop-table-allow: false
+#    hikari:
+#      master:
+#        driver-class-name: oracle.jdbc.OracleDriver
+#        jdbc-url: 6017e22080e747c8c89374a2d430241b446f7527bbf8f115f0a770796cd1c16e5cc2e6ac99c7ca2deb235092956f80ec
+#        username: 63d6ee4a01ef2da1054672ddeda2961c
+#        password: 3c12f7f9f43bd54344ebc38f47674ded
+#        minimum-idle: 5
+#        maximum-pool-size: 15
+#        auto-commit: true
+#        idle-timeout: 30000
+#        pool-name: HikariCP
+#        max-lifetime: 1800000
+#        connection-timeout: 30000
+#        connection-test-query: SELECT 1 FROM DUAL
+#      slave:
+#        enabled: true
+#        driver-class-name: oracle.jdbc.OracleDriver
+#        jdbc-url: 6017e22080e747c8c89374a2d430241b446f7527bbf8f115f0a770796cd1c16e4aa9a845a0d62f9819362719c2d108b7
+#        username: 63d6ee4a01ef2da1054672ddeda2961c
+#        password: d0016e31e01c35a75307300470ed2286
+#        minimum-idle: 5
+#        maximum-pool-size: 15
+#        auto-commit: true
+#        idle-timeout: 30000
+#        pool-name: HikariCP
+#        max-lifetime: 1800000
+#        connection-timeout: 30000
+#        connection-test-query: SELECT 1 FROM DUAL
