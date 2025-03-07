@@ -37,7 +37,7 @@ public class Proxy_Demo {
     public static void main(String[] args) {
         System.out.println("-------------------- JDK动态代理 --------------------");
         // -------------------- JDK动态代理 --------------------
-        UserService targetJdk = new UserServiceImpl();
+        UserService target = new UserServiceImpl();
 
         UserService jdkProxy = (UserService) Proxy.newProxyInstance(
                 Proxy_Demo.class.getClassLoader(),
@@ -46,7 +46,7 @@ public class Proxy_Demo {
                     @Override
                     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
                         System.out.println("[JDK代理] 前置处理");
-                        Object result = method.invoke(targetJdk, args);
+                        Object result = method.invoke(target, args);
                         System.out.println("[JDK代理] 后置处理");
                         return result;
                     }

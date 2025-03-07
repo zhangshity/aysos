@@ -32,6 +32,7 @@
         <module>fk-nacos-springboot</module>
         <module>fk-aop-log</module>
         <module>fk-spring-batch</module>
+        <module>xxl-job-enhance</module>
     </modules>
 
     <properties>
